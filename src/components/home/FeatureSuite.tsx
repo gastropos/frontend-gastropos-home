@@ -359,7 +359,11 @@ function PosScene({ lang }: { lang: Lang }) {
                     className={`relative overflow-hidden rounded-xl bg-white p-1.5 ring-1 transition-shadow ${isTap ? "ring-2 ring-[#ea5929] shadow-lg" : "ring-border"}`}
                   >
                     <img
-                      src={m.img}
+                      src={m.img.replace(".webp", "-240.webp")}
+                      srcSet={`${m.img.replace(".webp", "-240.webp")} 240w, ${m.img} 480w`}
+                      sizes="(min-width: 1024px) 200px, 30vw"
+                      width={240}
+                      height={180}
                       alt=""
                       loading="lazy"
                       className="aspect-[4/3] w-full rounded-lg object-cover"
@@ -1091,7 +1095,14 @@ function QrMenu({ lang, reduce, total }: { lang: Lang; reduce: boolean; total: n
           const added = i < 2;
           return (
             <div key={m.id} className="flex items-center gap-2.5 rounded-xl bg-[#f8fafc] p-2">
-              <img src={m.img} alt="" className="size-11 rounded-lg object-cover" loading="lazy" />
+              <img
+                src={m.img.replace(".webp", "-240.webp")}
+                width={44}
+                height={44}
+                alt=""
+                className="size-11 rounded-lg object-cover"
+                loading="lazy"
+              />
               <div className="min-w-0 flex-1">
                 <p className="truncate text-xs font-semibold">{lang === "de" ? m.de : m.en}</p>
                 <p className="font-mono text-[10px] text-muted-foreground">

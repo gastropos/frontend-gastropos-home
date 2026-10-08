@@ -40,7 +40,11 @@ export function saveConsent(value: Consent | null) {
 
 export function ConsentBanner() {
   const { lang } = useI18n();
-  const [open, setOpen] = useState(false);
+  // Rendered open on the server so the banner paints with the HTML instead of
+  // after hydration (it was the Largest Contentful Paint element on mobile).
+  // Visitors who already chose get `consent-set` on <html> from the inline
+  // script in __root.tsx, which hides it before the first paint.
+  const [open, setOpen] = useState(true);
   const de = lang === "de";
 
   useEffect(() => {
@@ -59,6 +63,7 @@ export function ConsentBanner() {
 
   return (
     <div
+      data-consent-banner
       role="dialog"
       aria-live="polite"
       aria-label={de ? "Datenschutz-Einstellungen" : "Privacy settings"}

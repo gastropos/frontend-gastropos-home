@@ -108,9 +108,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       {
-        // Returning visitors skip the intro: hide it before the first paint.
+        // Before the first paint: returning visitors skip the intro, and the
+        // consent banner stays hidden once a choice has been stored.
         children:
-          "try{if(sessionStorage.getItem('gastropos_intro_seen'))document.documentElement.classList.add('intro-seen')}catch(e){}",
+          "try{var c=document.documentElement.classList;if(sessionStorage.getItem('gastropos_intro_seen'))c.add('intro-seen');var v=localStorage.getItem('ot-consent');if(v==='all'||v==='necessary')c.add('consent-set')}catch(e){}",
       },
       {
         type: "application/ld+json",

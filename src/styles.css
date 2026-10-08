@@ -370,7 +370,8 @@ html, body {
 
   /* ── Futuristic Intro — Spiral Vortex ──────────────────────── */
 
-  .intro-seen .intro-overlay {
+  .intro-seen .intro-overlay,
+  .consent-set [data-consent-banner] {
     display: none;
   }
 
