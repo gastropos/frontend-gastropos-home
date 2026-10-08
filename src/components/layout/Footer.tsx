@@ -12,7 +12,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-6">
           <div className="col-span-2">
             <Link to="/" className="flex items-center" aria-label="GastroPos">
-              <img src={logoUrl} alt="GastroPos" className="h-8 w-auto" />
+              <img src={logoUrl} alt="GastroPos" width={103} height={32} className="h-8 w-auto" />
             </Link>
             <p className="mt-6 max-w-xs text-sm text-muted-foreground leading-relaxed">
               {t.footer.tagline}
@@ -112,7 +112,7 @@ export function Footer() {
 function FooterCol({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h5 className="text-[11px] font-mono uppercase tracking-widest text-foreground">{title}</h5>
+      <h2 className="text-[11px] font-mono uppercase tracking-widest text-foreground">{title}</h2>
       <div className="mt-6 flex flex-col gap-3 text-sm text-muted-foreground">{children}</div>
     </div>
   );

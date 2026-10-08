@@ -47,8 +47,8 @@ export function Hero() {
       <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
         {/* ── text block ── */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 16 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-[#ea5929]/20 bg-[#ea5929]/5 px-4 py-2 text-xs font-semibold text-[#ea5929]">

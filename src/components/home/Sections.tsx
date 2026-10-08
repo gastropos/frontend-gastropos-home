@@ -353,7 +353,7 @@ export function SocialProof() {
             >
               {[...row.names, ...row.names].map((name, i) => (
                 <span key={i} className="flex items-center">
-                  <span className="font-display text-lg font-bold tracking-tight text-muted-foreground/60">
+                  <span className="font-display text-lg font-bold tracking-tight text-muted-foreground">
                     {name}
                   </span>
                   <span className="mx-8 size-1.5 rounded-full bg-[#ea5929]/40" />

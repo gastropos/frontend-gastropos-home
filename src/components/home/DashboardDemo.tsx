@@ -39,7 +39,7 @@ const TABLES: Table[] = [
 const STATUS_COLORS: Record<TableStatus, string> = {
   free: "bg-[#e8e8e8] text-[#666]",
   occupied: "bg-[#7B3F72] text-white",
-  ready: "bg-[#5a9c56] text-white",
+  ready: "bg-[#3f7a3c] text-white",
 };
 
 const BASE_ORDER: OrderItem[] = [
@@ -200,12 +200,12 @@ export function DashboardDemo() {
 
               {/* Status legend */}
               <div className="mb-3 flex flex-wrap items-center gap-2">
-                <span className="text-xs text-[#999]">Status</span>
+                <span className="text-xs text-[#5f6672]">Status</span>
                 <div className="ml-auto flex flex-wrap gap-1.5">
                   {[
                     { label: lang === "de" ? "Frei" : "Free", color: "bg-[#e0e0e0]" },
                     { label: lang === "de" ? "Bestellt" : "Occupied", color: "bg-[#7B3F72]" },
-                    { label: lang === "de" ? "Bereit" : "Ready", color: "bg-[#5a9c56]" },
+                    { label: lang === "de" ? "Bereit" : "Ready", color: "bg-[#3f7a3c]" },
                     { label: lang === "de" ? "Serviert" : "Served", color: "bg-[#aaa]" },
                   ].map(({ label, color }) => (
                     <span key={label} className="flex items-center gap-1 rounded-full bg-white px-2.5 py-0.5 text-[10px] font-semibold shadow-sm">
@@ -291,10 +291,16 @@ export function DashboardDemo() {
               <div className="flex items-center justify-between">
                 <span className="text-base font-bold text-[#0c1b3d]">🔔 {activeTable}</span>
                 <div className="flex gap-1.5">
-                  <button className="flex size-7 items-center justify-center rounded-full bg-[#f4f5f7] hover:bg-[#e8e8e8]">
+                  <button
+                    aria-label={lang === "de" ? "Vorheriger Tisch" : "Previous table"}
+                    className="flex size-7 items-center justify-center rounded-full bg-[#f4f5f7] hover:bg-[#e8e8e8]"
+                  >
                     <ChevronLeft className="size-3.5 text-[#555]" />
                   </button>
-                  <button className="flex size-7 items-center justify-center rounded-full bg-[#f4f5f7] hover:bg-[#e8e8e8]">
+                  <button
+                    aria-label={lang === "de" ? "Nächster Tisch" : "Next table"}
+                    className="flex size-7 items-center justify-center rounded-full bg-[#f4f5f7] hover:bg-[#e8e8e8]"
+                  >
                     <ChevronRight className="size-3.5 text-[#555]" />
                   </button>
                 </div>
@@ -313,7 +319,7 @@ export function DashboardDemo() {
               </div>
 
               {/* course nav */}
-              <div className="mt-3 flex items-center justify-between text-xs text-[#aaa]">
+              <div className="mt-3 flex items-center justify-between text-xs text-[#6b7280]">
                 <ChevronLeft className="size-3" />
                 <span>{lang === "de" ? "Gang #1" : "Course #1"}</span>
                 <ChevronRight className="size-3" />
@@ -366,7 +372,7 @@ export function DashboardDemo() {
 
               {/* total bar */}
               <div className="mt-3 rounded-xl bg-[#0c1b3d] px-4 py-3">
-                <p className="font-mono text-[10px] uppercase tracking-widest text-white/40">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-white/70">
                   {lang === "de" ? "Gesamt" : "Total"}
                 </p>
                 <motion.p

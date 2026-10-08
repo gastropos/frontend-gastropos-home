@@ -6,7 +6,7 @@ import { BuiltFor, FinalCta, SocialProof } from "@/components/home/Sections";
 import { FeatureSuite } from "@/components/home/FeatureSuite";
 import { DashboardDemo } from "@/components/home/DashboardDemo";
 import { FuturisticIntro } from "@/components/home/FuturisticIntro";
-import { useState, useCallback } from "react";
+import { useCallback } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -19,29 +19,21 @@ export const Route = createFileRoute("/")({
     }),
     links: [
       { rel: "canonical", href: "https://www.gastropos.com/" },
-      { rel: "preload", as: "image", href: "/carousel-kitchen.jpg" },
+      { rel: "preload", as: "image", href: "/carousel-kitchen.webp" },
     ],
   }),
   component: Index,
 });
 
 function Index() {
-  const [introComplete, setIntroComplete] = useState(false);
-
-  const handleIntroComplete = useCallback(() => {
-    setIntroComplete(true);
-  }, []);
+  // The page renders visible from the start (the intro overlay covers it on a
+  // first visit), so it paints immediately instead of after the 3.5 s intro.
+  const handleIntroComplete = useCallback(() => {}, []);
 
   return (
     <>
       <FuturisticIntro onComplete={handleIntroComplete} />
-      <div
-        style={{
-          opacity: introComplete ? 1 : 0,
-          transition: "opacity 0.6s ease-out",
-          pointerEvents: introComplete ? "auto" : "none",
-        }}
-      >
+      <div>
         <SiteShell>
           <Hero />
           <SocialProof />

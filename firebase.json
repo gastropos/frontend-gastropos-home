@@ -3,8 +3,21 @@
     "public": "dist/client",
     "cleanUrls": true,
     "trailingSlash": false,
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
     "headers": [
+      {
+        "source": "**/*.@(jpg|jpeg|png|webp|avif|gif|svg|ico|woff2)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=2592000, stale-while-revalidate=86400"
+          }
+        ]
+      },
       {
         "source": "/assets/**",
         "headers": [

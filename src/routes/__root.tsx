@@ -108,6 +108,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       {
+        // Returning visitors skip the intro: hide it before the first paint.
+        children:
+          "try{if(sessionStorage.getItem('gastropos_intro_seen'))document.documentElement.classList.add('intro-seen')}catch(e){}",
+      },
+      {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",

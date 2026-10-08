@@ -268,7 +268,7 @@ export function Header() {
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between rounded-full border border-white/40 bg-white/85 px-4 pl-6 shadow-[0_10px_40px_-10px_rgba(15,23,42,0.25)] backdrop-blur-xl">
         <div className="flex items-center gap-6">
           <Link to="/" className="flex items-center" aria-label="GastroPos">
-            <img src={logoUrl} alt="GastroPos" className="h-8 w-auto" />
+            <img src={logoUrl} alt="GastroPos" width={103} height={32} className="h-8 w-auto" />
           </Link>
           <nav className="hidden gap-1 text-sm font-medium text-muted-foreground lg:flex">
             <NavTrigger

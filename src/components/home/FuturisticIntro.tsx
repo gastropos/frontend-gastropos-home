@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import { createPortal } from "react-dom";
 
 const SESSION_KEY = "gastropos_intro_seen";
 const PARTICLE_COUNT = 62;
@@ -7,7 +6,9 @@ const TOTAL_DURATION = 3500;
 
 /**
  * Futuristic intro overlay — spiral vortex + logo reveal.
- * Rendered via Portal into <body> to bypass PageTransition opacity.
+ * Rendered on the server as well (so server and client markup match) and
+ * hidden before paint for returning visitors by the inline script in
+ * __root.tsx, which adds `intro-seen` to <html>.
  */
 export function FuturisticIntro({ onComplete }: { onComplete: () => void }) {
   const [mounted, setMounted] = useState(false);
@@ -47,10 +48,10 @@ export function FuturisticIntro({ onComplete }: { onComplete: () => void }) {
   useEffect(() => {
     if (!mounted) return;
     const imagesToPreload = [
-      "/carousel-kitchen.jpg",
-      "/carousel-restaurant.jpg",
-      "/carousel-cafe.jpg",
-      "/carousel-bar.jpg",
+      "/carousel-kitchen.webp",
+      "/carousel-restaurant.webp",
+      "/carousel-cafe.webp",
+      "/carousel-bar.webp",
     ];
 
     imagesToPreload.forEach((src) => {
@@ -62,11 +63,11 @@ export function FuturisticIntro({ onComplete }: { onComplete: () => void }) {
   }, [mounted]);
 
   if (!show) return null;
-  if (typeof document === "undefined") return null;
 
   const overlay = (
     <div
       className="intro-overlay"
+      aria-hidden
       style={{
         opacity: fading ? 0 : 1,
         transform: fading ? "scale(1.05)" : "scale(1)",
@@ -104,11 +105,11 @@ export function FuturisticIntro({ onComplete }: { onComplete: () => void }) {
           transition: "opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16,1,0.3,1), filter 0.8s ease-out",
         }}
       >
-        <h1 className="intro-logo-text font-display text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl">
+        <p className="intro-logo-text font-display text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl">
           <span style={{ color: "#ea5929" }}>Gastro</span>
           <span style={{ color: "#5b8af5" }}>Pos</span>
           <span style={{ color: "#5b8af5", fontSize: "0.55em", fontWeight: 700, letterSpacing: "0.02em", opacity: 0.85 }}>.ai</span>
-        </h1>
+        </p>
 
         <div
           className="mt-4"
@@ -164,5 +165,5 @@ export function FuturisticIntro({ onComplete }: { onComplete: () => void }) {
     </div>
   );
 
-  return createPortal(overlay, document.body);
+  return overlay;
 }

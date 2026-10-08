@@ -266,7 +266,7 @@ function FeatureRow({
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-12 lg:gap-16">
         <Reveal className={`lg:col-span-5 ${reverse ? "lg:order-2" : ""}`}>
           <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-widest">
-            <span className="rounded-full bg-[#ea5929] px-2.5 py-1 font-semibold text-white">
+            <span className="rounded-full bg-[#c2410c] px-2.5 py-1 font-semibold text-white">
               {index}
             </span>
             <span className={dark ? "text-white/70" : "text-muted-foreground"}>{eyebrow}</span>
@@ -301,15 +301,15 @@ function FeatureRow({
 /* ═══════════════════════════ 01 · POS scene ═══════════════════════════ */
 
 const MENU = [
-  { id: "burger", de: "Burger", en: "Burger", price: 12.5, img: "/food/burger.jpg" },
-  { id: "steak", de: "Steak", en: "Steak", price: 24, img: "/food/steak.jpg" },
-  { id: "salad", de: "Salat", en: "Salad", price: 9.5, img: "/food/salad.jpg" },
-  { id: "pasta", de: "Pasta", en: "Pasta", price: 13, img: "/food/pasta.jpg" },
-  { id: "pizza", de: "Pizza", en: "Pizza", price: 11.5, img: "/food/pizza.jpg" },
-  { id: "fries", de: "Pommes", en: "Fries", price: 4.5, img: "/food/fries.jpg" },
-  { id: "soup", de: "Suppe", en: "Soup", price: 6.5, img: "/food/soup.jpg" },
-  { id: "wrap", de: "Wrap", en: "Wrap", price: 9, img: "/food/wrap.jpg" },
-  { id: "bowl", de: "Bowl", en: "Bowl", price: 12, img: "/food/bowl.jpg" },
+  { id: "burger", de: "Burger", en: "Burger", price: 12.5, img: "/food/burger.webp" },
+  { id: "steak", de: "Steak", en: "Steak", price: 24, img: "/food/steak.webp" },
+  { id: "salad", de: "Salat", en: "Salad", price: 9.5, img: "/food/salad.webp" },
+  { id: "pasta", de: "Pasta", en: "Pasta", price: 13, img: "/food/pasta.webp" },
+  { id: "pizza", de: "Pizza", en: "Pizza", price: 11.5, img: "/food/pizza.webp" },
+  { id: "fries", de: "Pommes", en: "Fries", price: 4.5, img: "/food/fries.webp" },
+  { id: "soup", de: "Suppe", en: "Soup", price: 6.5, img: "/food/soup.webp" },
+  { id: "wrap", de: "Wrap", en: "Wrap", price: 9, img: "/food/wrap.webp" },
+  { id: "bowl", de: "Bowl", en: "Bowl", price: 12, img: "/food/bowl.webp" },
 ];
 const POS_SCRIPT = ["burger", "salad", "burger", "fries"];
 const POS_STEPS = POS_SCRIPT.length + 4; // taps, send, paid, paid, reset
@@ -436,7 +436,7 @@ function PosScene({ lang }: { lang: Lang }) {
             <motion.div
               animate={sending && !reduce ? { scale: [1, 0.95, 1] } : { scale: 1 }}
               transition={{ duration: 0.4 }}
-              className={`mt-3 rounded-lg py-3 text-center text-sm font-semibold text-white transition-shadow ${sending ? "bg-[#ea5929] shadow-[0_0_0_6px_rgba(234,89,41,0.2)]" : "bg-[#ea5929]"}`}
+              className={`mt-3 rounded-lg py-3 text-center text-sm font-semibold text-white transition-shadow ${sending ? "bg-[#c2410c] shadow-[0_0_0_6px_rgba(234,89,41,0.25)]" : "bg-[#c2410c]"}`}
             >
               {lang === "de" ? "Senden & bezahlen" : "Send & pay"}
             </motion.div>
@@ -929,10 +929,10 @@ const QR_ITEMS = [
     de: "Pizza Margherita",
     en: "Pizza Margherita",
     price: 11.5,
-    img: "/food/pizza.jpg",
+    img: "/food/pizza.webp",
   },
-  { id: "pasta", de: "Trüffel-Pasta", en: "Truffle pasta", price: 13, img: "/food/pasta.jpg" },
-  { id: "salad", de: "Bunter Salat", en: "Garden salad", price: 9.5, img: "/food/salad.jpg" },
+  { id: "pasta", de: "Trüffel-Pasta", en: "Truffle pasta", price: 13, img: "/food/pasta.webp" },
+  { id: "salad", de: "Bunter Salat", en: "Garden salad", price: 9.5, img: "/food/salad.webp" },
 ];
 
 function QrScene({ lang }: { lang: Lang }) {
