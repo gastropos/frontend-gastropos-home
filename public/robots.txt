@@ -2,4 +2,5 @@ User-agent: *
 Allow: /
 Disallow: /signin
 
+# Summary for AI assistants: https://www.gastropos.com/llms.txt
 Sitemap: https://www.gastropos.com/sitemap.xml

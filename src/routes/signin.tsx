@@ -5,9 +5,9 @@ import { useI18n } from "@/lib/i18n/context";
 export const Route = createFileRoute("/signin")({
   head: () => ({
     meta: [
-      { title: "Sign in — GastroPos" },
-      { name: "description", content: "Sign in to your GastroPos dashboard." },
-      { name: "robots", content: "noindex" },
+      { title: "Anmelden — GastroPos" },
+      { name: "description", content: "Melden Sie sich bei GastroPos an." },
+      { name: "robots", content: "noindex, follow" },
     ],
   }),
   component: SignIn,

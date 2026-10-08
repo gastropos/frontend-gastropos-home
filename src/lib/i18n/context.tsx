@@ -10,13 +10,17 @@ interface I18nContextValue {
 const I18nContext = createContext<I18nContextValue | null>(null);
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("en");
+  const [lang, setLangState] = useState<Lang>("de");
 
   useEffect(() => {
     const stored = typeof window !== "undefined" ? window.localStorage.getItem("ot-lang") : null;
     if (stored === "en" || stored === "de") setLangState(stored);
-    else if (typeof navigator !== "undefined" && navigator.language?.startsWith("de"))
-      setLangState("de");
+    else if (
+      typeof navigator !== "undefined" &&
+      !navigator.language?.startsWith("de") &&
+      !/bot|crawler|spider|crawling/i.test(navigator.userAgent)
+    )
+      setLangState("en");
   }, []);
 
   const setLang = (l: Lang) => {

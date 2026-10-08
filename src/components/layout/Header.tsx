@@ -87,10 +87,10 @@ const productLinks: LinkItem[] = [
   },
   {
     to: "/product/inventory",
-    en: "Inventory",
-    de: "Warenwirtschaft",
-    desc_en: "Stock & recipes",
-    desc_de: "Bestand & Rezepte",
+    en: "Stock",
+    de: "Bestand",
+    desc_en: "Stock & sold-out",
+    desc_de: "Bestand & Ausverkauft",
     icon: Package,
   },
   {
@@ -156,14 +156,14 @@ const industryLinks: LinkItem[] = [
     to: "/industries/food-truck",
     en: "Food Truck",
     de: "Foodtruck",
-    desc_en: "Mobile, offline-first",
-    desc_de: "Mobil, offline-fähig",
+    desc_en: "Phone & handheld POS",
+    desc_de: "Kasse auf Handy & Handheld",
     icon: Truck,
   },
   {
     to: "/industries/kiosk",
-    en: "Kiosk",
-    de: "Kiosk",
+    en: "Kiosk & snack bar",
+    de: "Kiosk & Imbiss",
     desc_en: "Quick service counter",
     desc_de: "Schneller Counter",
     icon: Store,
@@ -172,16 +172,16 @@ const industryLinks: LinkItem[] = [
     to: "/industries/retail",
     en: "Retail",
     de: "Einzelhandel",
-    desc_en: "Inventory + checkout",
-    desc_de: "Bestand + Kasse",
+    desc_en: "Barcode + stock",
+    desc_de: "Barcode + Bestand",
     icon: ShoppingBag,
   },
   {
     to: "/industries/hair-salon",
     en: "Hair Salon",
     de: "Friseur",
-    desc_en: "Bookings & services",
-    desc_de: "Termine & Dienste",
+    desc_en: "Services & vouchers",
+    desc_de: "Leistungen & Gutscheine",
     icon: Scissors,
   },
   {
@@ -196,8 +196,8 @@ const industryLinks: LinkItem[] = [
     to: "/industries/service-business",
     en: "Service Business",
     de: "Dienstleister",
-    desc_en: "Appointments + invoices",
-    desc_de: "Termine + Rechnungen",
+    desc_en: "Receipts & invoices",
+    desc_de: "Belege & Rechnungen",
     icon: Briefcase,
   },
 ];
@@ -550,13 +550,7 @@ const LANGUAGES = [
   { code: "de", label: "Deutsch", flag: "🇩🇪" },
 ] as const;
 
-function LangDropdown({
-  lang,
-  setLang,
-}: {
-  lang: "en" | "de";
-  setLang: (l: "en" | "de") => void;
-}) {
+function LangDropdown({ lang, setLang }: { lang: "en" | "de"; setLang: (l: "en" | "de") => void }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -615,16 +609,15 @@ function LangDropdown({
                   setOpen(false);
                 }}
                 className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors text-left
-                  ${lang === l.code
-                    ? "bg-[#1a2d6d]/8 text-[#1a2d6d] font-semibold"
-                    : "text-foreground hover:bg-accent/5 hover:text-[#1a2d6d]"
+                  ${
+                    lang === l.code
+                      ? "bg-[#1a2d6d]/8 text-[#1a2d6d] font-semibold"
+                      : "text-foreground hover:bg-accent/5 hover:text-[#1a2d6d]"
                   }`}
               >
                 <span className="text-[16px] leading-none">{l.flag}</span>
                 <span>{l.label}</span>
-                {lang === l.code && (
-                  <span className="ml-auto size-1.5 rounded-full bg-[#1a2d6d]" />
-                )}
+                {lang === l.code && <span className="ml-auto size-1.5 rounded-full bg-[#1a2d6d]" />}
               </button>
             ))}
           </motion.div>

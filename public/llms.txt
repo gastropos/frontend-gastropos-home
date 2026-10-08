@@ -1,0 +1,64 @@
+# GastroPos
+
+> GastroPos is a cloud point-of-sale system (Kassensystem) for restaurants, cafés, takeaways and delivery businesses in Germany and Austria, made by OrdersTracker UG (haftungsbeschränkt), Essen, Germany (formerly sold as OrdersTracker). It combines a till for counter and table service, a waiter app, a kitchen display, QR-code ordering at the table, an own webshop for delivery and pickup, a GoBD-compliant cash book, Z-reports, DATEV export and the fiskaly cloud TSE. The website is in German (primary) and English.
+
+Key facts:
+- Plans: Klein 39 €, Standard 59 €, Premium 79 € per month; they differ in the number of line items per month (1,500 / 3,000 / unlimited).
+- TSE: fiskaly cloud TSE, a separate add-on for 15 € per month; not included in the plans. Austria: RKSV supported.
+- Devices: Android and iOS phones and tablets, web, Windows; Sunmi and iMin devices with built-in printer and customer display. ESC/POS printers via Wi-Fi, LAN, Bluetooth, USB. Card terminals via ZVT, SumUp, Zettle.
+- Accounting: DATEV booking batch (EXTF, SKR03/SKR04/SKR07) on demand, GoBD archive, DSFinV-K export via fiskaly, Z-reports emailed to the tax advisor, accountant login.
+- AI: menu import from photo or PDF, voice ordering at the table, in-app assistant for setup (tables, printers, payment types).
+- Not included: recipe-based inventory, multi-location management, customer accounts in the webshop, in-app payment for QR orders.
+- Contact: info@gastropos.ai, +49 201 759 346 94.
+
+## Products
+- [Cloud-Kassensystem für Gastronomie & Imbiss](https://www.gastropos.com/product/pos): TSE-fähiges Cloud-Kassensystem für Restaurant, Café und Imbiss: Tischservice, Thekenkasse, Küchenmonitor, Lieferung, Z-Bericht, DATEV- und GoBD-Export — auf Android, iOS, Windows und Sunmi-Geräten.
+- [Mobile Bestellaufnahme für den Service](https://www.gastropos.com/product/waiter-ordering): Bestellungen am Tisch auf Android- und iOS-Smartphones, Tablets und Sunmi-Handhelds aufnehmen, an die Küche senden, Abholbereit-Meldungen erhalten, getrennt zahlen.
+- [QR-Code-Bestellung am Tisch für die Gastronomie](https://www.gastropos.com/product/qr-ordering): Selbstbestellung per QR-Code: eigener Code pro Tisch, Speisekarte im Browser, Größen und Extras, Kellner rufen, Rechnung anfordern, Allergene, sechs Sprachen — direkt mit Kasse und Küchenmonitor verbunden.
+- [Küchenmonitor (KDS) für die Gastronomie](https://www.gastropos.com/product/kitchen-display): Küchenmonitor für Restaurant und Imbiss: Bestellungen aus allen Kanälen, Farb-Timer, Kategorie-Filter pro Bildschirm, Gänge, Abholbereit-Meldung an den Service.
+- [Online-Bestellsystem & Liefer-Webshop für Restaurants](https://www.gastropos.com/product/online-ordering): Webshop für Lieferung und Abholung: Liefergebiete nach PLZ oder Entfernung, Karte, Klarna, PayPal oder bar, Trinkgeld, Rabattcodes, eigene Fahrer — ohne Provision pro Bestellung.
+- [Bestand, Ausverkauft & Allergene für die Gastronomie](https://www.gastropos.com/product/inventory): Einfache Bestandsführung für die Gastronomie: Bestand pro Produkt, E-Mail bei niedrigem Bestand, Ausverkauft an Kasse, QR-Bestellung und Webshop, 14 Allergene und Zusatzstoffe pro Produkt.
+- [Digitales Kassenbuch für die Gastronomie (GoBD)](https://www.gastropos.com/product/cash-book): Digitales Kassenbuch: automatische Barumsätze, Ein- und Auszahlungen mit Zweck, lückenlose Nummerierung, Storno statt Löschen, DATEV-Konto pro Zweck, GoBD-Archiv.
+- [DATEV-Export für die Gastronomie (SKR03/04/07)](https://www.gastropos.com/product/datev-export): DATEV-Buchungsstapel (EXTF) mit SKR03, SKR04 oder SKR07, Konten je Steuersatz und Zahlungsart, inklusive Kassenbuch, GoBD-Archiv, DSFinV-K und Z-Bericht-Mails an den Steuerberater.
+- [Auswertungen & Umsatzstatistik für die Gastronomie](https://www.gastropos.com/product/analytics): Auswertungen für die Gastronomie: Umsatz, Bestellungen, Ø Bonwert, Koch- und Wartezeiten, Umsatz nach Stunde, Tag, Produkt, Kategorie, Mitarbeiter, Tisch und Zahlungsart, Bestseller und Ladenhüter.
+
+## Pricing and company
+- [GastroPos — Cloud-Kassensystem für Restaurants, Cafés & Lieferdienste](https://www.gastropos.com/): Kasse, Bestellaufnahme am Tisch, Küchenmonitor, QR-Bestellung und eigener Webshop in einem System, mit fiskaly Cloud-TSE, Kassenbuch und DATEV-Export.
+- [Preise](https://www.gastropos.com/pricing): Klein 39 €, Standard 59 €, Premium 79 € pro Monat; fiskaly Cloud-TSE als Zusatzmodul für 15 € pro Monat.
+- [Demo buchen](https://www.gastropos.com/demo): Persönliche Vorführung von GastroPos.
+- [Vergleich mit klassischen Kassensystemen](https://www.gastropos.com/compare): Cloud-Kasse und klassisches Kassensystem im Funktionsvergleich.
+- [Über GastroPos](https://www.gastropos.com/about): Wer hinter GastroPos steht.
+- [Kontakt](https://www.gastropos.com/contact): info@gastropos.ai, +49 201 759 346 94.
+- [Partnerprogramm](https://www.gastropos.com/partners): Für Wiederverkäufer, Hardware-Händler und Steuerberatungen.
+- [Empfehlungsprogramm](https://www.gastropos.com/affiliate): GastroPos weiterempfehlen.
+
+## Industries
+- [Kassensystem für Restaurants](https://www.gastropos.com/industries/restaurant): Restaurant-Kasse mit Tischübersicht, mobiler Bestellaufnahme, Küchenmonitor, getrennten Rechnungen, QR-Selbstbestellung, Reservierungen, Gutscheinen, fiskaly-TSE und DATEV-Export.
+- [Kassensystem für Cafés](https://www.gastropos.com/industries/cafe): Café-Kasse: Thekenmodus, Tischservice, Größen und Extras, Steuer Im Haus/Außer Haus, Kundendisplay, QR-Bestellung, Gutscheine, fiskaly-TSE und DATEV.
+- [Kassensystem für Bars & Kneipen](https://www.gastropos.com/industries/bar): Bar-Kasse: offene Deckel pro Tisch oder Platz, schnelle Runden mit Favoriten, Bardrucker, getrennte Rechnungen, Trinkgeld pro Kellner, QR-Kellnerruf, fiskaly-TSE und DATEV.
+- [Kassensystem für Bäckereien](https://www.gastropos.com/industries/bakery): Bäckerei-Kasse: Thekenmodus mit Barcode und freien Preisen, Steuer Im Haus/Außer Haus, Webshop-Abholbestellungen, Ausverkauft-Schalter, Allergene, Gutscheine, fiskaly-TSE und DATEV.
+- [Mobile Kasse für Foodtrucks](https://www.gastropos.com/industries/food-truck): Foodtruck-Kasse auf Smartphone oder Sunmi-Handheld, Bluetooth-Bondrucker, Kartenzahlung mit SumUp/Zettle/ZVT, optionales Offline-Kassieren, Webshop-Abholung, fiskaly-TSE.
+- [Kassensystem für Kiosk & Imbiss](https://www.gastropos.com/industries/kiosk): Kasse für Kiosk und Imbiss: Thekenmodus, Barcode-Scanner, Schnelltasten, QR-Bestellung am Tisch, Telefonbestellungen mit Anruferkennung, Lieferung, Gutscheine, fiskaly-TSE.
+- [Einfache Kasse für kleine Läden](https://www.gastropos.com/industries/retail): Einfache Kasse für kleine Läden: Barcode-Scan, Schnelltasten, Bestand pro Produkt, Ausverkauft, Gutscheine, Kundenliste, fiskaly-TSE, Kassenbuch und DATEV-Export.
+- [Kasse für Friseure & Barbershops](https://www.gastropos.com/industries/hair-salon): TSE-fähige Kasse für Friseure und Barbershops: Leistungen und Verkaufsprodukte, Kartenzahlung, Wert- und Leistungsgutscheine, Trinkgeld pro Mitarbeiter, E-Belege, DATEV-Export.
+- [Kasse für Kosmetikstudios & Spas](https://www.gastropos.com/industries/beauty-salon): TSE-fähige Kasse für Kosmetikstudios und Spas: Behandlungen und Produkte, Wert- und Leistungsgutscheine, Kartenzahlung, Trinkgeld pro Mitarbeiter, E-Belege, DATEV-Export.
+- [Kasse für Dienstleister](https://www.gastropos.com/industries/service-business): TSE-fähige Kasse für Dienstleister: Leistungen mit Preisen, Kassieren auf Tablet oder Smartphone, digitale Belege, Firmenrechnungen, Gutscheine, Kartenzahlung, DATEV-Export.
+
+## Guides and help
+- [Gastro-Ratgeber: Kasse, Steuern, TSE & DATEV](https://www.gastropos.com/resources/blog): Ratgeber für Gastronomen: 7 % Mehrwertsteuer auf Speisen, Bonpflicht und E-Bon, Bewirtungsbeleg, Kassenbuch, Aufbewahrungsfristen, Webshop und QR-Bestellung.
+- [Hilfe-Center — GastroPos Kassen-Support](https://www.gastropos.com/resources/help): Hilfe für GastroPos: Einrichtung, Hardware-Kompatibilität, TSE-Aktivierung, DATEV-Exporte und Fehlerbehebung.
+- [Ratgeber: Das richtige Kassensystem für die Gastronomie](https://www.gastropos.com/resources/pos-guide): Checkliste für die Wahl einer Gastro-Kasse in Deutschland: TSE, Geräte, Zahlungen, Offline-Verhalten, Gesamtkosten, Exporte, Support und Vertragslaufzeit.
+- [TSE-Ratgeber: KassenSichV, DSFinV-K & Cloud-TSE](https://www.gastropos.com/resources/tse-guide): TSE-Ratgeber für die Gastronomie: Was die KassenSichV verlangt, Cloud- vs. Hardware-TSE, DSFinV-K, Belegausgabepflicht, Meldepflicht und wie GastroPos die fiskaly Cloud-TSE nutzt.
+- [DATEV-Ratgeber für die Gastronomie (SKR03/04/07)](https://www.gastropos.com/resources/datev-guide): DATEV-Ratgeber für die Gastronomie: Buchungsstapel (EXTF), SKR03/SKR04/SKR07, Steuersätze Im Haus und Außer Haus, Zahlungskonten, Z-Bericht-Mails und Steuerberater-Zugang.
+
+## Blog articles
+- [7 % Mehrwertsteuer auf Speisen seit 2026: Was Sie in der Kasse umstellen müssen](https://www.gastropos.com/resources/blog/mehrwertsteuer-gastronomie-2026): Seit 1. Januar 2026 gilt für Speisen in der Gastronomie dauerhaft 7 % Mehrwertsteuer, Getränke bleiben bei 19 %. So stellen Sie Steuersätze, Menüs und Außer-Haus-Verkauf in der Kasse richtig ein.
+- [Bonpflicht: Wann ein digitaler Beleg (E-Bon) ausreicht](https://www.gastropos.com/resources/blog/bonpflicht-e-bon): Seit 2020 muss jede elektronische Kasse einen Beleg ausgeben. Was § 146a AO verlangt, wann ein digitaler Beleg per QR-Code oder E-Mail erlaubt ist und welche Angaben er enthalten muss.
+- [Bewirtungsbeleg: Pflichtangaben und digitale Ausfüllung durch den Gast](https://www.gastropos.com/resources/blog/bewirtungsbeleg): Geschäftsgäste brauchen für den Betriebsausgabenabzug einen maschinell erstellten, TSE-gesicherten Beleg. Welche Angaben ein Bewirtungsbeleg braucht und wie Restaurants es ihren Gästen leicht machen.
+- [Aufbewahrungsfristen für Kassendaten: 8 oder 10 Jahre?](https://www.gastropos.com/resources/blog/aufbewahrungsfristen-kassendaten): Seit 2025 müssen Buchungsbelege nur noch acht statt zehn Jahre aufbewahrt werden. Was das für Kassenbons, Z-Berichte, das Kassenbuch, TSE-Exporte und die Kassen-Bedienungsanleitung bedeutet.
+- [Kassenbuch in der Gastronomie richtig führen: Regeln und typische Fehler](https://www.gastropos.com/resources/blog/kassenbuch-gastronomie): Was ein GoBD-konformes Kassenbuch braucht, wie Sie Einlagen, Entnahmen und Trinkgelder richtig erfassen und welche Fehler Betriebsprüfer am häufigsten finden.
+- [Eigener Webshop für Lieferung und Abholung: So starten Sie](https://www.gastropos.com/resources/blog/eigener-webshop-restaurant): Warum Restaurants neben Lieferplattformen eine eigene Bestellseite anbieten, welche Einstellungen wichtig sind (Liefergebiete, Mindestbestellwert, Öffnungszeiten, Zahlung) und wie Gäste zu Ihrem Shop finden.
+- [QR-Code-Bestellung am Tisch: Vorteile, Grenzen und Einführung](https://www.gastropos.com/resources/blog/qr-code-bestellung-restaurant): Wie die Bestellung per QR-Code am Tisch funktioniert, wo sie hilft (Stoßzeiten, Nachbestellungen, Sprachbarrieren) und wie Sie sie einführen, ohne den persönlichen Service zu verlieren.
+
+## Optional
+- [Full text of all product pages, guides and articles](https://www.gastropos.com/llms-full.txt)

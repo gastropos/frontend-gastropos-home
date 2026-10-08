@@ -1,3 +1,4 @@
+import { saveConsent } from "@/components/layout/ConsentBanner";
 import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n/context";
 import { productLinks, industryLinks } from "./Header";
@@ -84,6 +85,13 @@ export function Footer() {
             <Link to="/legal/$slug" params={{ slug: "cookies" }} className="hover:text-accent">
               {lang === "de" ? "Cookies" : "Cookies"}
             </Link>
+            <button
+              type="button"
+              onClick={() => saveConsent(null)}
+              className="text-left hover:text-accent"
+            >
+              {lang === "de" ? "Datenschutz-Einstellungen" : "Privacy settings"}
+            </button>
             <Link to="/resources/$slug" params={{ slug: "help" }} className="hover:text-accent">
               Help
             </Link>

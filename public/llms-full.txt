@@ -1,0 +1,1044 @@
+# GastroPos
+
+> GastroPos is a cloud point-of-sale system (Kassensystem) for restaurants, cafés, takeaways and delivery businesses in Germany and Austria, made by OrdersTracker UG (haftungsbeschränkt), Essen, Germany (formerly sold as OrdersTracker). It combines a till for counter and table service, a waiter app, a kitchen display, QR-code ordering at the table, an own webshop for delivery and pickup, a GoBD-compliant cash book, Z-reports, DATEV export and the fiskaly cloud TSE. The website is in German (primary) and English.
+
+Key facts:
+- Plans: Klein 39 €, Standard 59 €, Premium 79 € per month; they differ in the number of line items per month (1,500 / 3,000 / unlimited).
+- TSE: fiskaly cloud TSE, a separate add-on for 15 € per month; not included in the plans. Austria: RKSV supported.
+- Devices: Android and iOS phones and tablets, web, Windows; Sunmi and iMin devices with built-in printer and customer display. ESC/POS printers via Wi-Fi, LAN, Bluetooth, USB. Card terminals via ZVT, SumUp, Zettle.
+- Accounting: DATEV booking batch (EXTF, SKR03/SKR04/SKR07) on demand, GoBD archive, DSFinV-K export via fiskaly, Z-reports emailed to the tax advisor, accountant login.
+- AI: menu import from photo or PDF, voice ordering at the table, in-app assistant for setup (tables, printers, payment types).
+- Not included: recipe-based inventory, multi-location management, customer accounts in the webshop, in-app payment for QR orders.
+- Contact: info@gastropos.ai, +49 201 759 346 94.
+
+
+# Produkte
+
+## Das Cloud-Kassensystem für Restaurant, Café und Imbiss.
+
+URL: https://www.gastropos.com/product/pos
+
+Tischservice, Thekenverkauf, Lieferung und Küchenmonitor in einer App — auf Tablets, Smartphones und Sunmi-Kassen. TSE-fähig mit fiskaly, mit Z-Bericht, DATEV- und GoBD-Export und einem KI-Assistenten, der Speisekarte, Tische und Drucker für Sie einrichtet.
+
+Funktionen:
+- Tischservice mit Bereichen, Live-Tischstatus und Bestellverlauf pro Tisch
+- Thekenmodus für den Schnellverkauf — Preis antippen, Barcode scannen, fertig
+- Größen, Extras, Pflichtauswahl, „ohne“-Zutaten und Wünsche pro Artikel
+- Getrennt oder zusammen zahlen, Tische teilen, Artikel umbuchen
+- Küchenmonitor und Küchendrucker nach Kategorie
+- Bondrucker über WLAN/LAN, Bluetooth oder USB, Kassenschublade über den Drucker
+- Kartenterminals über ZVT, SumUp oder Zettle
+- Richtige Mehrwertsteuer für Im-Haus- und Außer-Haus-Verkauf auf jedem Beleg
+- Feste Rollen für Admin, Schichtleitung, Service, Küche, Fahrer und Steuerberater
+- Optionales Offline-Kassieren im Thekenmodus — automatische Nachsynchronisierung
+
+### Tischservice, der auch bei vollem Haus mithält
+
+Jeder Tisch zeigt auf einen Blick seinen Status — frei, bestellt, bereit, serviert — mit laufender Summe und Uhrzeit der ersten Bestellung. Der Service nimmt Bestellungen auf dem Tablet oder Smartphone auf, wählt Größe und Extras in einem Dialog und schickt alles mit einem Tipp an die Küche.
+
+- Pflichtauswahl (z. B. Teig, Größe) kann nicht vergessen werden
+- Extras mit Aufpreis je Größe, Zutaten per „ohne“ abbestellen
+- „Mit KI hinzufügen“: Bestellung diktieren statt tippen
+
+### Thekenmodus für den schnellen Verkauf
+
+Für Imbiss, Café und Bäckerei: ohne Tische, einfach verkaufen. Preis antippen und der Artikel steht auf dem Bon; Barcodes per Scanner oder Kamera erfassen. Freie Preise, „Bar passend“ und „Karte“ sowie der vollständige Bezahldialog sind nur einen Tipp entfernt — ideal auf einer Sunmi-Theken-Kasse mit eingebautem Drucker.
+
+- Umschalter Im Haus / Außer Haus mit dem richtigen Steuersatz
+- Rückgeld, Rabatt, Trinkgeld und Gutscheine in einem Bezahldialog
+- Optionales Offline-Kassieren bei Internetausfall
+
+### Rechnung teilen ohne Kopfrechnen
+
+Gäste zahlen zusammen oder getrennt: Artikel einzeln auswählen und auf eine eigene Rechnung legen, einen Betrag auf Bar und Karte aufteilen oder ganze Tische teilen und zusammenlegen. Die Rechnung druckt auf dem zugewiesenen Drucker — an der Bar, an der Theke oder am Handheld.
+
+- Kartenzahlung über ZVT-Terminal, SumUp oder Zettle
+- Digitaler Beleg per QR-Code oder E-Mail
+- Bewirtungsbeleg und Firmenrechnung auf Wunsch
+
+### Rechtssicher in Deutschland und Österreich
+
+Jeder Beleg wird von der fiskaly Cloud-TSE signiert (Österreich: RKSV) — ganz ohne TSE-Hardware. Z-Berichte entstehen auf Wunsch automatisch zur gewünschten Uhrzeit und gehen per E-Mail an Ihren Steuerberater; DATEV- (SKR03/04/07), GoBD- und DSFinV-K-Exporte sind jederzeit abrufbar.
+
+- Stornos als signierte Gegenbelege — Originale bleiben unverändert
+- Digitales Kassenbuch mit lückenloser Nummerierung
+- Eigener Zugang für den Steuerberater
+
+### Häufige Fragen
+
+**Auf welchen Geräten läuft GastroPos?**
+Auf Android- und iOS-Tablets und -Smartphones, unter Windows und im Browser. Sunmi- und iMin-Kassen werden inklusive eingebautem Bondrucker und Kundendisplay unterstützt.
+
+**Ist GastroPos TSE-konform?**
+Ja. GastroPos nutzt die fiskaly Cloud-TSE, die als Zusatzfunktion gebucht und in den Einstellungen aktiviert wird — ganz ohne Hardware. DSFinV-K-Exporte werden direkt bei fiskaly abgerufen. In Österreich wird die RKSV unterstützt.
+
+**Welche Hardware brauche ich?**
+Zum Start genügt ein Tablet oder Smartphone. Nach Bedarf kommen ein ESC/POS-Bondrucker (WLAN/LAN, Bluetooth oder USB), eine Kassenschublade am Drucker, ein Barcode-Scanner und ein Kartenterminal (ZVT, SumUp oder Zettle) hinzu — oder Sie nutzen ein All-in-one-Gerät von Sunmi.
+
+**Kann ich bei Internetausfall weiter verkaufen?**
+Im Thekenmodus ja — wenn „Offline kassieren erlauben“ eingeschaltet ist. Die Belege werden auf dem Gerät gespeichert und automatisch übertragen, sobald die Verbindung wieder steht. Tischservice und Küchenmonitor benötigen eine Internetverbindung.
+
+**Was macht die KI?**
+Sie liest Ihre Speisekarte aus Fotos oder einem PDF und legt Kategorien, Produkte und Preise an. Der Assistent erstellt Tische und Bereiche, richtet Drucker ein und testet sie, nimmt Bestellungen per Sprache auf und beantwortet Fragen zum System.
+
+**Welche Sprachen unterstützt die App?**
+Die Kassen-App gibt es auf Deutsch, Englisch und Türkisch. Die QR-Bestellseite für Gäste spricht zusätzlich Arabisch, Spanisch und Französisch.
+
+## Bestellungen am Tisch aufnehmen — und direkt in die Küche schicken.
+
+URL: https://www.gastropos.com/product/waiter-ordering
+
+Ihr Service nimmt Bestellungen auf dem Smartphone, Tablet oder Sunmi-Handheld auf, schickt sie mit einem Tipp an Küchenmonitor oder Küchendrucker und kassiert direkt am Tisch.
+
+Funktionen:
+- Läuft auf Android- und iOS-Smartphones und -Tablets sowie auf Sunmi-Handhelds
+- Tischübersicht nach Bereichen mit Live-Status, Summe und Uhrzeit der ersten Bestellung
+- Größen, Extras, Pflichtauswahl, „ohne“-Zutaten und Wünsche
+- Gänge: Artikel für die Küche nach Gängen gruppieren
+- Mitteilungen mit rotem Zähler: abholbereit, Kellner gerufen, Rechnung angefordert
+- Mitteilungen übernehmen, damit Kollegen wissen, wer sich kümmert
+- Zusammen oder getrennt zahlen, Betrag auf Bar und Karte aufteilen
+- Artikel oder ganze Tische umbuchen, Tische teilen und zusammenlegen
+
+### Die Bestellung landet sofort da, wo sie hingehört
+
+Der Service wählt den Tisch, fügt Artikel aus der Speisekarte hinzu und tippt auf „Senden“. Getränke drucken an der Bar, Speisen erscheinen auf dem Küchenmonitor — sortiert nach Kategorie. Kein Weg zur Kasse, keine handgeschriebenen Bons.
+
+- Preis antippen fügt sofort hinzu, lange drücken zeigt Details
+- Prüfansicht vor dem Senden — Menge, Preis oder Wunsch ändern
+- Druck-Routing nach Kategorie und Druckauftrag
+
+### Kein fertiges Gericht und kein winkender Gast wird übersehen
+
+Meldet die Küche eine Bestellung als fertig oder ruft ein Gast per QR-Code den Kellner oder die Rechnung, bekommt der ganze Service eine Mitteilung. Ein Tipp auf „Übernehmen“ — und alle sehen, wer sich kümmert.
+
+- Roter Zähler an der Glocke zeigt offene Mitteilungen
+- „Serviert“ direkt aus der Mitteilung
+- Rechnungswunsch zeigt die gewünschte Zahlungsart
+
+### Kassieren direkt am Tisch
+
+Jedes Service-Gerät ist eine vollwertige Kasse. Zusammen oder getrennt kassieren, Trinkgeld oder Rabatt erfassen, Gutscheine einlösen und den Beleg am Handheld oder am zugewiesenen Drucker drucken. Kartenzahlungen laufen über ZVT-Terminal, SumUp oder Zettle.
+
+- Jeder Beleg mit fiskaly-TSE signiert (Zusatzfunktion)
+- Digitaler Beleg per QR-Code oder E-Mail
+- Trinkgeld pro Kellner erfasst
+
+### Häufige Fragen
+
+**Brauche ich spezielle Handhelds?**
+Nein. Jedes aktuelle Android- oder iOS-Smartphone funktioniert. Wer einen Drucker in der Hand des Kellners möchte, nutzt ein Sunmi-Handheld mit eingebautem Bondrucker.
+
+**Wohin gehen die Bestellungen?**
+An den Küchenmonitor und/oder an Küchen- und Bardrucker — je nach Kategorie des Artikels.
+
+**Können mehrere Kellner am selben Tisch arbeiten?**
+Ja. Alle Geräte sind in Echtzeit synchronisiert — jeder sieht den aktuellen Stand jedes Tisches.
+
+**Können Gäste getrennt zahlen?**
+Ja. Artikel einzeln auswählen und auf eine eigene Rechnung legen oder einen Betrag auf Bar und Karte aufteilen.
+
+## Gäste bestellen vom eigenen Handy — ganz ohne App.
+
+URL: https://www.gastropos.com/product/qr-ordering
+
+Jeder Tisch bekommt seinen eigenen QR-Code. Gäste öffnen Ihre Speisekarte im Browser — ohne App —, bestellen mit Größen und Extras, und die Bestellung landet wie jede andere auf Küchenmonitor und Kasse.
+
+Funktionen:
+- Eigener QR-Code pro Tisch — herunterladen, drucken oder erneuern
+- Startseite für Gäste: bestellen, meine Bestellungen, Kellner rufen, Rechnung bitte
+- Speisekarte mit Kategorien, Suche, Beschreibungen und Fotos
+- Größen, Pflichtauswahl, Extras und abbestellte Zutaten
+- Zutaten, Allergene und Zusatzstoffe pro Gericht
+- Oberfläche folgt der Handy-Sprache (6 Sprachen)
+- Optional: Bestellungen vor dem Küchenversand freigeben
+- Optional: anonym bestellen oder per Telefon verifizieren
+- Optional: neuer QR-Code nach der Zahlung
+- Ihre Farben auf der Bestellseite
+
+### Scannen, stöbern, bestellen — wie eine App
+
+Gäste sehen Ihre Speisekarte mit Kategorien und Suche, öffnen ein Gericht, wählen Größe, Teig oder Extras und legen es in den Warenkorb. Preise und Aufpreise kommen direkt aus Ihrer Kassen-Speisekarte — einmal ändern, überall richtig.
+
+- Pflichtauswahl wird erzwungen
+- Allergene und Zusatzstoffe bei jedem Gericht
+- Dunkler Modus für den Abendservice
+
+### Kellner rufen, Rechnung anfordern
+
+Die Startseite hat große Schaltflächen für „Kellner rufen“ und „Rechnung bitte“ — inklusive gewünschter Zahlungsart. Ihr Team bekommt auf jedem Gerät eine Mitteilung und übernimmt sie mit einem Tipp. Bezahlt wird wie gewohnt beim Personal.
+
+- „Meine Bestellungen“ zeigt alles Bestellte
+- Tischnummer automatisch zugeordnet
+- Digitale Belege für den Gast
+
+### Sie behalten die Kontrolle
+
+Schalten Sie die Selbstbestellung in den Einstellungen ein und drucken Sie den QR-Code jedes Tisches unter Stammdaten → Tische. Legen Sie fest, ob Gäste anonym bestellen dürfen, ob das Personal Bestellungen zuerst freigibt und ob der QR-Code nach der Zahlung erneuert wird.
+
+- Freigabe-Ansicht für das Personal
+- Code sofort erneuern — der alte wird ungültig
+- Kategorien oder Gerichte in der Selbstbestellung ausblenden
+
+### Häufige Fragen
+
+**Müssen Gäste eine App installieren?**
+Nein. Die Speisekarte öffnet sich direkt nach dem Scan im Browser des Handys.
+
+**Können Gäste am Handy bezahlen?**
+Noch nicht. Gäste fordern die Rechnung an und wählen Bar oder Karte; kassiert wird vom Personal am Tisch.
+
+**Welche Sprachen hat die Gästeseite?**
+Deutsch, Englisch, Türkisch, Arabisch, Spanisch und Französisch — automatisch nach Handy-Einstellung. Gerichtnamen und Beschreibungen erscheinen so, wie Sie sie angelegt haben.
+
+**Was, wenn ein QR-Code kopiert oder missbraucht wird?**
+Erneuern Sie ihn in der Selbstbestellungseinstellung des Tisches — der alte Code ist sofort ungültig. Auf Wunsch geschieht das nach jeder Zahlung automatisch.
+
+## Der Küchenmonitor, der Papierbons ersetzt.
+
+URL: https://www.gastropos.com/product/kitchen-display
+
+Bestellungen vom Tisch, von der Theke, aus der QR-Selbstbestellung und dem Webshop erscheinen sofort auf dem Bildschirm — älteste zuerst, mit einem Timer, der gelb und rot wird. Die Küche meldet „fertig“, der Service wird sofort benachrichtigt.
+
+Funktionen:
+- Bestellungen nach Eingang sortiert — älteste zuerst
+- Timer pro Bestellung: gelb nach 5, rot nach 10 Minuten
+- Liefer- und Abholbestellungen nach Zielzeit getaktet
+- Kategorie-Filter pro Bildschirm — Grill, Pizza, Bar, Desserts
+- Artikel nach Gängen gruppiert
+- Ansichten „In Zubereitung“ und „Fertig“, fertig oder serviert melden
+- Kellner aus der Küche rufen, Tisch-Artikel drucken
+- Ton bei neuer Bestellung mit Lautstärke, Hell/Dunkel, Schriftgröße
+- Beliebig viele Bildschirme, in Echtzeit synchronisiert
+
+### Ein Bildschirm für jede Bestellung
+
+Ob vom Kellner gesendet, per QR-Code bestellt oder im Webshop aufgegeben — jede Bestellung erscheint auf dem Küchenmonitor mit Tisch oder Abholname, Artikeln, Extras, abbestellten Zutaten und Wünschen.
+
+- Extras in Blau, abbestellte Zutaten in Rot
+- Timer zeigt, wie lange ein Tisch schon wartet
+- Suche und Statusleiste mit offenen Tischen und Artikeln
+
+### Fertig — und der Service weiß Bescheid
+
+Ein Tipp meldet einen Artikel oder die ganze Bestellung als fertig. Sie wandert in die Ansicht „Fertig“, und jedes Service-Gerät zeigt eine Mitteilung. Ist das Essen raus, wird es als serviert markiert.
+
+- Jeder Bildschirm filtert seine eigenen Kategorien
+- Läuft auf jedem Tablet, Monitor oder Sunmi-Gerät
+- Küchendrucker können parallel laufen
+
+### Häufige Fragen
+
+**Welche Hardware brauche ich?**
+Jedes Tablet oder Touch-Gerät, auf dem die GastroPos-App läuft — Android, iOS, Windows oder ein Sunmi-Gerät. Montieren Sie es dort, wo die Küche es antippen kann.
+
+**Kann ich mehrere Bildschirme nutzen?**
+Ja, beliebig viele. Jeder Bildschirm hat seinen eigenen Kategorie-Filter, z. B. einen für Pizza, einen für den Grill und einen für die Bar.
+
+**Kann ich weiterhin Küchendrucker nutzen?**
+Ja. Drucker werden nach Kategorie angesteuert und können statt oder zusätzlich zum Monitor laufen.
+
+**Braucht der Küchenmonitor Internet?**
+Ja. Bestellungen kommen in Echtzeit über die Cloud auf den Monitor, daher ist ein stabiles WLAN nötig.
+
+## Ihr eigener Webshop für Lieferung und Abholung.
+
+URL: https://www.gastropos.com/product/online-ordering
+
+Gäste bestellen auf Ihrer eigenen Bestellseite und zahlen online oder bei Lieferung. Bestellungen kommen mit Signalton im Liefersystem der Kasse an, drucken nach dem Annehmen in der Küche und werden von Ihren eigenen Fahrern ausgeliefert.
+
+Funktionen:
+- Bestellseite mit Logo, Einführungstext, Farbe und Hintergrundbildern
+- Lieferung und Abholung — oder nur Abholung
+- Liefergebiete nach PLZ oder Entfernung: Mindestbestellwert, Gebühr, gratis ab
+- Bezahlung: Karte über Stripe, Klarna, PayPal, bar oder mit Karte bei Lieferung
+- So schnell wie möglich oder Wunschzeit am selben Tag
+- Trinkgeld im Checkout
+- Rabattcodes: % oder €, Mindestwert, Einlöselimit, Wochentage, Gültigkeit
+- Lieferzeiten, Feiertage, heute geschlossen, „keine Lieferung bis“
+- Einzelne Produkte pausieren, ausverkaufte werden ausgeblendet
+- Bestellhistorie und „erneut bestellen“ auf dem Gerät des Gastes
+- Anruferkennung für Telefonbestellungen (FRITZ!Box, Zusatzfunktion)
+
+### Ein Shop im Look Ihres Restaurants
+
+Gäste öffnen Ihre Bestellseite am Handy oder Computer, wählen Lieferung oder Abholung, stöbern in der Speisekarte mit Fotos und Beschreibungen und sehen Ihre Rabattcodes sofort. Logo, Einführungstext, Hauptfarbe und Hintergrundbilder stammen aus Ihren Liefer-Einstellungen.
+
+- Geöffnet-Status und Schließzeit auf einen Blick
+- Suche und Kategorien über die ganze Speisekarte
+- Dunkler Modus und Bestellhistorie auf dem Gerät des Gastes
+
+### Bestellungen kommen dort an, wo Sie arbeiten
+
+Neue Webshop-Bestellungen erscheinen mit Signalton im Liefersystem der Kasse — mit Artikeln, Extras, Abhol- oder Lieferzeit, Zahlungsstatus und Kundendaten. Mit einem Tipp angenommen, drucken Küchenbon und Lieferschein automatisch.
+
+- Telefonbestellungen im selben Bildschirm erfassen
+- Lieferschein mit Google-Maps-QR-Code
+- Webshop-Bestellungen erscheinen auch auf dem Küchenmonitor
+
+### Eigene Fahrer, ohne Chaos
+
+Weisen Sie Bestellungen Ihren Fahrern zu. In der App sehen Fahrer ihre Touren auf der Karte, starten die Navigation in ihrer Karten-App, rufen den Kunden an und melden die Zustellung.
+
+- Fahrer-Rolle mit eigener Ansicht
+- Bezahlung an der Haustür
+- Lieferhistorie pro Tag
+
+### Einmal einrichten
+
+In den Liefer-Einstellungen legen Sie fest, was Gäste können: heute geöffnet oder geschlossen, Lieferung an oder aus, Trinkgeld, Zahlungsarten, die Startseite Ihres Shops, Lieferzeiten, Feiertage, Liefergebiete, Produktverfügbarkeit und Rabattcodes.
+
+- Zahlungen gehen direkt auf Ihr Stripe- oder PayPal-Konto
+- Eigene Webshop-Speisekarte, getrennt von der Kassen-Speisekarte
+- Zusatzgebühren fix oder in %, optional nur bei Online-Zahlung
+
+### Liefergebiete, die sich rechnen
+
+Legen Sie Gebiete nach Postleitzahl oder Entfernung in Kilometern fest — jedes mit eigenem Mindestbestellwert, eigener Liefergebühr und Grenze für kostenlose Lieferung.
+
+- Gäste außerhalb Ihrer Gebiete erfahren es vor der Bestellung
+- Abholung immer möglich
+- Änderungen wirken sofort
+
+### Häufige Fragen
+
+**Nimmt GastroPos eine Provision pro Bestellung?**
+Nein. Sie zahlen Ihr GastroPos-Paket plus die üblichen Gebühren Ihres Zahlungsanbieters (Stripe oder PayPal). Das Geld geht direkt auf Ihr Konto.
+
+**Welche Zahlungsarten können Gäste nutzen?**
+Karte über Stripe (Apple Pay und Google Pay erscheinen auf der Stripe-Zahlungsseite, wo verfügbar), Klarna, PayPal, Barzahlung bei Lieferung und Kartenzahlung am Terminal vor Ort. Jede Zahlungsart schalten Sie einzeln an oder aus.
+
+**Können Gäste vorbestellen?**
+Ja, für eine Wunschzeit am selben Tag — auch wenn Sie noch geschlossen haben und später am Tag öffnen.
+
+**Brauchen Gäste ein Kundenkonto?**
+Nein. Gäste bestellen ohne Registrierung. Kontaktdaten und Bestellhistorie bleiben auf ihrem Gerät gespeichert, eine Bestellung lässt sich mit einem Tipp wiederholen.
+
+**Was ist mit Lieferando, Wolt und Uber Eats?**
+Ihr eigener Webshop läuft parallel zu diesen Plattformen. Kunden aus allen Kanälen landen in Ihrer Kundenliste. Fragen Sie uns nach dem aktuellen Stand der Plattform-Anbindungen.
+
+## Wissen, was noch da ist — und nichts verkaufen, was weg ist.
+
+URL: https://www.gastropos.com/product/inventory
+
+Führen Sie einen Bestand pro Produkt, erhalten Sie eine E-Mail bei niedrigem Bestand und markieren Sie Artikel als ausverkauft — gleichzeitig an der Kasse, in der QR-Selbstbestellung und im Webshop. Allergene und Zusatzstoffe sind bei jedem Produkt hinterlegt.
+
+Funktionen:
+- Bestand pro Produkt, leer bedeutet unbegrenzt
+- Warnung per E-Mail ab einer selbst gewählten Schwelle
+- Option: als ausverkauft markieren, wenn nichts mehr da ist
+- Schalter „Verfügbar“ direkt in der Produktliste
+- Ausverkaufte Artikel an Kasse und QR-Bestellung gesperrt, im Webshop ausgeblendet
+- Einzelne Produkte im Webshop vorübergehend pausieren
+- 14 Hauptallergene und Zusatzstoffe pro Produkt
+- Zutaten für „ohne“-Wünsche
+
+### Ausverkauft — überall, mit einem Schalter
+
+Das letzte Tiramisu ist weg? Schalter „Verfügbar“ in der Produktliste aus — das Gericht ist sofort an der Kasse und in der QR-Selbstbestellung gesperrt und verschwindet aus dem Webshop. Wieder einschalten, sobald es nachgeliefert ist.
+
+- Für das ganze Team sofort sichtbar
+- Keine enttäuschten Gäste mehr
+- Funktioniert für jedes Produkt
+
+### Bestand und Warnungen
+
+Geben Sie für Produkte, die Sie verfolgen möchten, den aktuellen Bestand und eine Warnschwelle ein. GastroPos schickt Ihnen eine E-Mail, wenn der Bestand darunter fällt, und kann das Produkt bei null als ausverkauft markieren.
+
+- Ideal für Tagesgerichte, Kuchen oder Flaschengetränke
+- Leer lassen für unbegrenzte Produkte
+- Bestand mit + / − in Sekunden anpassen
+
+### Allergene und Zusatzstoffe richtig gekennzeichnet
+
+Wählen Sie für jedes Produkt die 14 Hauptallergene und Zusatzstoffe aus einer Liste. Gäste sehen sie in der QR-Selbstbestellung und in der digitalen Speisekarte — die Kennzeichnung, die Sie gesetzlich schulden.
+
+- Zutaten werden zu „ohne“-Optionen
+- Sonderwünsche als Schnellauswahl
+- Produkte im Kellner- oder Selbstbestellungsmenü ausblenden
+
+### Häufige Fragen
+
+**Ist das eine Warenwirtschaft mit Rezepturen?**
+Nein. GastroPos führt den Bestand pro Produkt — ideal für Artikel, die Sie als Ganzes verkaufen, wie Kuchen, Tagesgerichte oder Flaschen. Rezepturen, Zutatenbestände und Lieferanten sind nicht Teil von GastroPos.
+
+**Muss ich für jedes Produkt einen Bestand führen?**
+Nein. Bleibt der Bestand leer, ist das Produkt unbegrenzt. Führen Sie nur das, was wirklich ausgehen kann.
+
+**Wo sehen Gäste die Allergene?**
+In der QR-Selbstbestellung und der digitalen Speisekarte bei jedem Gericht. Ihr Personal sieht sie in den Produktdetails an der Kasse.
+
+## Das Kassenbuch, das sich selbst führt.
+
+URL: https://www.gastropos.com/product/cash-book
+
+Jede Barzahlung und jede Bar-Erstattung wird automatisch gebucht. Ein- und Auszahlungen — Bank, Wareneinkauf, Privatentnahme — sind in Sekunden erfasst. Einträge lassen sich nicht ändern oder löschen, nur stornieren, und fließen in Z-Bericht, DATEV und GoBD-Archiv.
+
+Funktionen:
+- Barverkäufe und Bar-Erstattungen automatisch gebucht
+- Ein- und Auszahlungen mit Zweck, Steuersatz und Lieferant
+- Belegnummer und -datum des Fremdbelegs
+- Vordefinierte Zwecke: Bank, Privat, Wareneinkauf, Porto, Trinkgeld-Auszahlung …
+- Lückenlose Nummerierung und laufender Kassenstand
+- Kein Ändern, kein Löschen — nur Storno mit Begründung
+- Excel-Export, DATEV-Export und GoBD-Archiv
+- Ein- und Auszahlungen im Z-Bericht ausgewiesen
+- Öffnungen der Kassenschublade werden protokolliert
+
+### Barumsätze buchen sich selbst
+
+Jede Barzahlung an der Kasse erscheint automatisch im Kassenbuch, jede Bar-Erstattung nach einem Storno wird ausgebucht. Der aktuelle Kassenstand steht immer oben.
+
+- Filter nach Zeitraum
+- Jeder Eintrag zeigt Mitarbeiter und Gerät
+- Excel-Export mit einem Tipp
+
+### Ein- und Auszahlungen in Sekunden
+
+Petersilie auf dem Markt gekauft oder Bargeld zur Bank gebracht? Auszahlung wählen, Zweck, Betrag und — bei Bedarf — Steuersatz, Lieferant und Belegnummer eintragen. Die Zwecke sind mit Ihren DATEV-Konten verknüpft.
+
+- Mehrere Positionen pro Buchung
+- Zwecke und Konten konfigurierbar
+- Papierbeleg mit der Buchungsnummer ablegen
+
+### Prüfungssicher von Anfang an
+
+Einträge sind lückenlos nummeriert und können weder geändert noch gelöscht werden. Fehler werden per Storno mit Pflicht-Begründung korrigiert. Ein- und Auszahlungen stehen im Z-Bericht, und das Kassenbuch ist Teil des DATEV-Exports und des GoBD-Archivs für die Betriebsprüfung.
+
+- Z-Bericht mit Ein-, Auszahlungen und Schubladen-Öffnungen
+- Steuerberater-Zugang für die Buchhaltung
+- GoBD-/GDPdU-Archiv für den Prüfer
+
+### Häufige Fragen
+
+**Brauche ich noch ein Kassenbuch auf Papier?**
+GastroPos führt das Kassenbuch digital, lückenlos nummeriert und ohne Lösch- oder Änderungsmöglichkeit. Wie Sie Fremdbelege ablegen, besprechen Sie am besten mit Ihrem Steuerberater.
+
+**Kann ich eine falsche Buchung korrigieren?**
+Ja, durch ein Storno mit Begründung. Originalbuchung und Storno bleiben beide sichtbar — so, wie es die Betriebsprüfung erwartet.
+
+**Bekommt mein Steuerberater das Kassenbuch?**
+Ja. Kassenbuch-Buchungen sind mit den Konten ihrer Zwecke im DATEV-Export enthalten, und Ihr Steuerberater kann einen eigenen Zugang erhalten.
+
+**Wie werden Trinkgelder behandelt?**
+Trinkgelder werden pro Rechnung und pro Kellner erfasst. Eine Bar-Auszahlung von Trinkgeld wird mit dem Zweck „Trinkgelder Auszahlung“ gebucht.
+
+## DATEV-Export, den Ihr Steuerberater direkt importiert.
+
+URL: https://www.gastropos.com/product/datev-export
+
+Erstellen Sie für jeden Zeitraum mit wenigen Klicks einen DATEV-Buchungsstapel — mit den richtigen Erlöskonten je Steuersatz und Zahlungsart, SKR03, SKR04 oder SKR07. Z-Berichte gehen automatisch per E-Mail an Ihren Steuerberater.
+
+Funktionen:
+- DATEV-Buchungsstapel (EXTF) für jeden Zeitraum innerhalb eines Wirtschaftsjahres
+- SKR03, SKR04 oder SKR07 mit Standardkonten
+- Eigene Konten je Steuersatz und je Zahlungsart
+- Richtige Aufteilung von Im-Haus- und Außer-Haus-Steuer
+- Buchungen pro Rechnung oder pro Tag zusammengefasst
+- Berater- und Mandantennummer, Wirtschaftsjahresbeginn
+- Kassenbuch enthalten, auf die Konten der Zwecke gebucht
+- Export per E-Mail senden oder herunterladen
+- GoBD-/GDPdU-Archiv und DSFinV-K-Export (mit TSE)
+- Automatische Z-Bericht-Mails und Zugang für den Steuerberater
+
+### Vom Zeitraum zum Buchungsstapel in einer Minute
+
+Wählen Sie den letzten Monat oder einen beliebigen Zeitraum, tragen Sie einmalig Berater- und Mandantennummer ein, wählen Sie SKR03, SKR04 oder SKR07 und erstellen Sie den Export. Kurz darauf liegt die Datei in der Exportliste — zum Herunterladen oder Versenden per E-Mail.
+
+- Eine Buchung pro Rechnung, Steuersatz und Zahlungsart
+- Geteilte Rechnungen werden anteilig aufgeteilt
+- Stornos als eigene Buchungen
+
+### Ihre Konten, Ihre Zuordnung
+
+Ohne eigene Einstellungen nutzt GastroPos die Standardkonten Ihres Kontenrahmens, z. B. 8400/8300 für 19 %/7 % Erlöse im SKR03. Passen Sie Zahlungskonten, Erlöskonten je Steuersatz und Kassenbuch-Zwecke so an, dass der Export zur Buchhaltung Ihres Steuerberaters passt.
+
+- Zahlungskonten für Bar, Karte und jede Zahlungsart
+- Erlöskonten mit Buchungsschlüssel je Steuersatz
+- Österreichische Steuersätze inklusive
+
+### Ihr Steuerberater bleibt automatisch informiert
+
+Erstellen Sie Z-Berichte automatisch zu einer Uhrzeit Ihrer Wahl und senden Sie sie täglich, wöchentlich oder monatlich per E-Mail an Ihren Steuerberater — mit Zusammenfassung und Link zum PDF. Ihr Steuerberater kann zusätzlich einen eigenen Zugang bekommen.
+
+- Erinnerung, wenn der letzte Z-Bericht zu alt ist
+- Tage ohne Umsatz werden übersprungen
+- Z-Berichte als Excel, CSV oder ZIP
+
+### Bereit für die Betriebsprüfung
+
+Für die Betriebsprüfung exportieren Sie das GoBD-Archiv: alle Rechnungen, Positionen, Zahlungen, Steuern und das Kassenbuch als Archiv mit index.xml für die Prüfsoftware. Mit der Zusatzfunktion fiskaly-TSE steht auch der DSFinV-K-Export bereit.
+
+- Datenträgerüberlassung nach GDPdU
+- Exporte bleiben in der Exportliste
+- Österreich: RKSV-Export
+
+### Häufige Fragen
+
+**Gibt es eine direkte Verbindung zu DATEV Unternehmen online?**
+Nein. GastroPos erstellt eine DATEV-Buchungsstapel-Datei (EXTF), die Ihr Steuerberater in DATEV importiert. Sie können sie direkt aus GastroPos per E-Mail senden.
+
+**Welche Kontenrahmen werden unterstützt?**
+SKR03, SKR04 und SKR07. Jedes Konto lässt sich in den DATEV-Kontorahmen-Einstellungen überschreiben.
+
+**Was bekommt mein Steuerberater automatisch?**
+Z-Berichte per E-Mail — täglich, wöchentlich oder monatlich — mit Zusammenfassung und PDF-Link. DATEV-Exporte erstellen und versenden Sie bei Bedarf.
+
+**Ist der DSFinV-K-Export enthalten?**
+Der DSFinV-K-Export kommt aus der fiskaly-TSE, die als Zusatzfunktion gebucht wird (15 € pro Monat). DATEV- und GoBD-Exporte sind in jedem Paket enthalten.
+
+## Sehen, wie Ihr Betrieb läuft — live, für jeden Zeitraum.
+
+URL: https://www.gastropos.com/product/analytics
+
+Umsatz, Bestellungen, Ø Bonwert, Stoßzeiten und Bestseller auf einen Blick — im Vergleich zum Vorzeitraum. Elf Auswertungen nach Stunde, Tag, Produkt, Kategorie, Mitarbeiter, Tisch, Kunde und Zahlungsart.
+
+Funktionen:
+- Dashboard: Bestellungen, Umsatz, Ø Bonwert, Rabatte, Stornos
+- Durchschnittliche Koch- und Wartezeit
+- Trend im Vergleich zum Vorzeitraum
+- Umsatz nach Stunde und nach Tag
+- Umsatz nach Produkt, Kategorie, Mitarbeiter, Tisch, Kunde und Zahlungsart
+- Torten-, Balkendiagramm oder Liste
+- Bestseller und Ladenhüter mit Excel-Export
+- Produktvariationen (Größen, Extras) auf Wunsch
+- Schnellauswahl: heute, 7 Tage, dieser Monat, 30 Tage
+
+### Der Tag auf einen Blick
+
+Das Dashboard zeigt Bestellzahl, Umsatz mit Durchschnitt pro Bestellung, Koch- und Wartezeit, Rabatte und Stornos — dazu Umsatz nach Uhrzeit, die Top-5-Produkte und die Verteilung der Zahlungsarten.
+
+- Beliebiger Zeitraum mit Start- und Endzeit
+- Im Vergleich zum Vorzeitraum
+- Für Administratoren verfügbar
+
+### Was läuft — und was nicht
+
+Umsatz nach Produkt oder Kategorie zeigt den Anteil jedes Artikels am Gesamtumsatz, als Diagramm oder Liste. Bestseller- und Ladenhüter-Listen sortieren nach Stückzahl — als Excel-Export für Ihre Speisekartenplanung.
+
+- Top-Produkt und Durchschnitt pro Produkt
+- Größen und Extras als eigene Zeilen
+- Suche nach Produkt oder Kategorie
+
+### Personal nach Stoßzeiten planen
+
+Umsatz pro Stunde und pro Tag zeigt Ihre Stoßstunde, Ihren besten Tag und den Wochenend-Anteil — so planen Sie Personal und Vorbereitung für die Stunden, die wirklich zählen.
+
+- Stoßstunde und aktive Stunden
+- Bester Tag und Durchschnitt pro Tag
+- Kellner-Umsatzbericht für jede Schicht
+
+### Häufige Fragen
+
+**Sind die Auswertungen inklusive?**
+Ja, in jedem Paket. Sie stehen Administratoren zur Verfügung.
+
+**Kann ich die Daten exportieren?**
+Bestseller- und Ladenhüter-Listen lassen sich als Excel exportieren. Z-Berichte gibt es als Excel oder CSV, für die Buchhaltung gibt es den DATEV-Export.
+
+**Warum weichen Auswertungen vom Z-Bericht ab?**
+Auswertungen nutzen genau den gewählten Zeitraum, ein Z-Bericht umfasst alles seit dem letzten Z-Bericht. Für die Buchhaltung zählt der Z-Bericht.
+
+**Zeigen die Auswertungen Margen oder Wareneinsatz?**
+Nein. GastroPos wertet Umsätze und Mengen aus; Einkaufspreise und Rezepturen werden nicht erfasst.
+
+
+# Ratgeber
+
+## Ratgeber für die Gastronomie in Deutschland.
+
+URL: https://www.gastropos.com/resources/blog
+
+Praxis-Artikel zu Mehrwertsteuer, Bonpflicht, Kassenbuch und Online-Bestellung — dazu ausführliche Ratgeber zu Kassenwahl, TSE und DATEV.
+
+### So wählen Sie das richtige Kassensystem
+
+Rechtssicherheit, Geräte, Zahlungen, Offline-Verhalten, Gesamtkosten und Support — die Fragen, die Sie vor Vertragsabschluss stellen sollten. Zum Ratgeber unter Ressourcen → Kassen-Ratgeber.
+
+### Die TSE-Pflicht erklärt
+
+Was KassenSichV, TSE und DSFinV-K bedeuten, wie eine Cloud-TSE funktioniert und was Sie dem Finanzamt melden müssen. Zum Ratgeber unter Ressourcen → TSE-Ratgeber.
+
+### DATEV für die Gastronomie
+
+Kontenrahmen, Steuersätze für Im Haus und Außer Haus und was Ihr Steuerberater wirklich von Ihrer Kasse braucht. Zum Ratgeber unter Ressourcen → DATEV-Ratgeber.
+
+### Die GastroPos-Bedienungsanleitung
+
+Jedes Modul mit markierten Screenshots erklärt — von der Bestellaufnahme bis zum Z-Bericht. Zu finden unter Ressourcen → Hilfe-Center.
+
+### Häufige Fragen
+
+**Kann ich ein Thema vorschlagen?**
+Ja — schreiben Sie uns über die Kontaktseite, welche Frage wir beantworten sollen.
+
+## So wählen Sie das richtige Kassensystem.
+
+URL: https://www.gastropos.com/resources/pos-guide
+
+Was ein modernes Kassensystem für Restaurant, Café oder Imbiss in Deutschland können muss — und welche Fragen Sie jedem Anbieter vor Vertragsabschluss stellen sollten.
+
+### 1. Rechtssicherheit ist Pflicht
+
+In Deutschland braucht jede elektronische Kasse eine zertifizierte TSE, muss Belege ausgeben und DSFinV-Daten exportieren können. Fragen Sie, wie die TSE bereitgestellt wird (Cloud oder Hardware), was sie kostet und wie Stornos und Z-Berichte funktionieren.
+
+- Stornos als signierte Gegenbelege
+- Automatische Z-Berichte
+- Digitale Belege
+
+### 2. Die richtigen Geräte für Ihren Ablauf
+
+Tischservice braucht mobile Geräte für den Service, der Thekenverkauf eine schnelle Theken-Kasse, die Küche einen Monitor oder Drucker. Prüfen Sie, welche Geräte unterstützt werden — Tablets, Smartphones, All-in-one-Kassen wie Sunmi — und welche Drucker und Kartenterminals funktionieren.
+
+- Bondrucker über WLAN, Bluetooth oder USB
+- Kartenterminals (ZVT) oder SumUp/Zettle
+- Küchenmonitor oder Küchendrucker
+
+### 3. Was passiert, wenn das Internet ausfällt?
+
+Cloud-Systeme brauchen eine Verbindung für die Echtzeit-Synchronisation zwischen Geräten. Fragen Sie genau, was offline noch funktioniert, wie Belege behandelt werden und wie sich die TSE verhält, bis die Verbindung zurück ist.
+
+### 4. Rechnen Sie die Gesamtkosten
+
+Addieren Sie Paketpreis, kostenpflichtige Zusatzfunktionen (z. B. TSE), Hardware, Kartengebühren und eventuelle Provisionen auf Online-Bestellungen über zwei bis drei Jahre. Ein niedriger Grundpreis mit vielen Extras ist oft die teuerste Variante.
+
+### 5. Exporte für Ihren Steuerberater
+
+Fragen Sie, welches DATEV-Format geliefert wird, welche Kontenrahmen unterstützt werden, ob ein GoBD-Archiv exportiert werden kann und ob Ihr Steuerberater einen eigenen Zugang bekommt.
+
+### 6. Wechsel vom bisherigen System
+
+Planen Sie den Wechsel an einem ruhigen Tag. Die Speisekarte ist die größte Aufgabe — fragen Sie, ob der Anbieter sie importieren kann, z. B. aus Fotos oder einem PDF. Exportieren und archivieren Sie die Daten Ihres alten Systems: Belege müssen acht Jahre, Bücher und Organisationsunterlagen zehn Jahre aufbewahrt werden.
+
+### Häufige Fragen
+
+**Cloud oder lokale Installation?**
+Für die meisten Betriebe ist eine Cloud-Kasse die praktische Wahl: automatische Updates, Zugriff von überall und kein eigener Server. Prüfen Sie, was offline noch funktioniert.
+
+**Welche Kosten werden am häufigsten übersehen?**
+Kartengebühren und kostenpflichtige Zusatzfunktionen wie die TSE. Vergleichen Sie die gesamten Monatskosten, nicht nur den Paketpreis.
+
+**Wie importiert GastroPos meine Speisekarte?**
+Mit dem KI-Import: Fotografieren Sie Ihre Speisekarte oder laden Sie ein PDF hoch, prüfen Sie die vorgeschlagenen Kategorien, Produkte und Preise und importieren Sie sie. Kundendaten und alte Umsätze aus anderen Systemen werden nicht übernommen.
+
+## Der TSE-Ratgeber für Kassen in Deutschland.
+
+URL: https://www.gastropos.com/resources/tse-guide
+
+Was KassenSichV, TSE und DSFinV-K für Ihren Betrieb bedeuten, was Sie dem Finanzamt melden müssen — und wie die TSE in GastroPos funktioniert.
+
+### Was ist die TSE?
+
+Die Technische Sicherheitseinrichtung (TSE) signiert jeden Vorgang Ihrer Kasse, damit Aufzeichnungen nicht unbemerkt verändert werden können. Die KassenSichV schreibt für elektronische Kassen in Deutschland eine zertifizierte TSE vor.
+
+### Cloud-TSE statt USB-Stick
+
+Eine Hardware-TSE steckt als Stick oder Karte im Gerät; eine Cloud-TSE signiert online, es gibt nichts zu verlieren oder auszutauschen. GastroPos nutzt die zertifizierte Cloud-TSE von fiskaly. Sie buchen sie als Zusatzfunktion (15 € pro Monat), hinterlegen Ihre Firmenstammdaten und aktivieren sie in den Einstellungen — ganz ohne Hardware.
+
+- Jeder Beleg und jedes Storno signiert
+- TSE-Daten auf dem Beleg
+- Österreich: RKSV unterstützt
+
+### DSFinV-K: die Daten für die Kassenprüfung
+
+Die DSFinV-K ist das Standardformat, in dem Prüfer die Daten Ihrer Kasse lesen. In GastroPos fordert ein Administrator den DSFinV-K-Export in den TSE-Einstellungen bei fiskaly an; kurz darauf steht er zum Download bereit. Für die Betriebsprüfung liefert GastroPos zusätzlich ein GoBD-Archiv.
+
+### Belegausgabepflicht
+
+Sie müssen zu jedem Verkauf einen Beleg anbieten — auf Papier oder digital. GastroPos druckt Belege oder zeigt einen QR-Code für den digitalen Beleg, den Gäste auch per E-Mail erhalten können.
+
+### Meldepflicht und Bußgelder
+
+Elektronische Kassen und ihre TSE müssen dem Finanzamt gemeldet werden. Eine Kasse ohne funktionierende TSE kann Bußgelder von bis zu 25.000 € nach sich ziehen. Nutzen Sie ein zertifiziertes System, aktivieren Sie die TSE und halten Sie Z-Berichte und Exporte bereit.
+
+### Häufige Fragen
+
+**Brauche ich gesetzlich eine TSE?**
+Wenn Sie in Deutschland eine elektronische Kasse nutzen: ja, mit sehr wenigen Ausnahmen.
+
+**Ist die TSE in GastroPos enthalten?**
+Die fiskaly Cloud-TSE ist eine eigene Zusatzfunktion für 15 € pro Monat. DATEV- und GoBD-Exporte sind in jedem Paket enthalten.
+
+**Akzeptiert das Finanzamt eine Cloud-TSE?**
+Ja. Zertifizierte Cloud-TSEs wie fiskaly sind zugelassen und signieren Vorgänge genauso wie Hardware-Module.
+
+**Wie lange muss ich die Aufzeichnungen aufbewahren?**
+Buchungsbelege (auch Kassenbons und Z-Berichte) acht Jahre, Bücher, Inventare und Organisationsunterlagen wie die Kassen-Bedienungsanleitung zehn Jahre (§ 147 AO). Exportieren Sie Z-Berichte, DATEV- und GoBD-Daten regelmäßig und archivieren Sie sie — Details klärt Ihr Steuerberater.
+
+## DATEV für die Gastronomie: Was Ihr Steuerberater braucht.
+
+URL: https://www.gastropos.com/resources/datev-guide
+
+Wie der DATEV-Export aus Ihrer Kasse funktioniert, welcher Kontenrahmen passt, wie Steuersätze behandelt werden und wie Ihr Steuerberater an die Daten kommt — am Beispiel von GastroPos.
+
+### SKR03, SKR04 oder SKR07?
+
+Nutzen Sie den Kontenrahmen, auf dem Ihr Steuerberater bereits bucht. GastroPos unterstützt SKR03, SKR04 und SKR07 mit Standardkonten, und jedes Konto lässt sich an die Einrichtung Ihres Steuerberaters anpassen.
+
+### Steuersätze schon an der Kasse richtig
+
+Im Haus und Außer Haus können unterschiedliche Steuersätze gelten. GastroPos wendet den je Produkt oder Kategorie hinterlegten Satz für Im Haus und Außer Haus an und bucht jeden Beleg nach Steuersatz getrennt auf das passende Erlöskonto. Was an der Kasse stimmt, muss später nicht korrigiert werden.
+
+### Zahlungsarten auf eigenen Konten
+
+Bar und Karte haben Standardkonten; jede weitere Zahlungsart kann in den DATEV-Einstellungen ein eigenes Konto bekommen. Kassenbuch-Buchungen laufen auf die Konten ihrer Zwecke. Trinkgelder werden im Export nicht separat gebucht.
+
+### Wie Ihr Steuerberater an die Daten kommt
+
+Erstellen Sie den DATEV-Buchungsstapel für einen beliebigen Zeitraum und senden Sie ihn per E-Mail oder laden Sie ihn herunter — Ihr Steuerberater importiert ihn in DATEV. Z-Berichte können täglich, wöchentlich oder monatlich automatisch per E-Mail verschickt werden, und Ihr Steuerberater kann einen eigenen Zugang bekommen.
+
+### Häufige Fragen
+
+**Gibt es eine direkte Verbindung zu DATEV Unternehmen online?**
+Nein. GastroPos erstellt eine DATEV-Buchungsstapel-Datei (EXTF), die Ihr Steuerberater importiert.
+
+**Kann ich pro Tag oder pro Beleg exportieren?**
+Beides: Buchungen werden pro Rechnung erstellt oder pro Tag zusammengefasst, für jeden Zeitraum innerhalb eines Wirtschaftsjahres.
+
+**Enthält der Export das Kassenbuch?**
+Ja. Ein- und Auszahlungen werden auf die Konten ihrer Zwecke gebucht.
+
+
+# Blog
+
+## 7 % Mehrwertsteuer auf Speisen seit 2026: Was Sie in der Kasse umstellen müssen
+
+URL: https://www.gastropos.com/resources/blog/mehrwertsteuer-gastronomie-2026 (Stand: 2026-10-08)
+
+Seit 1. Januar 2026 gilt für Speisen in der Gastronomie dauerhaft 7 % Mehrwertsteuer, Getränke bleiben bei 19 %. So stellen Sie Steuersätze, Menüs und Außer-Haus-Verkauf in der Kasse richtig ein.
+
+Das Wichtigste in Kürze:
+- Speisen in der Gastronomie: seit 1. Januar 2026 dauerhaft 7 % Mehrwertsteuer.
+- Getränke bleiben bei 19 % — mit wenigen Ausnahmen wie Milchgetränken mit mindestens 75 % Milchanteil.
+- Menüs aus Speise und Getränk müssen auf beide Steuersätze aufgeteilt werden.
+- Prüfen Sie den Steuersatz jedes Artikels in der Kasse und Ihre DATEV-Erlöskonten.
+
+### Was hat sich am 1. Januar 2026 geändert?
+
+Der Bundestag hat die dauerhafte Senkung beschlossen, der Bundesrat hat am 19. Dezember 2025 zugestimmt. Seit dem 1. Januar 2026 werden Restaurant- und Verpflegungsdienstleistungen für Speisen mit dem ermäßigten Satz von 7 % besteuert — im Restaurant, im Café, am Foodtruck, beim Catering und in der Gemeinschaftsverpflegung. Getränke sind ausdrücklich ausgenommen und bleiben beim Regelsatz von 19 %.
+
+Für viele Betriebe endet damit ein jahrelanges Hin und Her: Der ermäßigte Satz galt befristet von Mitte 2020 bis Ende 2023, 2024 und 2025 wurden Speisen im Haus wieder mit 19 % besteuert. Das heißt: Bis 2025 mussten Sie bei Speisen zwischen Verzehr im Haus (19 %) und Außer-Haus-Verkauf (7 %) unterscheiden. Seit 2026 gilt für Speisen in beiden Fällen 7 %.
+
+### Was bleibt bei 19 %?
+
+- Alle ausgeschenkten Getränke — Softdrinks, Kaffee, Bier, Wein, Spirituosen.
+- Ausnahmen: Milch- und Milchmischgetränke mit mindestens 75 % Milchanteil (zum Beispiel viele Cappuccino- oder Latte-Varianten) und Leitungswasser können mit 7 % besteuert werden. Hier kommt es auf das genaue Rezept an — klären Sie das mit Ihrer Steuerberatung.
+- Andere Waren, etwa Merchandise oder Gutscheine für bestimmte Leistungen, folgen eigenen Regeln.
+
+### Menüs und Kombi-Angebote: Speise und Getränk aufteilen
+
+Ein Mittagsmenü mit Getränk, ein Frühstücksbuffet mit Kaffee oder eine Pauschale enthalten beide Steuersätze. Der Gesamtpreis muss auf den 7-%-Anteil (Speise) und den 19-%-Anteil (Getränk) aufgeteilt werden. Stimmen Sie mit Ihrer Steuerberatung ab, welchen Aufteilungsmaßstab Sie verwenden, dokumentieren Sie ihn und wenden Sie ihn einheitlich an.
+
+In der Praxis ist es oft am einfachsten, Menüs in der Kasse als getrennte Artikel zu buchen — die Speise mit 7 %, das Getränk mit 19 % — und den Preisvorteil bei einem der Artikel abzubilden. Dann stimmen Beleg, TSE-Daten und DATEV-Export automatisch.
+
+### Checkliste für Ihre Kasse
+
+- Speisekarte durchgehen: jede Speise auf 7 %, jedes Getränk auf 19 % (außer den Milch-Ausnahmen).
+- Getrennte Im-Haus- und Außer-Haus-Preise entfernen, die es nur wegen der Steuersätze gab — oder bewusst aus Preisgründen behalten.
+- Menüs und Kombi-Angebote prüfen und einen Aufteilungsmaßstab festlegen.
+- Steuersätze mit den DATEV-Erlöskonten abgleichen, damit jeder Satz auf dem richtigen Konto landet.
+- Nach dem ersten Tag: Z-Bericht mit Ihren Erwartungen vergleichen und an die Steuerberatung schicken.
+
+### So geht es mit GastroPos
+
+In GastroPos hat jeder Artikel seinen eigenen Steuersatz, sodass Speisen und Getränke auf demselben Beleg korrekt besteuert werden. Der DATEV-Export bucht die Umsätze je Steuersatz und Zahlungsart auf die Konten, die Sie in den DATEV-Einstellungen festlegen (SKR03, SKR04 oder SKR07), und der Z-Bericht zeigt die Summen je Steuersatz.
+
+Dieser Artikel ist eine allgemeine Information und keine Steuer- oder Rechtsberatung. Klären Sie die Details für Ihren Betrieb mit Ihrer Steuerberatung.
+
+### Häufige Fragen
+
+**Gilt 2026 für Speisen im Restaurant 7 % Mehrwertsteuer?**
+Ja. Seit 1. Januar 2026 gilt für Speisen in Restaurants, Cafés und beim Catering dauerhaft der ermäßigte Satz von 7 %.
+
+**Welcher Steuersatz gilt für Getränke?**
+Getränke bleiben bei 19 %. Ausnahmen sind Milchgetränke mit mindestens 75 % Milchanteil und Leitungswasser.
+
+**Brauche ich noch getrennte Steuersätze für Im Haus und Außer Haus?**
+Für Speisen nicht — sie liegen seit 2026 in beiden Fällen bei 7 %. Getränke liegen, abgesehen von den Ausnahmen, ebenfalls in beiden Fällen bei 19 %.
+
+## Bonpflicht: Wann ein digitaler Beleg (E-Bon) ausreicht
+
+URL: https://www.gastropos.com/resources/blog/bonpflicht-e-bon (Stand: 2026-10-08)
+
+Seit 2020 muss jede elektronische Kasse einen Beleg ausgeben. Was § 146a AO verlangt, wann ein digitaler Beleg per QR-Code oder E-Mail erlaubt ist und welche Angaben er enthalten muss.
+
+Das Wichtigste in Kürze:
+- Wer eine elektronische Kasse nutzt, muss für jeden Verkauf einen Beleg ausgeben (§ 146a Abs. 2 AO).
+- Der Beleg kann auf Papier oder — mit Zustimmung des Gastes — elektronisch ausgegeben werden.
+- Die Zustimmung ist formlos möglich; dass der Gast einen QR-Code scannt, genügt.
+- Ob Papier oder digital: Der Beleg muss die TSE-Daten enthalten.
+
+### Was die Belegausgabepflicht bedeutet
+
+Seit 1. Januar 2020 muss jeder, der Verkäufe mit einem elektronischen Aufzeichnungssystem erfasst, dem Kunden für jeden Geschäftsvorfall einen Beleg zur Verfügung stellen — in unmittelbarem zeitlichem Zusammenhang mit dem Verkauf (§ 146a Abs. 2 AO). Der Gast muss den Beleg nicht mitnehmen, aber Sie müssen ihn anbieten.
+
+Eine Befreiung ist nur auf Antrag beim Finanzamt möglich, etwa beim Verkauf an eine Vielzahl nicht bekannter Personen. In der Gastronomie wird sie selten gewährt — planen Sie also mit Belegen.
+
+### Papier oder digital?
+
+Der Beleg kann gedruckt oder mit Zustimmung des Empfängers elektronisch ausgegeben werden (§ 6 KassenSichV). Die Zustimmung braucht kein Formular: Scannt der Gast einen QR-Code, um den Beleg zu öffnen, ist das eine Zustimmung durch schlüssiges Handeln. Den Übertragungsweg schreibt die Finanzverwaltung nicht vor — QR-Code auf dem Display, Download-Link, E-Mail oder NFC sind möglich. Die Datei muss in einem gängigen Format wie PDF, PNG oder JPG vorliegen, das sich mit kostenloser Software öffnen lässt.
+
+### Was auf dem Beleg stehen muss
+
+- Name und Anschrift des Unternehmens
+- Datum und Uhrzeit von Vorgangsbeginn und -ende
+- Menge und Art der Waren oder Leistungen
+- Transaktionsnummer und Seriennummer der Kasse oder der TSE
+- Entgelt und Steuerbetrag je Steuersatz sowie der Steuersatz
+- Signaturdaten der TSE (Signaturzähler, Prüfwert)
+
+Der QR-Code mit den TSE-Daten, den viele Belege zeigen, ist freiwillig. Er erleichtert Prüfungen, gesetzlich vorgeschrieben ist er nicht.
+
+### Digitale Belege mit GastroPos
+
+GastroPos kann den Beleg drucken, als QR-Code auf dem Kundendisplay anzeigen oder per E-Mail senden. Der Gast öffnet den Beleg auf dem Handy — und kann dort eine Firmenrechnung anfordern oder einen Bewirtungsbeleg ausfüllen. Mit der fiskaly Cloud-TSE (Zusatzmodul, 15 € pro Monat) trägt jeder Beleg die TSE-Daten.
+
+Dieser Artikel ist eine allgemeine Information und keine Steuer- oder Rechtsberatung. Klären Sie die Details für Ihren Betrieb mit Ihrer Steuerberatung.
+
+### Häufige Fragen
+
+**Muss ich für jeden Verkauf einen Bon drucken?**
+Sie müssen für jeden Verkauf einen Beleg ausgeben, aber nicht unbedingt drucken. Mit Zustimmung des Gastes genügt ein digitaler Beleg.
+
+**Reicht es, einen QR-Code anzuzeigen?**
+Ja, ein QR-Code, der zum Beleg führt, ist ein anerkannter Weg der elektronischen Ausgabe. Das Scannen gilt als Zustimmung.
+
+**Muss der Gast den Beleg mitnehmen?**
+Nein. Sie müssen ihn anbieten, der Gast darf ihn ablehnen.
+
+## Bewirtungsbeleg: Pflichtangaben und digitale Ausfüllung durch den Gast
+
+URL: https://www.gastropos.com/resources/blog/bewirtungsbeleg (Stand: 2026-10-08)
+
+Geschäftsgäste brauchen für den Betriebsausgabenabzug einen maschinell erstellten, TSE-gesicherten Beleg. Welche Angaben ein Bewirtungsbeleg braucht und wie Restaurants es ihren Gästen leicht machen.
+
+Das Wichtigste in Kürze:
+- Seit 2023 werden für Bewirtungen nur maschinell erstellte, TSE-gesicherte Belege anerkannt, wenn das Restaurant eine elektronische Kasse nutzt.
+- Der Beleg muss die TSE-Daten oder Seriennummer und Transaktionsnummer der Kasse zeigen.
+- Teilnehmer und Anlass ergänzt der Gastgeber — auf Papier oder digital.
+- Bei Belegen über 250 € muss der Name des Bewirtenden auf dem Beleg stehen.
+
+### Warum der Beleg des Restaurants entscheidend ist
+
+Unternehmen können 70 % der Kosten einer geschäftlichen Bewirtung als Betriebsausgabe abziehen. Seit 1. Januar 2023 erkennt die Finanzverwaltung nur noch maschinell erstellte, elektronisch aufgezeichnete und mit einer TSE gesicherte Belege an, wenn das Restaurant eine elektronische Kasse nutzt (BMF-Schreiben vom 30. Juni 2021). Ein handschriftlicher Beleg oder ein Beleg ohne TSE-Daten reicht Ihrem Gast dann nicht.
+
+### Was ein Bewirtungsbeleg braucht
+
+Vom Restaurant (auf dem maschinellen Beleg):
+
+- Name und Anschrift des Restaurants
+- Tag der Bewirtung
+- Verzehrte Speisen und Getränke mit Preisen, Beträge je Steuersatz
+- Transaktionsnummer und Seriennummer der Kasse oder TSE
+- Bei Beträgen über 250 €: Name des Bewirtenden
+
+Vom Gastgeber (wird ergänzt):
+
+- Namen aller Teilnehmer, einschließlich des Gastgebers
+- Der konkrete geschäftliche Anlass
+- Gegebenenfalls Trinkgeld und Unterschrift
+
+### Digital statt Papierformular
+
+Die Angaben des Gastgebers können auch digital ergänzt werden, solange sie unveränderbar mit dem Beleg verbunden sind. Das erspart Ihrem Service das Drucken des zweiten Formulars am Tisch.
+
+### Bewirtungsbeleg mit GastroPos
+
+Mit GastroPos scannt der Gast den QR-Code des digitalen Belegs und füllt den Bewirtungsbeleg direkt am Handy aus: Teilnehmer, Anlass, Firmendaten. Der Beleg trägt die Daten der fiskaly Cloud-TSE. Auf Wunsch fordert der Gast auch eine Firmenrechnung mit seiner Firmenadresse an.
+
+Dieser Artikel ist eine allgemeine Information und keine Steuer- oder Rechtsberatung. Klären Sie die Details für Ihren Betrieb mit Ihrer Steuerberatung.
+
+### Häufige Fragen
+
+**Gilt ein handschriftlicher Bewirtungsbeleg noch?**
+Nur, wenn das Restaurant keine elektronische Kasse hat. Andernfalls erwartet das Finanzamt einen maschinell erstellten, TSE-gesicherten Beleg.
+
+**Wie viel einer Bewirtung ist absetzbar?**
+70 % der angemessenen Kosten sind als Betriebsausgabe abziehbar; die Vorsteuer ist in der Regel voll abziehbar.
+
+## Aufbewahrungsfristen für Kassendaten: 8 oder 10 Jahre?
+
+URL: https://www.gastropos.com/resources/blog/aufbewahrungsfristen-kassendaten (Stand: 2026-10-08)
+
+Seit 2025 müssen Buchungsbelege nur noch acht statt zehn Jahre aufbewahrt werden. Was das für Kassenbons, Z-Berichte, das Kassenbuch, TSE-Exporte und die Kassen-Bedienungsanleitung bedeutet.
+
+Das Wichtigste in Kürze:
+- Buchungsbelege — auch Kassenbons und Z-Berichte — müssen seit 2025 acht Jahre aufbewahrt werden.
+- Für Bücher, Inventare, Jahresabschlüsse und Organisationsunterlagen bleibt es bei zehn Jahren.
+- Die Frist beginnt mit dem Ende des Kalenderjahres, in dem die Unterlage entstanden ist.
+- Kassendaten müssen über die gesamte Frist lesbar und exportierbar bleiben — auch nach einem Systemwechsel.
+
+### Was sich geändert hat
+
+Das Vierte Bürokratieentlastungsgesetz (BEG IV) hat die Aufbewahrungsfrist für Buchungsbelege in § 147 AO von zehn auf acht Jahre verkürzt. Sie gilt für alle Belege, deren Frist am 1. Januar 2025 noch nicht abgelaufen war. Für Banken, Versicherungen und Wertpapierinstitute gelten Sonderregeln — für die Gastronomie spielt das keine Rolle.
+
+### Welche Frist gilt wofür?
+
+- 8 Jahre: Kassenbons, Rechnungen, Z-Berichte, Belege zum Kassenbuch, Bewirtungsbelege, Kartenzahlungsbelege
+- 10 Jahre: das Kassenbuch als Buch, Inventare, Jahresabschlüsse sowie Organisationsunterlagen der Kasse — z. B. Bedienungsanleitung, Programmierprotokolle und Nachweise zur Inbetriebnahme
+- 6 Jahre: Geschäftsbriefe, die keine Buchungsbelege sind
+
+Beispiel: Ein Kassenbon vom 15. März 2026 darf frühestens nach dem 31. Dezember 2034 vernichtet werden.
+
+### Elektronische Kassendaten
+
+Bei elektronischen Kassen reicht Papier nicht: Die Einzelaufzeichnungen, die TSE-Daten und der DSFinV-K-Export müssen über die gesamte Frist maschinell auswertbar verfügbar bleiben. Das gilt auch, wenn Sie den Kassenanbieter wechseln — exportieren Sie Ihre Daten vor Vertragsende und archivieren Sie sie.
+
+### Exporte in GastroPos
+
+- DSFinV-K-Export aus der fiskaly-TSE (Administratoren, mit TSE-Zusatzmodul)
+- GoBD-Archiv als ZIP mit index.xml: Kassenbuch, Rechnungen, Positionen, Zahlungen, Steuern
+- DATEV-Buchungsstapel (EXTF) für beliebige Zeiträume
+- Z-Berichte als Excel, CSV oder ZIP
+
+Dieser Artikel ist eine allgemeine Information und keine Steuer- oder Rechtsberatung. Klären Sie die Details für Ihren Betrieb mit Ihrer Steuerberatung.
+
+### Häufige Fragen
+
+**Wie lange muss ich Z-Berichte aufbewahren?**
+Z-Berichte sind Buchungsbelege, also seit 2025 acht Jahre, gerechnet ab Ende des Kalenderjahres.
+
+**Muss ich die Bedienungsanleitung der Kasse aufbewahren?**
+Ja. Sie gehört zu den Organisationsunterlagen und ist zehn Jahre aufzubewahren.
+
+## Kassenbuch in der Gastronomie richtig führen: Regeln und typische Fehler
+
+URL: https://www.gastropos.com/resources/blog/kassenbuch-gastronomie (Stand: 2026-10-08)
+
+Was ein GoBD-konformes Kassenbuch braucht, wie Sie Einlagen, Entnahmen und Trinkgelder richtig erfassen und welche Fehler Betriebsprüfer am häufigsten finden.
+
+Das Wichtigste in Kürze:
+- Jede Barbewegung täglich, vollständig und in zeitlicher Reihenfolge erfassen.
+- Einträge dürfen nachträglich nicht verändert werden — Korrekturen erfolgen per Storno mit Begründung.
+- Der Kassenbestand darf nie negativ werden.
+- Privatentnahmen, Einlagen und ausgezahlte Trinkgelder brauchen eigene Buchungen.
+
+### Warum das Kassenbuch in der Gastronomie so wichtig ist
+
+In der Gastronomie wird viel bar bezahlt. Bei einer Betriebsprüfung gehört das Kassenbuch zu den ersten Unterlagen, die geprüft werden: Ist es nicht vollständig und nachvollziehbar, darf das Finanzamt Umsätze schätzen — meist zu Ihrem Nachteil.
+
+### Die Grundregeln
+
+- Täglich: Barumsätze und Barbewegungen werden jeden Tag erfasst.
+- Vollständig: jede Einnahme und Ausgabe, auch Kleinbeträge.
+- Geordnet: chronologisch, mit lückenloser Nummerierung.
+- Unveränderbar: kein Löschen oder Überschreiben; Korrekturen per Storno-Buchung.
+- Belegt: Zu jeder Buchung gibt es einen Beleg oder Eigenbeleg.
+- Kassensturzfähig: Der tatsächliche Bargeldbestand muss jederzeit mit dem Buch abgleichbar sein.
+
+### Typische Fehler
+
+- Negativer Kassenbestand — ein klares Zeichen für fehlende Buchungen.
+- Privatentnahmen oder -einlagen nicht erfasst.
+- Trinkgelder an das Team aus der Kasse ausgezahlt, ohne Buchung.
+- Bar bezahlte Einkäufe (z. B. im Großmarkt) ohne Beleg.
+- Excel-Listen, die jederzeit geändert werden können — sie gelten nicht als unveränderbar.
+
+### Das digitale Kassenbuch in GastroPos
+
+In GastroPos werden Barverkäufe und Bar-Erstattungen automatisch ins Kassenbuch übernommen. Einlagen und Ausgaben erfassen Sie mit einem Zweck — z. B. Von/An Bank, Privatentnahme, Trinkgeld-Auszahlung, Wareneinkauf oder Porto — mit Steuersatz, Lieferant und Belegnummer. Einträge lassen sich nicht bearbeiten oder löschen; ein Storno braucht eine Begründung. Die Nummerierung ist lückenlos, der laufende Bestand immer sichtbar. Jeder Zweck kann ein eigenes DATEV-Konto haben, sodass die Buchungen im DATEV-Export erscheinen.
+
+Dieser Artikel ist eine allgemeine Information und keine Steuer- oder Rechtsberatung. Klären Sie die Details für Ihren Betrieb mit Ihrer Steuerberatung.
+
+### Häufige Fragen
+
+**Ist ein Kassenbuch in Excel erlaubt?**
+In der Regel nicht, weil Einträge spurlos geändert werden können. Nutzen Sie ein System, das Änderungen protokolliert oder verhindert.
+
+**Wie erfasse ich Trinkgeld im Kassenbuch?**
+Per Karte vereinnahmte Trinkgelder, die später bar ausgezahlt werden, erfassen Sie als Ausgabe mit dem Zweck „Trinkgeld-Auszahlung“. Details klären Sie mit Ihrer Steuerberatung.
+
+## Eigener Webshop für Lieferung und Abholung: So starten Sie
+
+URL: https://www.gastropos.com/resources/blog/eigener-webshop-restaurant (Stand: 2026-10-08)
+
+Warum Restaurants neben Lieferplattformen eine eigene Bestellseite anbieten, welche Einstellungen wichtig sind (Liefergebiete, Mindestbestellwert, Öffnungszeiten, Zahlung) und wie Gäste zu Ihrem Shop finden.
+
+Das Wichtigste in Kürze:
+- Mit dem eigenen Shop bleiben Kundenbeziehung und Bestelldaten bei Ihnen.
+- Legen Sie Liefergebiete mit Mindestbestellwert und Liefergebühr fest — nach Postleitzahl oder Entfernung.
+- Bestellungen sollten direkt in Kasse und Küche landen, nicht auf einem zusätzlichen Tablet.
+- Bewerben Sie den Shop-Link auf Flyern, Belegen, bei Google und in Social Media.
+
+### Warum eine eigene Bestellseite?
+
+Lieferplattformen bringen Reichweite, berechnen aber auf jede Bestellung eine Provision und behalten den Kontakt zum Gast. Der eigene Shop ist der Kanal für Stammgäste: Wer Sie schon kennt, bestellt direkt — und Preise, Gebühren und Aktionen bestimmen Sie selbst.
+
+### Die wichtigsten Einstellungen
+
+- Liefergebiete nach Postleitzahl oder Entfernung, jeweils mit Mindestbestellwert, Liefergebühr und Grenze für kostenlose Lieferung
+- Liefer- und Abholzeiten je Wochentag, Feiertage und eine kurzfristige Pause, wenn die Küche voll ist
+- Zahlungsarten: bar bei Lieferung, Karte, PayPal, Klarna oder Zahlung vor Ort
+- Rabattcodes mit Gültigkeit, Mindestbestellwert und Nutzungslimit
+- Auftritt: Logo, Einführungstext, Hauptfarbe und Fotos Ihrer Gerichte
+
+### Von der Bestellung in die Küche
+
+Die größte Zeitersparnis: Online-Bestellungen kommen mit Ton direkt in der Kasse an. Das Team nimmt die Bestellung an, der Küchenbon wird gedruckt oder auf dem Küchenmonitor angezeigt, und der Lieferschein trägt einen QR-Code für die Navigation. Ihre Fahrer sehen ihre Aufträge und die Route in der App.
+
+### Gäste zum Shop bringen
+
+- Hinterlegen Sie den Shop-Link in Ihrem Google-Unternehmensprofil als Bestell-Link.
+- Drucken Sie einen QR-Code auf Flyer, Pizzakartons und Belege.
+- Bieten Sie im Restaurant einen Rabattcode für die erste Direktbestellung an.
+- Teilen Sie den Link in Ihrer Social-Media-Bio.
+
+### Der GastroPos-Webshop
+
+Der GastroPos-Webshop läuft auf einer eigenen Seite für Ihr Restaurant und nutzt dieselben Artikel und Bestände wie Ihre Kasse. Ausverkaufte Artikel werden automatisch ausgeblendet. Gäste brauchen kein Konto: Bestellhistorie und Kontaktdaten bleiben auf ihrem Gerät, und eine Bestellung lässt sich mit einem Tipp wiederholen.
+
+### Häufige Fragen
+
+**Brauchen Gäste ein Konto zum Bestellen?**
+Nein. Im GastroPos-Webshop bestellen Gäste ohne Registrierung; ihre Daten werden auf ihrem Gerät gespeichert.
+
+**Können Gäste für später vorbestellen?**
+Ja, für eine Uhrzeit am selben Tag in 15-Minuten-Schritten — auch wenn Sie noch geschlossen haben, aber später am Tag öffnen.
+
+## QR-Code-Bestellung am Tisch: Vorteile, Grenzen und Einführung
+
+URL: https://www.gastropos.com/resources/blog/qr-code-bestellung-restaurant (Stand: 2026-10-08)
+
+Wie die Bestellung per QR-Code am Tisch funktioniert, wo sie hilft (Stoßzeiten, Nachbestellungen, Sprachbarrieren) und wie Sie sie einführen, ohne den persönlichen Service zu verlieren.
+
+Das Wichtigste in Kürze:
+- Jeder Tisch bekommt seinen eigenen QR-Code; Bestellungen kommen mit Tischnummer an.
+- Größter Vorteil: Nachbestellungen und Getränke ohne Warten auf den Service.
+- Allergene und Beschreibungen in der Sprache des Gastes reduzieren Rückfragen.
+- Mit einer Freigabe prüft der Service Bestellungen, bevor sie in die Küche gehen.
+
+### So funktioniert es
+
+Auf jedem Tisch steht ein QR-Code. Der Gast scannt ihn mit der Handykamera — ohne App — und sieht die Speisekarte mit Fotos, Beschreibungen und Allergenen. Bestellungen gehen mit Tischnummer direkt an Kasse und Küche. Außerdem kann der Gast den Service rufen oder die Rechnung anfordern.
+
+### Wo es hilft
+
+- Stoßzeiten: Gäste bestellen die zweite Runde, ohne auf den Service zu warten.
+- Weniger Laufwege: Der Service hat mehr Zeit für Beratung statt für einfache Bestellungen.
+- Sprachbarrieren: Die Speisekarte erscheint in der Sprache des Gastes.
+- Allergene: Gäste prüfen Zutaten und Zusatzstoffe selbst.
+
+### Grenzen und wie Sie damit umgehen
+
+- Nicht jeder Gast möchte per Handy bestellen — nehmen Sie weiterhin auch am Tisch Bestellungen auf.
+- Spaß- oder Fehlbestellungen: Nutzen Sie eine Freigabe für neue Tische oder am Abend.
+- Bezahlung: Legen Sie fest, ob Gäste beim Service am Tisch oder an der Theke zahlen.
+
+### Schritt für Schritt einführen
+
+- Starten Sie mit Getränken und Desserts, wo Nachbestellungen am wichtigsten sind.
+- Briefen Sie Ihr Team: Die QR-Bestellung unterstützt den Service, sie ersetzt ihn nicht.
+- Machen Sie die Codes sichtbar — Tischaufsteller funktionieren besser als Aufkleber.
+- Prüfen Sie nach zwei Wochen, welche Tische und Zeiten sie am meisten nutzen.
+
+### QR-Bestellung mit GastroPos
+
+In GastroPos erzeugen Sie für jeden Tisch einen QR-Code und können ihn jederzeit erneuern. Gäste bestellen, rufen den Service und fordern die Rechnung an (bar oder Karte am Tisch). Die Gäste-App gibt es auf Deutsch, Englisch, Türkisch, Arabisch, Spanisch und Französisch. Optional warten Bestellungen auf die Freigabe durch den Service, bevor sie in die Küche gehen.
+
+### Häufige Fragen
+
+**Müssen Gäste eine App installieren?**
+Nein. Die Speisekarte öffnet sich nach dem Scannen im Browser des Handys.
+
+**Können Gäste über den QR-Code bezahlen?**
+In GastroPos fordern Gäste über den QR-Code die Rechnung an und zahlen beim Service bar oder mit Karte; eine Zahlung in der App gibt es nicht.

@@ -1,22 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { absoluteUrl } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { SubPageHero, ContentSections, CtaFooter } from "@/components/layout/SubPage";
 import { useI18n } from "@/lib/i18n/context";
 
 export const Route = createFileRoute("/affiliate")({
-  head: () => ({
-    meta: [
-      { title: "Affiliate Program — Earn with GastroPos" },
-      {
-        name: "description",
-        content:
-          "Refer hospitality and retail operators to GastroPos. Earn up to €300 per qualified signup, plus recurring revenue share.",
-      },
-      { property: "og:url", content: absoluteUrl("/affiliate") },
-    ],
-    links: [{ rel: "canonical", href: absoluteUrl("/affiliate") }],
-  }),
+  head: () =>
+    pageHead({
+      title: "Empfehlungsprogramm — GastroPos",
+      description:
+        "Empfehlen Sie GastroPos an Gastronomen weiter. So funktioniert das Empfehlungsprogramm und wie Sie teilnehmen.",
+      path: "/affiliate",
+      breadcrumbs: [{ name: "Empfehlungsprogramm", path: "/affiliate" }],
+    }),
   component: Affiliate,
 });
 
@@ -29,8 +25,8 @@ function Affiliate() {
         title={lang === "de" ? "Verdienen Sie mit jeder Empfehlung." : "Earn from every referral."}
         lede={
           lang === "de"
-            ? "Bis zu 300 € pro qualifizierter Anmeldung plus 10 % wiederkehrende Umsatzbeteiligung — lebenslang."
-            : "Up to €300 per qualified signup plus 10% recurring revenue share — for life."
+            ? "Sie kennen Gastronomen, die eine neue Kasse suchen? Empfehlen Sie GastroPos — die Konditionen besprechen wir persönlich."
+            : "Know restaurant owners looking for a new POS? Recommend GastroPos — we discuss the terms personally."
         }
       />
       <ContentSections
@@ -39,8 +35,8 @@ function Affiliate() {
             heading: lang === "de" ? "Wie es funktioniert" : "How it works",
             body:
               lang === "de"
-                ? "1) Anmelden und einen einzigartigen Empfehlungslink erhalten. 2) Teilen mit Ihrem Netzwerk. 3) Auszahlung jeden Monat via Banküberweisung oder PayPal."
-                : "1) Sign up and get a unique referral link. 2) Share with your network. 3) Get paid monthly via bank transfer or PayPal.",
+                ? "1) Schreiben Sie uns über die Kontaktseite. 2) Wir vereinbaren die Konditionen und wie wir Empfehlungen zuordnen. 3) Sie stellen den Kontakt her, wir übernehmen Vorführung und Einrichtung."
+                : "1) Get in touch via the contact page. 2) We agree on terms and how referrals are attributed. 3) You make the introduction, we take care of the demo and setup.",
           },
           {
             heading: lang === "de" ? "Wer eignet sich" : "Who it's for",

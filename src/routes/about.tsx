@@ -1,22 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { absoluteUrl } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { SubPageHero, ContentSections, CtaFooter } from "@/components/layout/SubPage";
 import { useI18n } from "@/lib/i18n/context";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About GastroPos — Built for European operators" },
-      {
-        name: "description",
-        content:
-          "GastroPos is the cloud POS platform built in Munich for European hospitality, retail and service businesses. Our mission, story and team.",
-      },
-      { property: "og:url", content: absoluteUrl("/about") },
-    ],
-    links: [{ rel: "canonical", href: absoluteUrl("/about") }],
-  }),
+  head: () =>
+    pageHead({
+      title: "Über GastroPos — Kassensoftware für die Gastronomie",
+      description:
+        "GastroPos ist eine Cloud-Kasse aus Essen für Restaurants, Cafés und Lieferdienste. Was wir bauen, für wen und wie wir arbeiten.",
+      path: "/about",
+      image: "pos-tables.webp",
+      breadcrumbs: [{ name: "Über uns", path: "/about" }],
+    }),
   component: About,
 });
 
@@ -33,8 +30,8 @@ function About() {
         }
         lede={
           lang === "de"
-            ? "Gegründet 2018 in München. Heute vertrauen 2.000+ Betreiber in ganz Europa auf GastroPos."
-            : "Founded in 2018 in Munich. Today 2,000+ operators across Europe run on GastroPos."
+            ? "GastroPos ist eine Cloud-Kasse aus Essen für Restaurants, Cafés, Imbisse und Lieferdienste — von der Bestellung am Tisch bis zum DATEV-Export."
+            : "GastroPos is a cloud POS from Essen for restaurants, cafés, takeaways and delivery businesses — from the order at the table to the DATEV export."
         }
       />
       <ContentSections
@@ -43,22 +40,22 @@ function About() {
             heading: lang === "de" ? "Unsere Mission" : "Our mission",
             body:
               lang === "de"
-                ? "Wir glauben, dass jedes unabhängige Restaurant, Café und Geschäft die gleichen Werkzeuge verdient wie die größten Ketten — ohne sechsstellige IT-Budgets. Deshalb bauen wir eine Plattform, die in unter 20 Minuten einsatzbereit ist, monatlich kündbar ist und alles enthält, was Sie zum Betreiben Ihres Geschäfts brauchen."
-                : "We believe every independent restaurant, café and shop deserves the same tools as the biggest chains — without six-figure IT budgets. That's why we build a platform that's live in under 20 minutes, cancellable monthly, and includes everything you need to run your business.",
+                ? "Wir glauben, dass jedes unabhängige Restaurant, Café und Geschäft die gleichen Werkzeuge verdient wie die größten Ketten — ohne sechsstellige IT-Budgets. Deshalb bauen wir eine Kasse, die auf vorhandenen Handys, Tablets und Sunmi-Geräten läuft, die Speisekarte per KI aus einem Foto übernimmt und Kasse, Küche, QR-Bestellung und Webshop in einem System verbindet."
+                : "We believe every independent restaurant, café and shop deserves the same tools as the biggest chains — without six-figure IT budgets. That's why we build a POS that runs on the phones, tablets and Sunmi devices you already have, imports your menu from a photo with AI, and connects till, kitchen, QR ordering and webshop in one system.",
           },
           {
             heading: lang === "de" ? "Wo wir sitzen" : "Where we are",
             body:
               lang === "de"
-                ? "Hauptsitz in München. Support-Teams in Berlin, Wien und Istanbul. Operativ tätig in Deutschland, Österreich, der Schweiz, den Niederlanden, Frankreich und der Türkei."
-                : "Headquartered in Munich. Support teams in Berlin, Vienna and Istanbul. Operating in Germany, Austria, Switzerland, the Netherlands, France and Turkey.",
+                ? "Unser Sitz ist in Essen. GastroPos ist die Weiterentwicklung von OrdersTracker, das wir seit 2018 entwickeln. GastroPos ist auf den deutschen Markt ausgerichtet — mit fiskaly Cloud-TSE, DSFinV-K, GoBD-Archiv und DATEV-Export — und unterstützt auch die österreichische RKSV. Die Kasse gibt es auf Deutsch, Englisch und Türkisch."
+                : "We are based in Essen. GastroPos is the next generation of OrdersTracker, which we have been building since 2018. GastroPos is built for the German market — with fiskaly cloud TSE, DSFinV-K, GoBD archive and DATEV export — and also supports the Austrian RKSV. The POS is available in German, English and Turkish.",
           },
           {
             heading: lang === "de" ? "Unsere Werte" : "Our values",
             body:
               lang === "de"
-                ? "Operator-zuerst. Konform per Design. Ausfallzeit ist nicht verhandelbar. Support antwortet in Minuten, nicht Tagen. Wir versenden nichts, was wir nicht selbst in unseren Partner-Restaurants einsetzen würden."
-                : "Operator-first. Compliant by design. Downtime is non-negotiable. Support replies in minutes, not days. We ship nothing we wouldn't deploy in our own partner restaurants.",
+                ? "Betrieb zuerst: Was im Service hektisch wird, muss mit wenigen Tipps gehen. Rechtssicher von Anfang an: TSE, Belege und Exporte sind eingebaut, nicht nachgerüstet. Ehrlich: Wir beschreiben nur Funktionen, die es wirklich gibt."
+                : "Operations first: whatever gets hectic during service must take just a few taps. Compliant from the start: TSE, receipts and exports are built in, not bolted on. Honest: we only describe features that actually exist.",
           },
         ]}
       />

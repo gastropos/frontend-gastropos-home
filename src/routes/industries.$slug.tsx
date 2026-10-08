@@ -1,7 +1,8 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { absoluteUrl } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 import { SiteShell } from "@/components/layout/SiteShell";
-import { SubPageHero, ContentSections, FaqList, CtaFooter } from "@/components/layout/SubPage";
+import { FaqList, CtaFooter } from "@/components/layout/SubPage";
+import { ProductHero, ShowcaseRows } from "@/components/product/ProductShowcase";
 import { industries, type IndustrySlug } from "@/content/industries";
 import { useI18n } from "@/lib/i18n/context";
 
@@ -14,32 +15,15 @@ export const Route = createFileRoute("/industries/$slug")({
   head: ({ loaderData, params }) => {
     if (!loaderData) return {};
     const i = loaderData.industry;
-    return {
-      meta: [
-        { title: i.metaTitle.en },
-        { name: "description", content: i.metaDescription.en },
-        { property: "og:title", content: i.metaTitle.en },
-        { property: "og:description", content: i.metaDescription.en },
-        { property: "og:url", content: absoluteUrl(`/industries/${params.slug}`) },
-      ],
-      links: [{ rel: "canonical", href: absoluteUrl(`/industries/${params.slug}`) }],
-      scripts: i.faq.length
-        ? [
-            {
-              type: "application/ld+json",
-              children: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                mainEntity: i.faq.map((f) => ({
-                  "@type": "Question",
-                  name: f.q.en,
-                  acceptedAnswer: { "@type": "Answer", text: f.a.en },
-                })),
-              }),
-            },
-          ]
-        : undefined,
-    };
+    return pageHead({
+      title: i.metaTitle.de,
+      description: i.metaDescription.de,
+      path: `/industries/${params.slug}`,
+      image: i.heroImage,
+      imageAlt: i.heroAlt.de,
+      breadcrumbs: [{ name: i.eyebrow.de, path: `/industries/${params.slug}` }],
+      faq: i.faq.map((f) => ({ q: f.q.de, a: f.a.de })),
+    });
   },
   component: IndustryPage,
   notFoundComponent: () => <div className="p-20 text-center">Industry not found</div>,
@@ -52,16 +36,22 @@ function IndustryPage() {
   const pick = <T,>(o: Bilingual<T>): T => (lang === "de" ? o.de : o.en);
   return (
     <SiteShell>
-      <SubPageHero
+      <ProductHero
         eyebrow={pick(industry.eyebrow)}
         title={pick(industry.title)}
         lede={pick(industry.lede)}
+        image={industry.heroImage}
+        imageAlt={pick(industry.heroAlt)}
+        highlights={industry.highlights.map((h) => ({
+          value: pick(h.value),
+          label: pick(h.label),
+        }))}
       />
-      <section className="border-t border-border py-20">
-        <div className="mx-auto max-w-4xl px-6 grid gap-12 md:grid-cols-2">
-          <div>
+      <section className="border-b border-border py-20">
+        <div className="mx-auto grid max-w-5xl gap-8 px-6 md:grid-cols-2">
+          <div className="rounded-3xl border border-border bg-surface/60 p-8 shadow-card">
             <h2 className="font-display text-2xl font-extrabold tracking-tight">
-              {lang === "de" ? "Die Probleme, die wir lösen" : "Problems we solve"}
+              {lang === "de" ? "Kennen Sie das?" : "Sound familiar?"}
             </h2>
             <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
               {pick(industry.painPoints).map((p: string) => (
@@ -71,9 +61,9 @@ function IndustryPage() {
               ))}
             </ul>
           </div>
-          <div>
+          <div className="rounded-3xl border border-accent/20 bg-accent/[0.03] p-8 shadow-card">
             <h2 className="font-display text-2xl font-extrabold tracking-tight">
-              {lang === "de" ? "Was Sie bekommen" : "What you get"}
+              {lang === "de" ? "Was GastroPos dafür bietet" : "What GastroPos offers"}
             </h2>
             <ul className="mt-6 space-y-3 text-sm">
               {pick(industry.features).map((f: string) => (
@@ -85,22 +75,16 @@ function IndustryPage() {
           </div>
         </div>
       </section>
-      <ContentSections
-        sections={industry.sections.map((s) => ({
+      <ShowcaseRows
+        label={lang === "de" ? "So unterstützt Sie GastroPos" : "How GastroPos helps"}
+        rows={industry.sections.map((s) => ({
           heading: pick(s.heading),
           body: pick(s.body),
+          bullets: pick(s.bullets),
+          image: s.image,
+          imageAlt: pick(s.imageAlt),
         }))}
       />
-      <section className="border-t border-border bg-surface/40 py-20">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="font-mono text-[11px] uppercase tracking-widest text-accent">
-            {lang === "de" ? "Was Kunden sagen" : "What customers say"}
-          </p>
-          <blockquote className="mt-5 font-display text-xl font-semibold leading-relaxed tracking-tight md:text-2xl text-balance">
-            {pick(industry.proof)}
-          </blockquote>
-        </div>
-      </section>
       <FaqList items={industry.faq.map((f) => ({ q: pick(f.q), a: pick(f.a) }))} />
       <CtaFooter />
     </SiteShell>

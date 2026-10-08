@@ -10,11 +10,12 @@ import {
 import { useEffect, type ReactNode } from "react";
 import Clarity from "@microsoft/clarity";
 import { PageTransition } from "../components/layout/PageTransition";
+import { ConsentBanner, useConsent } from "../components/layout/ConsentBanner";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { I18nProvider, useI18n } from "../lib/i18n/context";
-import { SITE_URL, absoluteUrl, OG_IMAGE } from "../lib/seo";
+import { SITE_URL, SITE_NAME, ORGANIZATION_ID, absoluteUrl, OG_IMAGE } from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -78,74 +79,83 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "GastroPos — Cloud POS for restaurants, retail & service businesses" },
+      { title: "GastroPos — Cloud-Kassensystem für Gastronomie" },
       {
         name: "description",
         content:
-          "GastroPos is the cloud POS platform engineered for European hospitality and retail. TSE & DATEV compliant, offline-first, with KDS, QR ordering, inventory, and multi-store analytics.",
+          "GastroPos ist das Cloud-Kassensystem für Restaurants, Cafés und Lieferdienste: Tischservice, Thekenkasse, Küchenmonitor, QR-Bestellung, Webshop, fiskaly Cloud-TSE, Z-Bericht und DATEV-Export.",
       },
-      { name: "author", content: "GastroPos GmbH" },
-      { property: "og:site_name", content: "GastroPos" },
+      { name: "author", content: "OrdersTracker UG (haftungsbeschränkt)" },
+      { property: "og:site_name", content: SITE_NAME },
       { property: "og:type", content: "website" },
-      {
-        property: "og:title",
-        content: "GastroPos — Cloud POS for restaurants, retail & service businesses",
-      },
+      { property: "og:locale", content: "de_DE" },
+      { property: "og:locale:alternate", content: "en_US" },
+      { property: "og:title", content: "GastroPos — Cloud-Kassensystem für Gastronomie" },
       {
         property: "og:description",
         content:
-          "GastroPos is the cloud POS platform engineered for European hospitality and retail. TSE & DATEV compliant, offline-first, with KDS, QR ordering, inventory, and multi-store analytics.",
-      },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@GastroPos" },
-      { name: "theme-color", content: "#0F172A" },
-      {
-        name: "twitter:title",
-        content: "GastroPos — Cloud POS for restaurants, retail & service businesses",
-      },
-      {
-        name: "twitter:description",
-        content:
-          "GastroPos is the cloud POS platform engineered for European hospitality and retail. TSE & DATEV compliant, offline-first, with KDS, QR ordering, inventory, and multi-store analytics.",
+          "GastroPos ist das Cloud-Kassensystem für Restaurants, Cafés und Lieferdienste: Tischservice, Thekenkasse, Küchenmonitor, QR-Bestellung, Webshop, fiskaly Cloud-TSE, Z-Bericht und DATEV-Export.",
       },
       { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: OG_IMAGE },
+      { name: "theme-color", content: "#0F172A" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "apple-touch-icon", href: "/favicon.svg" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@700;800&display=swap",
-      },
     ],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "GastroPos",
-          url: SITE_URL,
-          logo: absoluteUrl("/favicon.svg"),
-          sameAs: [],
-          description:
-            "Cloud POS platform for restaurants, retail and service businesses across Europe.",
-          address: { "@type": "PostalAddress", addressLocality: "Munich", addressCountry: "DE" },
-        }),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          name: "GastroPos",
-          applicationCategory: "BusinessApplication",
-          operatingSystem: "Android, iOS, Windows, macOS, Web",
-          offers: { "@type": "Offer", price: "49", priceCurrency: "EUR" },
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": ORGANIZATION_ID,
+              name: "OrdersTracker UG (haftungsbeschränkt)",
+              alternateName: SITE_NAME,
+              url: SITE_URL,
+              logo: absoluteUrl("/favicon.svg"),
+              email: "info@gastropos.ai",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Marktstr. 10",
+                postalCode: "45355",
+                addressLocality: "Essen",
+                addressCountry: "DE",
+              },
+            },
+            {
+              "@type": "WebSite",
+              "@id": `${SITE_URL}/#website`,
+              url: SITE_URL,
+              name: SITE_NAME,
+              inLanguage: ["de-DE", "en"],
+              publisher: { "@id": ORGANIZATION_ID },
+            },
+            {
+              "@type": "SoftwareApplication",
+              "@id": `${SITE_URL}/#software`,
+              name: SITE_NAME,
+              applicationCategory: "BusinessApplication",
+              applicationSubCategory: "Point of Sale",
+              operatingSystem: "Android, iOS, Windows, Web",
+              description:
+                "Cloud-Kassensystem für die Gastronomie mit Tischservice, Thekenkasse, Küchenmonitor, QR-Bestellung, Webshop, Kassenbuch, fiskaly Cloud-TSE und DATEV-Export.",
+              publisher: { "@id": ORGANIZATION_ID },
+              offers: {
+                "@type": "AggregateOffer",
+                priceCurrency: "EUR",
+                lowPrice: "39",
+                highPrice: "79",
+                offerCount: 3,
+                url: absoluteUrl("/pricing"),
+              },
+            },
+          ],
         }),
       },
     ],
@@ -158,7 +168,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="de">
       <head>
         <HeadContent />
       </head>
@@ -181,19 +191,19 @@ function HtmlLangSync() {
 
 const CLARITY_PROJECT_ID = "xe2bznzbcr";
 
-/** Initializes Microsoft Clarity session recording on the client after hydration. */
-function ClarityInit() {
+let trackersLoaded = false;
+
+/** Loads Clarity and the Crisp chat only after the visitor consented; a withdrawal reloads the page to unload them. */
+function ConsentedTrackers() {
+  const consent = useConsent();
   useEffect(() => {
+    if (consent !== "all") {
+      if (trackersLoaded) window.location.reload();
+      return;
+    }
+    if (trackersLoaded) return;
+    trackersLoaded = true;
     Clarity.init(CLARITY_PROJECT_ID);
-  }, []);
-  return null;
-}
-
-const CRISP_WEBSITE_ID = "a87c07a7-3e09-40f2-8fa1-6a875cac50a1";
-
-/** Loads the Crisp chat widget on the client after hydration. */
-function CrispInit() {
-  useEffect(() => {
     const w = window as typeof window & { $crisp?: unknown[]; CRISP_WEBSITE_ID?: string };
     if (w.$crisp) return;
     w.$crisp = [];
@@ -202,17 +212,19 @@ function CrispInit() {
     script.src = "https://client.crisp.chat/l.js";
     script.async = true;
     document.head.appendChild(script);
-  }, []);
+  }, [consent]);
   return null;
 }
+
+const CRISP_WEBSITE_ID = "a87c07a7-3e09-40f2-8fa1-6a875cac50a1";
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
       <I18nProvider>
-        <ClarityInit />
-        <CrispInit />
+        <ConsentedTrackers />
+        <ConsentBanner />
         <HtmlLangSync />
         <PageTransition>
           <Outlet />

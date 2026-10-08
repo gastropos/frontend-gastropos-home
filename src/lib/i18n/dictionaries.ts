@@ -34,7 +34,7 @@ export const dictionaries: Record<Lang, DictShape> = {
       company: "Company",
       legal: "Legal",
       compliance: "Compliance",
-      copyright: "© 2026 GastroPos GmbH. Munich, Germany.",
+      copyright: "© 2026 OrdersTracker UG (haftungsbeschränkt). Essen, Germany.",
     },
   },
   de: {
@@ -64,7 +64,7 @@ export const dictionaries: Record<Lang, DictShape> = {
       company: "Unternehmen",
       legal: "Rechtliches",
       compliance: "Konformität",
-      copyright: "© 2026 GastroPos GmbH. München, Deutschland.",
+      copyright: "© 2026 OrdersTracker UG (haftungsbeschränkt). Essen, Deutschland.",
     },
   },
 };

@@ -16,1329 +16,2064 @@ export interface ProductContent {
   lede: { en: string; de: string };
   metaTitle: { en: string; de: string };
   metaDescription: { en: string; de: string };
+  heroImage?: string;
+  heroAlt?: { en: string; de: string };
+  highlights?: { value: { en: string; de: string }; label: { en: string; de: string } }[];
   features: { en: string[]; de: string[] };
-  sections: { heading: { en: string; de: string }; body: { en: string; de: string } }[];
+  sections: {
+    heading: { en: string; de: string };
+    body: { en: string; de: string };
+    bullets?: { en: string[]; de: string[] };
+    image?: string;
+    imageAlt?: { en: string; de: string };
+  }[];
   faq: { q: { en: string; de: string }; a: { en: string; de: string } }[];
 }
 
 export const products: Record<ProductSlug, ProductContent> = {
   pos: {
     slug: "pos",
-    eyebrow: { en: "AI-Powered POS System", de: "KI-gestütztes Kassensystem" },
+    eyebrow: { en: "POS system", de: "Kassensystem" },
     title: {
-      en: "The AI cloud POS built for hospitality, retail and service.",
-      de: "Das KI-Cloud-Kassensystem für Gastronomie, Handel und Dienstleister.",
+      en: "The cloud POS for restaurants, cafés and takeaways.",
+      de: "Das Cloud-Kassensystem für Restaurant, Café und Imbiss.",
     },
     lede: {
-      en: "Run orders, payments, inventory and reporting on one tablet — TSE-compliant, offline-first, AI-assisted and ready in under 20 minutes. GastroPos turns every device in your venue into a sales surface and every transaction into actionable insight.",
-      de: "Bestellungen, Zahlungen, Warenwirtschaft und Reporting auf einem Tablet — TSE-konform, offline-fähig, KI-gestützt und in unter 20 Minuten einsatzbereit. GastroPos verwandelt jedes Gerät in eine Verkaufsfläche und jede Transaktion in nutzbare Erkenntnisse.",
+      en: "Table service, counter sales, delivery and kitchen display in one app — on tablets, smartphones and Sunmi POS devices. TSE-ready with fiskaly, with Z-reports, DATEV and GoBD exports built in, and an AI assistant that sets up your menu, tables and printers for you.",
+      de: "Tischservice, Thekenverkauf, Lieferung und Küchenmonitor in einer App — auf Tablets, Smartphones und Sunmi-Kassen. TSE-fähig mit fiskaly, mit Z-Bericht, DATEV- und GoBD-Export und einem KI-Assistenten, der Speisekarte, Tische und Drucker für Sie einrichtet.",
     },
     metaTitle: {
-      en: "AI Cloud POS System for Restaurants & Retail | GastroPos",
-      de: "KI-Cloud-Kassensystem für Gastronomie & Handel | GastroPos",
+      en: "Cloud POS System for Restaurants & Takeaways | GastroPos",
+      de: "Cloud-Kassensystem für Gastronomie & Imbiss | GastroPos",
     },
     metaDescription: {
-      en: "TSE-ready AI cloud POS for restaurants, cafés, bars and retail. Offline-first tablet POS with AI-assisted onboarding, KDS, inventory, DATEV export and 24/7 support.",
-      de: "TSE-konformes KI-Cloud-Kassensystem für Restaurants, Cafés, Bars und Handel. Tablet-Kasse mit KI-gestütztem Onboarding, Küchenmonitor, Warenwirtschaft, DATEV-Export und 24/7 Support.",
+      en: "TSE-ready cloud POS for restaurants, cafés and takeaways: table service, counter mode, kitchen display, delivery, Z-reports, DATEV and GoBD export — on Android, iOS, Windows and Sunmi devices.",
+      de: "TSE-fähiges Cloud-Kassensystem für Restaurant, Café und Imbiss: Tischservice, Thekenkasse, Küchenmonitor, Lieferung, Z-Bericht, DATEV- und GoBD-Export — auf Android, iOS, Windows und Sunmi-Geräten.",
     },
+    heroImage: "pos-hero.webp",
+    heroAlt: {
+      en: "GastroPos on a tablet, a Sunmi countertop POS and a handheld POS with receipt printer",
+      de: "GastroPos auf einem Tablet, einer Sunmi-Theken-Kasse und einem Handheld mit Bondrucker",
+    },
+    highlights: [
+      {
+        value: { en: "fiskaly TSE", de: "fiskaly-TSE" },
+        label: {
+          en: "Cloud TSE, DSFinV-K and Austrian RKSV",
+          de: "Cloud-TSE, DSFinV-K und RKSV für Österreich",
+        },
+      },
+      {
+        value: { en: "Android · iOS · Windows", de: "Android · iOS · Windows" },
+        label: {
+          en: "Tablets, phones and Sunmi / iMin devices",
+          de: "Tablets, Smartphones und Sunmi- / iMin-Geräte",
+        },
+      },
+      {
+        value: { en: "SKR03 · 04 · 07", de: "SKR03 · 04 · 07" },
+        label: { en: "DATEV export plus GoBD archive", de: "DATEV-Export und GoBD-Archiv" },
+      },
+      {
+        value: { en: "AI assistant", de: "KI-Assistent" },
+        label: {
+          en: "Menu import from a photo, orders by voice",
+          de: "Speisekarte per Foto, Bestellung per Sprache",
+        },
+      },
+    ],
     features: {
       en: [
-        "Runs on any Android tablet or iPad — bring your own device",
-        "TSE + DSFinV-K certified, free Fiskaly cloud-TSE in one click",
-        "Offline-first — keep selling when Wi-Fi drops, auto-sync on reconnect",
-        "Split bills by item, seat or share with tabs, tips and discounts",
-        "Cash drawer, Bluetooth/LAN receipt printer and barcode scanner support",
-        "Real-time sync to KDS, waiter app, QR ordering and online ordering",
-        "Built-in multi-language interface — 6 languages out of the box",
-        "Unlimited products, categories, modifiers, allergens and tax rates",
-        "Role-based permissions for owners, managers, waiters and cooks",
+        "Table service with areas, live table status and order history per table",
+        "Counter mode for quick sales — tap a price, scan a barcode, done",
+        "Sizes, extras, required choices, removed ingredients and notes per item",
+        "Separate or combined payment, split tables, move items between tables",
+        "Kitchen display and kitchen printers routed by category",
+        "Receipt printers via Wi-Fi/LAN, Bluetooth or USB, cash drawer via printer",
+        "Card terminals via ZVT, SumUp or Zettle",
+        "Correct VAT for eat-in and takeaway on every receipt",
+        "Fixed roles for admin, assistant manager, waiter, kitchen, courier and tax advisor",
+        "Optional offline checkout in counter mode — synced automatically",
       ],
       de: [
-        "Läuft auf jedem Android-Tablet oder iPad — Bring-your-own-device",
-        "TSE + DSFinV-K zertifiziert, kostenlose Fiskaly Cloud-TSE mit einem Klick",
-        "Offline-fähig — Verkauf auch ohne WLAN, automatische Synchronisation",
-        "Rechnungen pro Artikel, Sitz oder Anteil splitten — Tische, Trinkgeld, Rabatte",
-        "Kassenschublade, Bluetooth-/LAN-Bondrucker, Barcode-Scanner",
-        "Echtzeit-Synchronisation mit KDS, Kellner-App, QR- und Online-Bestellung",
-        "Mehrsprachige Oberfläche — 6 Sprachen out of the box",
-        "Unbegrenzte Produkte, Kategorien, Modifikatoren, Allergene und Steuersätze",
-        "Rollenbasierte Rechte für Inhaber, Manager, Service und Küche",
+        "Tischservice mit Bereichen, Live-Tischstatus und Bestellverlauf pro Tisch",
+        "Thekenmodus für den Schnellverkauf — Preis antippen, Barcode scannen, fertig",
+        "Größen, Extras, Pflichtauswahl, „ohne“-Zutaten und Wünsche pro Artikel",
+        "Getrennt oder zusammen zahlen, Tische teilen, Artikel umbuchen",
+        "Küchenmonitor und Küchendrucker nach Kategorie",
+        "Bondrucker über WLAN/LAN, Bluetooth oder USB, Kassenschublade über den Drucker",
+        "Kartenterminals über ZVT, SumUp oder Zettle",
+        "Richtige Mehrwertsteuer für Im-Haus- und Außer-Haus-Verkauf auf jedem Beleg",
+        "Feste Rollen für Admin, Schichtleitung, Service, Küche, Fahrer und Steuerberater",
+        "Optionales Offline-Kassieren im Thekenmodus — automatische Nachsynchronisierung",
       ],
     },
     sections: [
       {
         heading: {
-          en: "Why tablet POS beats legacy registers",
-          de: "Warum Tablet-Kassen klassische Registrierkassen schlagen",
+          en: "Table service that keeps up with a full house",
+          de: "Tischservice, der auch bei vollem Haus mithält",
         },
         body: {
-          en: "Legacy registers were built for the 1990s. A modern tablet POS turns every device in your venue — phone, tablet, terminal — into a sales surface. Take orders at the table, print receipts at the bar, and reconcile cash without ever leaving the floor. GastroPos uses a single source of truth in the cloud so every device sees the same menu, prices and inventory in real time.",
-          de: "Klassische Registrierkassen sind aus den 90ern. Ein modernes Tablet-Kassensystem verwandelt jedes Gerät — Smartphone, Tablet oder Terminal — in eine Verkaufsfläche. Bestellungen am Tisch aufnehmen, Bons an der Bar drucken und Bargeld abrechnen, ohne den Service zu verlassen. GastroPos nutzt eine zentrale Cloud, sodass alle Geräte die gleiche Karte, Preise und Bestände in Echtzeit sehen.",
+          en: "Every table shows its status at a glance — free, ordered, ready, served — with the running total and the time of the first order. Waiters add items on a tablet or smartphone, pick sizes and extras in one dialog and send the order to the kitchen with a single tap.",
+          de: "Jeder Tisch zeigt auf einen Blick seinen Status — frei, bestellt, bereit, serviert — mit laufender Summe und Uhrzeit der ersten Bestellung. Der Service nimmt Bestellungen auf dem Tablet oder Smartphone auf, wählt Größe und Extras in einem Dialog und schickt alles mit einem Tipp an die Küche.",
         },
-      },
-      {
-        heading: { en: "Compliant by design", de: "Konform per Design" },
-        body: {
-          en: "Every transaction is signed by a Fiskaly-certified TSE module and exported in DSFinV-K format for German tax audits. GoBD-compliant journaling, automatic DATEV exports and immutable audit logs are included in every plan — no add-ons, no surprise invoices when the Finanzamt comes knocking.",
-          de: "Jede Transaktion wird durch ein Fiskaly-zertifiziertes TSE-Modul signiert und im DSFinV-K-Format für deutsche Betriebsprüfungen exportiert. GoBD-konformes Journal, automatische DATEV-Exporte und unveränderliche Audit-Logs sind in jedem Paket enthalten — ohne Zusatzkosten und ohne Überraschungen bei einer Betriebsprüfung.",
+        bullets: {
+          en: [
+            "Required choices (e.g. dough, size) can't be forgotten",
+            "Extras with surcharge per size, ingredients removed with “without”",
+            "“Add with AI”: dictate the order instead of typing it",
+          ],
+          de: [
+            "Pflichtauswahl (z. B. Teig, Größe) kann nicht vergessen werden",
+            "Extras mit Aufpreis je Größe, Zutaten per „ohne“ abbestellen",
+            "„Mit KI hinzufügen“: Bestellung diktieren statt tippen",
+          ],
+        },
+        image: "pos-tables.webp",
+        imageAlt: {
+          en: "Option dialog for a pizza on a tablet next to a handheld showing the order",
+          de: "Optionsdialog einer Pizza auf dem Tablet neben einem Handheld mit der Bestellung",
         },
       },
       {
         heading: {
-          en: "Offline-first, never out of service",
-          de: "Offline-first, nie außer Betrieb",
+          en: "Counter mode for quick sales",
+          de: "Thekenmodus für den schnellen Verkauf",
         },
         body: {
-          en: "Wi-Fi drops, providers go down, routers reboot. The GastroPos app keeps taking orders, printing receipts and signing TSE transactions locally on the device. The moment connectivity returns, everything syncs to the cloud in the correct order — no lost tickets, no manual reconciliation.",
-          de: "WLAN fällt aus, Provider haben Störungen, Router starten neu. Die GastroPos-App nimmt weiter Bestellungen entgegen, druckt Bons und signiert TSE-Transaktionen lokal auf dem Gerät. Sobald die Verbindung steht, wird alles in der richtigen Reihenfolge in die Cloud synchronisiert — keine verlorenen Bons, keine manuelle Abstimmung.",
+          en: "For takeaways, cafés and bakeries: no tables, just sell. Tap a price and the item is on the receipt; scan a barcode with a USB scanner or the camera. Open-price items, quick cash or card buttons and the full payment dialog are one tap away — ideal on a Sunmi countertop POS with built-in printer.",
+          de: "Für Imbiss, Café und Bäckerei: ohne Tische, einfach verkaufen. Preis antippen und der Artikel steht auf dem Bon; Barcodes per Scanner oder Kamera erfassen. Freie Preise, „Bar passend“ und „Karte“ sowie der vollständige Bezahldialog sind nur einen Tipp entfernt — ideal auf einer Sunmi-Theken-Kasse mit eingebautem Drucker.",
+        },
+        bullets: {
+          en: [
+            "Eat-in / takeaway switch with the right VAT rate",
+            "Change, discount, tip and vouchers in one payment dialog",
+            "Optional offline checkout if the internet drops",
+          ],
+          de: [
+            "Umschalter Im Haus / Außer Haus mit dem richtigen Steuersatz",
+            "Rückgeld, Rabatt, Trinkgeld und Gutscheine in einem Bezahldialog",
+            "Optionales Offline-Kassieren bei Internetausfall",
+          ],
+        },
+        image: "pos-counter.webp",
+        imageAlt: {
+          en: "Payment dialog of the counter mode on a Sunmi-style countertop POS",
+          de: "Bezahldialog des Thekenmodus auf einer Sunmi-Theken-Kasse",
         },
       },
       {
         heading: {
-          en: "From order to ledger in one platform",
-          de: "Vom Auftrag bis zum Hauptbuch in einer Plattform",
+          en: "Splitting the bill without the maths",
+          de: "Rechnung teilen ohne Kopfrechnen",
         },
         body: {
-          en: "Orders flow into the kitchen display, payments settle through your preferred PSP, inventory deducts in real time, and end-of-day cash reconciles automatically into DATEV. No CSV exports, no spreadsheets, no friction between your service, your accountant and your tax advisor.",
-          de: "Bestellungen fließen in den Küchenmonitor, Zahlungen werden über Ihren bevorzugten PSP abgewickelt, Bestände werden in Echtzeit abgebucht und der Tagesabschluss läuft automatisch in DATEV. Keine CSV-Exporte, keine Tabellen, keine Reibung zwischen Service, Buchhaltung und Steuerberater.",
+          en: "Guests pay together or separately: select items one by one and move them to a separate bill, split a payment across cash and card, or split and merge whole tables. The receipt prints on the printer you assigned — at the bar, at the counter or on the handheld.",
+          de: "Gäste zahlen zusammen oder getrennt: Artikel einzeln auswählen und auf eine eigene Rechnung legen, einen Betrag auf Bar und Karte aufteilen oder ganze Tische teilen und zusammenlegen. Die Rechnung druckt auf dem zugewiesenen Drucker — an der Bar, an der Theke oder am Handheld.",
+        },
+        bullets: {
+          en: [
+            "Card payment via ZVT terminal, SumUp or Zettle",
+            "Digital receipt via QR code or email",
+            "Business receipt and company invoice on request",
+          ],
+          de: [
+            "Kartenzahlung über ZVT-Terminal, SumUp oder Zettle",
+            "Digitaler Beleg per QR-Code oder E-Mail",
+            "Bewirtungsbeleg und Firmenrechnung auf Wunsch",
+          ],
+        },
+        image: "pos-split.webp",
+        imageAlt: {
+          en: "Separate payment: items selected for a second bill on a tablet",
+          de: "Getrennt zahlen: Artikel für eine zweite Rechnung auf dem Tablet ausgewählt",
         },
       },
       {
-        heading: { en: "Built for every kind of venue", de: "Für jede Art von Betrieb gebaut" },
-        body: {
-          en: "Full-service restaurants use course timing and table maps. Quick-service counters use fast tiles and one-tap modifiers. Bars use tab management and pre-authorisation. Bakeries use scale integration and label printing. Retailers use barcode scanning and serial tracking. One platform, configured to your floor.",
-          de: "Restaurants nutzen Gangsteuerung und Tischplan. Schnellgastronomie nutzt schnelle Kacheln und Ein-Klick-Modifikatoren. Bars nutzen Tab-Verwaltung und Vorautorisierung. Bäckereien nutzen Waagenanbindung und Etikettendruck. Händler nutzen Barcode-Scanning und Seriennummern-Tracking. Eine Plattform, an Ihren Betrieb angepasst.",
+        heading: {
+          en: "Compliant in Germany and Austria",
+          de: "Rechtssicher in Deutschland und Österreich",
         },
-      },
-      {
-        heading: { en: "Live in under 20 minutes", de: "In unter 20 Minuten einsatzbereit" },
         body: {
-          en: "Import your menu from a spreadsheet or your previous system, pair your printer and TSE, train your team in a 30-minute walkthrough. Most venues take their first live order on the same day they sign up — and our 24/7 support is one tap away if you need a hand.",
-          de: "Importieren Sie Ihre Karte aus einer Tabelle oder Ihrem Altsystem, koppeln Sie Drucker und TSE, schulen Sie Ihr Team in einem 30-Minuten-Walkthrough. Die meisten Betriebe nehmen die erste Bestellung am gleichen Tag entgegen — und unser 24/7-Support ist nur einen Tipp entfernt, falls Sie Hilfe brauchen.",
+          en: "Every receipt is signed by the fiskaly cloud TSE (Austria: RKSV) — no TSE hardware needed. Z-reports can be created automatically at a time of your choice and sent to your tax advisor; DATEV (SKR03/04/07), GoBD archive and DSFinV-K exports are available at any time.",
+          de: "Jeder Beleg wird von der fiskaly Cloud-TSE signiert (Österreich: RKSV) — ganz ohne TSE-Hardware. Z-Berichte entstehen auf Wunsch automatisch zur gewünschten Uhrzeit und gehen per E-Mail an Ihren Steuerberater; DATEV- (SKR03/04/07), GoBD- und DSFinV-K-Exporte sind jederzeit abrufbar.",
+        },
+        bullets: {
+          en: [
+            "Cancellations as signed counter-receipts — originals stay untouched",
+            "Digital cash book with gap-free numbering",
+            "Separate tax advisor login",
+          ],
+          de: [
+            "Stornos als signierte Gegenbelege — Originale bleiben unverändert",
+            "Digitales Kassenbuch mit lückenloser Nummerierung",
+            "Eigener Zugang für den Steuerberater",
+          ],
+        },
+        image: "pos-compliance.webp",
+        imageAlt: {
+          en: "List of Z-reports with totals and details on a tablet",
+          de: "Liste der Z-Berichte mit Summen und Details auf dem Tablet",
         },
       },
     ],
     faq: [
       {
         q: {
-          en: "Is GastroPos POS TSE-compliant in Germany?",
-          de: "Ist die Kasse in Deutschland TSE-konform?",
+          en: "Which devices does GastroPos run on?",
+          de: "Auf welchen Geräten läuft GastroPos?",
         },
         a: {
-          en: "Yes. We are an official Fiskaly partner and the cloud-TSE is activated in one click — no additional hardware required. DSFinV-K exports and GoBD journaling are included in every plan.",
-          de: "Ja. Wir sind offizieller Fiskaly-Partner und die Cloud-TSE wird mit einem Klick aktiviert — ohne zusätzliche Hardware. DSFinV-K-Exporte und GoBD-Journal sind in jedem Paket enthalten.",
-        },
-      },
-      {
-        q: { en: "What hardware do I need?", de: "Welche Hardware benötige ich?" },
-        a: {
-          en: "Any Android tablet or iPad, a Bluetooth or LAN receipt printer, and a cash drawer if you accept cash. Optional: barcode scanner, scale, kitchen display, customer-facing display. We also resell certified bundles for plug-and-play setup.",
-          de: "Ein beliebiges Android-Tablet oder iPad, einen Bluetooth- oder LAN-Bondrucker und eine Kassenschublade für Bargeld. Optional: Barcode-Scanner, Waage, Küchenmonitor, Kundendisplay. Wir verkaufen auch zertifizierte Komplettpakete für Plug-and-Play.",
+          en: "On Android and iOS tablets and smartphones, on Windows and in the browser. Sunmi and iMin POS devices are supported including their built-in receipt printer and customer display.",
+          de: "Auf Android- und iOS-Tablets und -Smartphones, unter Windows und im Browser. Sunmi- und iMin-Kassen werden inklusive eingebautem Bondrucker und Kundendisplay unterstützt.",
         },
       },
       {
-        q: { en: "Can it work without internet?", de: "Funktioniert es ohne Internet?" },
+        q: { en: "Is GastroPos TSE-compliant?", de: "Ist GastroPos TSE-konform?" },
         a: {
-          en: "Yes. The app is offline-first; orders queue locally, TSE signatures are stored on the device, and everything syncs automatically once connectivity returns.",
-          de: "Ja. Die App ist offline-fähig; Bestellungen werden lokal gespeichert, TSE-Signaturen auf dem Gerät abgelegt und alles synchronisiert sich automatisch wieder.",
+          en: "Yes. GastroPos uses the fiskaly cloud TSE, which is booked as an add-on and activated in the settings — no hardware needed. DSFinV-K exports are retrieved directly from fiskaly. In Austria, RKSV is supported.",
+          de: "Ja. GastroPos nutzt die fiskaly Cloud-TSE, die als Zusatzfunktion gebucht und in den Einstellungen aktiviert wird — ganz ohne Hardware. DSFinV-K-Exporte werden direkt bei fiskaly abgerufen. In Österreich wird die RKSV unterstützt.",
         },
       },
       {
-        q: { en: "What does the AI actually do?", de: "Was macht die KI konkret?" },
+        q: { en: "What hardware do I need?", de: "Welche Hardware brauche ich?" },
         a: {
-          en: "It makes onboarding faster: it creates your menu and table layout for you, sets up your printers, and answers questions about the system so you find solutions faster.",
-          de: "Sie beschleunigt das Onboarding: Sie erstellt Ihre Speisekarte und Ihren Tischplan, richtet Ihre Drucker ein und beantwortet Fragen zum System, damit Sie schneller Lösungen finden.",
-        },
-      },
-      {
-        q: { en: "How long does setup take?", de: "Wie lange dauert die Einrichtung?" },
-        a: {
-          en: "Most venues are live in under 20 minutes. Menu import, hardware pairing, TSE activation and a team walkthrough all happen on day one.",
-          de: "Die meisten Betriebe sind in unter 20 Minuten live. Karte importieren, Hardware koppeln, TSE aktivieren und Team einweisen — alles am ersten Tag.",
+          en: "A tablet or smartphone is enough to start. Add an ESC/POS receipt printer (Wi-Fi/LAN, Bluetooth or USB), a cash drawer connected to the printer, a barcode scanner and a card terminal (ZVT, SumUp or Zettle) as needed — or use an all-in-one Sunmi device.",
+          de: "Zum Start genügt ein Tablet oder Smartphone. Nach Bedarf kommen ein ESC/POS-Bondrucker (WLAN/LAN, Bluetooth oder USB), eine Kassenschublade am Drucker, ein Barcode-Scanner und ein Kartenterminal (ZVT, SumUp oder Zettle) hinzu — oder Sie nutzen ein All-in-one-Gerät von Sunmi.",
         },
       },
       {
         q: {
-          en: "Can I switch from my current POS without losing data?",
-          de: "Kann ich von meinem aktuellen Kassensystem wechseln, ohne Daten zu verlieren?",
+          en: "Can I keep selling if the internet goes down?",
+          de: "Kann ich bei Internetausfall weiter verkaufen?",
         },
         a: {
-          en: "Yes. We import your menu, customer database, and historical sales data from most major POS systems. Your accountant keeps a clean audit trail across the cutover.",
-          de: "Ja. Wir importieren Ihre Karte, Kundendatenbank und historische Umsätze aus den meisten gängigen Kassensystemen. Ihr Steuerberater erhält einen sauberen Prüfpfad über den Wechsel hinweg.",
+          en: "In counter mode, yes — if “Allow offline checkout” is enabled. The receipts are stored on the device and transmitted automatically once the connection is back. Table service and the kitchen display need an internet connection.",
+          de: "Im Thekenmodus ja — wenn „Offline kassieren erlauben“ eingeschaltet ist. Die Belege werden auf dem Gerät gespeichert und automatisch übertragen, sobald die Verbindung wieder steht. Tischservice und Küchenmonitor benötigen eine Internetverbindung.",
+        },
+      },
+      {
+        q: { en: "What does the AI do?", de: "Was macht die KI?" },
+        a: {
+          en: "It reads your menu from photos or a PDF and creates categories, products and prices. The assistant creates tables and areas, sets up and tests printers, takes orders by voice, and answers questions about the system.",
+          de: "Sie liest Ihre Speisekarte aus Fotos oder einem PDF und legt Kategorien, Produkte und Preise an. Der Assistent erstellt Tische und Bereiche, richtet Drucker ein und testet sie, nimmt Bestellungen per Sprache auf und beantwortet Fragen zum System.",
         },
       },
       {
         q: {
-          en: "Does it work for multiple locations?",
-          de: "Funktioniert es für mehrere Standorte?",
+          en: "Which languages does the app support?",
+          de: "Welche Sprachen unterstützt die App?",
         },
         a: {
-          en: "Yes. Manage menus, prices, staff and reporting across unlimited locations from one dashboard, with per-location overrides where you need them.",
-          de: "Ja. Karten, Preise, Personal und Reporting für unbegrenzt viele Standorte über ein Dashboard — mit Anpassungen pro Standort, wo nötig.",
+          en: "The POS app is available in German, English and Turkish. The guest QR ordering page additionally speaks Arabic, Spanish and French.",
+          de: "Die Kassen-App gibt es auf Deutsch, Englisch und Türkisch. Die QR-Bestellseite für Gäste spricht zusätzlich Arabisch, Spanisch und Französisch.",
         },
       },
     ],
   },
   "waiter-ordering": {
     slug: "waiter-ordering",
-    eyebrow: { en: "Waiter Ordering", de: "Kellner-Bestellung" },
+    eyebrow: {
+      en: "Waiter ordering",
+      de: "Mobile Bestellaufnahme",
+    },
     title: {
-      en: "Capture orders at the table and send them straight to the kitchen.",
-      de: "Bestellungen am Tisch aufnehmen und direkt an die Küche senden.",
+      en: "Take orders at the table — and send them straight to the kitchen.",
+      de: "Bestellungen am Tisch aufnehmen — und direkt in die Küche schicken.",
     },
     lede: {
-      en: "The Waiter Ordering module lets your service team take a guest's order on a phone or tablet and fire it to the kitchen display without ever walking back to a register — so waiters stay attentive to guests instead of wasting time on the floor.",
-      de: "Mit dem Kellner-Bestellmodul nimmt Ihr Service-Team Bestellungen auf Smartphone oder Tablet auf und sendet sie an den Küchenmonitor, ohne zur Kasse zurückzulaufen — so bleibt Ihr Team beim Gast und verliert keine Zeit auf dem Weg dorthin.",
+      en: "Your service team takes orders on a smartphone, tablet or Sunmi handheld, sends them to the kitchen display or kitchen printer with one tap and collects payment right at the table.",
+      de: "Ihr Service nimmt Bestellungen auf dem Smartphone, Tablet oder Sunmi-Handheld auf, schickt sie mit einem Tipp an Küchenmonitor oder Küchendrucker und kassiert direkt am Tisch.",
     },
     metaTitle: {
-      en: "Waiter Ordering Module for Restaurants | GastroPos",
-      de: "Kellner-Bestellmodul für die Gastronomie | GastroPos",
+      en: "Mobile Waiter Ordering on Phone & Handheld | GastroPos",
+      de: "Mobile Bestellaufnahme für den Service | GastroPos",
     },
     metaDescription: {
-      en: "Waiter ordering module: take orders tableside on a phone or tablet, send them to the kitchen display, manage notifications and accept payment at the table.",
-      de: "Kellner-Bestellmodul: Bestellungen am Tisch per Smartphone oder Tablet aufnehmen, an den Küchenmonitor senden, Benachrichtigungen verwalten und am Tisch kassieren.",
+      en: "Take orders tableside on Android and iOS phones, tablets and Sunmi handhelds. Send to the kitchen, get notified when food is ready, split and pay at the table.",
+      de: "Bestellungen am Tisch auf Android- und iOS-Smartphones, Tablets und Sunmi-Handhelds aufnehmen, an die Küche senden, Abholbereit-Meldungen erhalten, getrennt zahlen.",
     },
+    heroImage: "waiter-hero.webp",
+    heroAlt: {
+      en: "GastroPos on a tablet and two handhelds: table overview, notifications and order entry",
+      de: "GastroPos auf Tablet und zwei Handhelds: Tischübersicht, Mitteilungen und Bestellaufnahme",
+    },
+    highlights: [
+      {
+        value: {
+          en: "Phone & handheld",
+          de: "Smartphone & Handheld",
+        },
+        label: {
+          en: "Android, iOS and Sunmi devices with printer",
+          de: "Android, iOS und Sunmi-Geräte mit Drucker",
+        },
+      },
+      {
+        value: {
+          en: "1 tap",
+          de: "1 Tipp",
+        },
+        label: {
+          en: "from the table to the kitchen",
+          de: "vom Tisch in die Küche",
+        },
+      },
+      {
+        value: {
+          en: "Live alerts",
+          de: "Live-Meldungen",
+        },
+        label: {
+          en: "order ready, waiter called, bill requested",
+          de: "abholbereit, Kellner gerufen, Rechnung gewünscht",
+        },
+      },
+      {
+        value: {
+          en: "By voice",
+          de: "Per Sprache",
+        },
+        label: {
+          en: "“Add with AI” takes the order for you",
+          de: "„Mit KI hinzufügen“ nimmt die Bestellung auf",
+        },
+      },
+    ],
     features: {
       en: [
-        "Take orders tableside on any Android or iOS device",
-        "Send orders straight to the Kitchen Display module",
-        "Every waiter device works as a POS — accept payment at the table",
-        "Pay together or split: select items one by one and add them to a separate bill",
-        "Print the invoice on a POS printer defined in the system after payment",
-        "Notifications panel with a red badge counter for urgent updates",
-        "Receive alerts from the kitchen module and from the self-ordering module (e.g. bill requests)",
-        "No double trips — waiters stay with guests instead of walking to the register",
+        "Runs on Android and iOS phones and tablets and on Sunmi handhelds",
+        "Table overview by area with live status, total and time of the first order",
+        "Sizes, extras, required choices, “without” ingredients and notes",
+        "Courses: group items into courses for the kitchen",
+        "Notifications with red badge: order ready, waiter called, bill requested",
+        "Claim a notification so colleagues know you are on it",
+        "Pay together or separately, split across cash and card",
+        "Move items or whole tables, split and merge tables",
       ],
       de: [
-        "Bestellungen am Tisch auf jedem Android- oder iOS-Gerät aufnehmen",
-        "Bestellungen direkt an das Küchenmonitor-Modul senden",
-        "Jedes Kellner-Gerät ist auch eine Kasse — am Tisch kassieren",
-        "Gemeinsam oder getrennt zahlen: Artikel einzeln auswählen und auf eine separate Rechnung setzen",
-        "Nach der Zahlung Druck der Rechnung auf einem im System definierten POS-Drucker",
-        "Benachrichtigungspanel mit rotem Badge-Counter für wichtige Hinweise",
-        "Hinweise aus dem Küchenmodul und dem Self-Ordering-Modul (z. B. Rechnungswünsche)",
-        "Keine Doppelwege — Ihr Service bleibt beim Gast statt zur Kasse zu laufen",
+        "Läuft auf Android- und iOS-Smartphones und -Tablets sowie auf Sunmi-Handhelds",
+        "Tischübersicht nach Bereichen mit Live-Status, Summe und Uhrzeit der ersten Bestellung",
+        "Größen, Extras, Pflichtauswahl, „ohne“-Zutaten und Wünsche",
+        "Gänge: Artikel für die Küche nach Gängen gruppieren",
+        "Mitteilungen mit rotem Zähler: abholbereit, Kellner gerufen, Rechnung angefordert",
+        "Mitteilungen übernehmen, damit Kollegen wissen, wer sich kümmert",
+        "Zusammen oder getrennt zahlen, Betrag auf Bar und Karte aufteilen",
+        "Artikel oder ganze Tische umbuchen, Tische teilen und zusammenlegen",
       ],
     },
     sections: [
       {
-        heading: { en: "Orders captured at the table", de: "Bestellungen direkt am Tisch" },
+        heading: {
+          en: "The order goes where it belongs — immediately",
+          de: "Die Bestellung landet sofort da, wo sie hingehört",
+        },
         body: {
-          en: "The Waiter Ordering module is designed for your service team to capture guest orders and send them to the Kitchen Display module instantly. Waiters fire the order straight from the table so they don't have to walk back and forth — that means more attention for the guest and less time spent moving around waiting for an order to be processed.",
-          de: "Das Kellner-Bestellmodul ist dafür gemacht, dass Ihr Service-Team Bestellungen direkt am Tisch aufnimmt und sofort an den Küchenmonitor sendet. Bestellungen werden vom Tisch aus abgeschickt, sodass kein Hin- und Hergehen mehr nötig ist — mehr Aufmerksamkeit für den Gast und weniger Zeitverlust beim Warten.",
+          en: "Waiters pick the table, add items from the menu and tap “Send”. Drinks print at the bar, food appears on the kitchen display — routed by category. No walking to the register, no handwritten tickets.",
+          de: "Der Service wählt den Tisch, fügt Artikel aus der Speisekarte hinzu und tippt auf „Senden“. Getränke drucken an der Bar, Speisen erscheinen auf dem Küchenmonitor — sortiert nach Kategorie. Kein Weg zur Kasse, keine handgeschriebenen Bons.",
+        },
+        bullets: {
+          en: [
+            "Tap a price to add an item instantly, long-press for details",
+            "Review screen before sending — change quantity, price or note",
+            "Print routing per category and print job",
+          ],
+          de: [
+            "Preis antippen fügt sofort hinzu, lange drücken zeigt Details",
+            "Prüfansicht vor dem Senden — Menge, Preis oder Wunsch ändern",
+            "Druck-Routing nach Kategorie und Druckauftrag",
+          ],
+        },
+        image: "waiter-order.webp",
+        imageAlt: {
+          en: "Menu and order review on two handhelds",
+          de: "Speisekarte und Bestellübersicht auf zwei Handhelds",
         },
       },
       {
         heading: {
-          en: "Notifications you can't miss",
-          de: "Benachrichtigungen, die nicht untergehen",
+          en: "Never miss a ready plate or a waving guest",
+          de: "Kein fertiges Gericht und kein winkender Gast wird übersehen",
         },
         body: {
-          en: "A red badge counter shows how many notifications are waiting for the waiter's attention, so nothing urgent gets lost in a busy service. Tapping the Notifications icon opens a side panel that lists updates not only from the kitchen module but also from the self-ordering module — for example when a guest at another table requests their bill.",
-          de: "Ein roter Badge-Counter zeigt an, wie viele Benachrichtigungen auf das Service-Team warten — damit im Trubel nichts Wichtiges untergeht. Ein Tipp auf das Benachrichtigungs-Symbol öffnet ein Seitenpanel mit Hinweisen sowohl aus dem Küchenmodul als auch aus dem Self-Ordering-Modul, zum Beispiel wenn ein Gast an einem anderen Tisch die Rechnung anfordert.",
+          en: "When the kitchen marks an order as ready, or a guest calls a waiter or asks for the bill via QR code, everyone on duty gets a notification. A waiter claims it with one tap — the others see who is handling it.",
+          de: "Meldet die Küche eine Bestellung als fertig oder ruft ein Gast per QR-Code den Kellner oder die Rechnung, bekommt der ganze Service eine Mitteilung. Ein Tipp auf „Übernehmen“ — und alle sehen, wer sich kümmert.",
+        },
+        bullets: {
+          en: [
+            "Red counter on the bell shows open notifications",
+            "“Served” directly from the notification",
+            "Bill requests show the preferred payment method",
+          ],
+          de: [
+            "Roter Zähler an der Glocke zeigt offene Mitteilungen",
+            "„Serviert“ direkt aus der Mitteilung",
+            "Rechnungswunsch zeigt die gewünschte Zahlungsart",
+          ],
+        },
+        image: "waiter-notify.webp",
+        imageAlt: {
+          en: "Notifications panel with ready orders and guest requests",
+          de: "Mitteilungen mit abholbereiten Bestellungen und Gästewünschen",
         },
       },
       {
         heading: {
-          en: "Payment at the table — together or split",
-          de: "Zahlung am Tisch — gemeinsam oder getrennt",
+          en: "Payment at the table",
+          de: "Kassieren direkt am Tisch",
         },
         body: {
-          en: "Because every waiter device acts as a POS, payment can be taken right at the table. Pay together or split the bill: items to be paid separately can be selected one by one and added to another list. Once the payment type is chosen, the invoice is generated and printed on a POS printer defined in the system.",
-          de: "Da jedes Kellner-Gerät auch als Kasse fungiert, kann direkt am Tisch kassiert werden. Gemeinsam oder getrennt zahlen: Artikel für eine separate Rechnung lassen sich einzeln auswählen und einer weiteren Liste hinzufügen. Nach Auswahl der Zahlungsart wird die Rechnung erzeugt und auf einem im System definierten POS-Drucker gedruckt.",
+          en: "Every waiter device is a complete till. Take payment together or separately, add a tip or discount, redeem vouchers and print the receipt on the handheld or on the assigned printer. Card payments run on a ZVT terminal, SumUp or Zettle.",
+          de: "Jedes Service-Gerät ist eine vollwertige Kasse. Zusammen oder getrennt kassieren, Trinkgeld oder Rabatt erfassen, Gutscheine einlösen und den Beleg am Handheld oder am zugewiesenen Drucker drucken. Kartenzahlungen laufen über ZVT-Terminal, SumUp oder Zettle.",
+        },
+        bullets: {
+          en: [
+            "Every receipt signed by the fiskaly TSE (add-on)",
+            "Digital receipt via QR code or email",
+            "Tips recorded per waiter",
+          ],
+          de: [
+            "Jeder Beleg mit fiskaly-TSE signiert (Zusatzfunktion)",
+            "Digitaler Beleg per QR-Code oder E-Mail",
+            "Trinkgeld pro Kellner erfasst",
+          ],
+        },
+        image: "waiter-pay.webp",
+        imageAlt: {
+          en: "Payment dialog with change, discount and tip",
+          de: "Bezahldialog mit Rückgeld, Rabatt und Trinkgeld",
         },
       },
     ],
     faq: [
       {
-        q: { en: "Do I need to buy special handhelds?", de: "Brauche ich spezielle Handhelds?" },
-        a: {
-          en: "No. The module runs on any Android or iOS phone or tablet your team already owns.",
-          de: "Nein. Das Modul läuft auf jedem Android- oder iOS-Smartphone oder Tablet, das Ihr Team bereits besitzt.",
+        q: {
+          en: "Do I need special handhelds?",
+          de: "Brauche ich spezielle Handhelds?",
         },
-      },
-      {
-        q: { en: "Where do the orders go?", de: "Wohin gehen die Bestellungen?" },
         a: {
-          en: "Straight to the Kitchen Display module the moment the waiter sends them from the table.",
-          de: "Direkt an das Küchenmonitor-Modul, sobald der Kellner sie vom Tisch aus abschickt.",
+          en: "No. Any current Android or iOS smartphone works. If you want a printer in the waiter’s hand, Sunmi handhelds with a built-in receipt printer are supported.",
+          de: "Nein. Jedes aktuelle Android- oder iOS-Smartphone funktioniert. Wer einen Drucker in der Hand des Kellners möchte, nutzt ein Sunmi-Handheld mit eingebautem Bondrucker.",
         },
       },
       {
         q: {
-          en: "Can the waiter take payment at the table?",
-          de: "Kann der Kellner am Tisch kassieren?",
+          en: "Where do the orders go?",
+          de: "Wohin gehen die Bestellungen?",
         },
         a: {
-          en: "Yes. Every waiter device acts as a POS. After payment, the invoice is printed on the POS printer defined in the system.",
-          de: "Ja. Jedes Kellner-Gerät ist auch eine Kasse. Nach der Zahlung wird die Rechnung auf dem im System hinterlegten POS-Drucker gedruckt.",
-        },
-      },
-      {
-        q: { en: "Can guests split the bill?", de: "Können Gäste die Rechnung aufteilen?" },
-        a: {
-          en: "Yes. Items to be paid separately can be selected one by one and added to another list, so each guest can settle their own share.",
-          de: "Ja. Zu trennende Artikel können einzeln ausgewählt und einer weiteren Liste hinzugefügt werden, sodass jeder Gast seinen Anteil getrennt bezahlen kann.",
+          en: "To the kitchen display and/or the kitchen and bar printers — depending on the category of each item.",
+          de: "An den Küchenmonitor und/oder an Küchen- und Bardrucker — je nach Kategorie des Artikels.",
         },
       },
       {
         q: {
-          en: "What kind of notifications does the waiter receive?",
-          de: "Welche Benachrichtigungen erhält der Kellner?",
+          en: "Can several waiters work on the same table?",
+          de: "Können mehrere Kellner am selben Tisch arbeiten?",
         },
         a: {
-          en: "Updates from the kitchen module (e.g. an order is ready) and from the self-ordering module (e.g. a guest requests their bill). A red badge counter shows how many are waiting.",
-          de: "Hinweise aus dem Küchenmodul (z. B. eine Bestellung ist fertig) und aus dem Self-Ordering-Modul (z. B. ein Gast fordert die Rechnung an). Ein roter Badge-Counter zeigt die Anzahl wartender Hinweise.",
+          en: "Yes. All devices are synchronised in real time, so every waiter sees the current state of every table.",
+          de: "Ja. Alle Geräte sind in Echtzeit synchronisiert — jeder sieht den aktuellen Stand jedes Tisches.",
+        },
+      },
+      {
+        q: {
+          en: "Can guests split the bill?",
+          de: "Können Gäste getrennt zahlen?",
+        },
+        a: {
+          en: "Yes. Select the items one by one and move them to a separate bill, or split one amount across cash and card.",
+          de: "Ja. Artikel einzeln auswählen und auf eine eigene Rechnung legen oder einen Betrag auf Bar und Karte aufteilen.",
         },
       },
     ],
   },
-
   "qr-ordering": {
     slug: "qr-ordering",
-    eyebrow: { en: "Self-Ordering via QR Code", de: "Selbstbestellung per QR-Code" },
+    eyebrow: {
+      en: "QR self-ordering",
+      de: "Selbstbestellung per QR-Code",
+    },
     title: {
-      en: "Guests scan, order and call you — straight from their own phone.",
-      de: "Gäste scannen, bestellen und rufen Sie — direkt vom eigenen Smartphone.",
+      en: "Guests order from their own phone — no app needed.",
+      de: "Gäste bestellen vom eigenen Handy — ganz ohne App.",
     },
     lede: {
-      en: "Place a QR code on the table and your guests do the rest. They open your menu in any browser, place orders, call a waiter or request the bill — no app download, no waiting, less work for your team.",
-      de: "Platzieren Sie einen QR-Code am Tisch und Ihre Gäste erledigen den Rest. Sie öffnen Ihre Karte in jedem Browser, geben Bestellungen auf, rufen einen Kellner oder fordern die Rechnung an — ohne App-Download, ohne Wartezeit und mit weniger Aufwand für Ihr Team.",
+      en: "Every table gets its own QR code. Guests open your menu in the browser — no app — order with sizes and extras, and the order lands on your kitchen display and POS like any other order.",
+      de: "Jeder Tisch bekommt seinen eigenen QR-Code. Gäste öffnen Ihre Speisekarte im Browser — ohne App —, bestellen mit Größen und Extras, und die Bestellung landet wie jede andere auf Küchenmonitor und Kasse.",
     },
     metaTitle: {
-      en: "QR Code Self-Ordering for Restaurants & Cafés | GastroPos",
-      de: "QR-Code-Selbstbestellung für Restaurants & Cafés | GastroPos",
+      en: "QR Code Table Ordering for Restaurants | GastroPos",
+      de: "QR-Code-Bestellung am Tisch für die Gastronomie | GastroPos",
     },
     metaDescription: {
-      en: "Activate self-ordering per table with a QR code. Guests scan, browse the menu, order, call a waiter or request the bill — no app, no extra hardware, lower staff cost.",
-      de: "Aktivieren Sie die Selbstbestellung pro Tisch per QR-Code. Gäste scannen, durchstöbern die Karte, bestellen, rufen einen Kellner oder fordern die Rechnung an — ohne App, ohne Zusatzhardware, mit weniger Personalaufwand.",
+      en: "QR self-ordering: unique code per table, menu in the browser, sizes and extras, call waiter, request bill, allergens, six guest languages — connected to POS and kitchen display.",
+      de: "Selbstbestellung per QR-Code: eigener Code pro Tisch, Speisekarte im Browser, Größen und Extras, Kellner rufen, Rechnung anfordern, Allergene, sechs Sprachen — direkt mit Kasse und Küchenmonitor verbunden.",
     },
+    heroImage: "qr-hero.webp",
+    heroAlt: {
+      en: "Table QR code in the POS and the guest ordering page on two smartphones",
+      de: "Tisch-QR-Code in der Kasse und die Bestellseite für Gäste auf zwei Smartphones",
+    },
+    highlights: [
+      {
+        value: {
+          en: "No app",
+          de: "Ohne App",
+        },
+        label: {
+          en: "opens in any mobile browser",
+          de: "öffnet in jedem Handy-Browser",
+        },
+      },
+      {
+        value: {
+          en: "6 languages",
+          de: "6 Sprachen",
+        },
+        label: {
+          en: "DE, EN, TR, AR, ES, FR — automatic",
+          de: "DE, EN, TR, AR, ES, FR — automatisch",
+        },
+      },
+      {
+        value: {
+          en: "1 QR per table",
+          de: "1 QR pro Tisch",
+        },
+        label: {
+          en: "renew at any time",
+          de: "jederzeit erneuerbar",
+        },
+      },
+      {
+        value: {
+          en: "Allergens",
+          de: "Allergene",
+        },
+        label: {
+          en: "shown on every dish",
+          de: "bei jedem Gericht sichtbar",
+        },
+      },
+    ],
     features: {
       en: [
-        "Unique QR code generated per table",
-        "Activate self-ordering for any table — keep classic service on others",
-        "No app download — opens in every mobile browser",
-        "Place orders, call the waiter or request the bill in one tap",
-        "Full menu with categories, search, photos and descriptions",
-        "Remove ingredients and pick variants (e.g. dressing, size)",
-        "Live cart with item count and total",
-        "Orders flow directly to the kitchen display and POS",
-        "Regenerate or renew a table's QR code at any time",
-        "Lower staff cost — fewer trips to the table",
+        "Unique QR code per table — download, print or renew",
+        "Guest home screen: order, my orders, call waiter, bill please",
+        "Menu with categories, search, descriptions and photos",
+        "Sizes, required choices, extras and removed ingredients",
+        "Ingredients, allergens and additives per dish",
+        "Guest interface follows the phone language (6 languages)",
+        "Optional: approve orders before they reach the kitchen",
+        "Optional: anonymous ordering or verification by phone",
+        "Optional: new QR code after payment",
+        "Your colours on the ordering page",
       ],
       de: [
-        "Eindeutiger QR-Code pro Tisch",
-        "Selbstbestellung pro Tisch aktivierbar — klassischer Service bleibt an anderen möglich",
-        "Kein App-Download — öffnet in jedem mobilen Browser",
-        "Bestellen, Kellner rufen oder Rechnung anfordern mit einem Tipp",
-        "Komplette Karte mit Kategorien, Suche, Bildern und Beschreibungen",
-        "Zutaten entfernen und Varianten wählen (z. B. Dressing, Größe)",
-        "Live-Warenkorb mit Artikelanzahl und Gesamtsumme",
-        "Bestellungen laufen direkt in den Küchenmonitor und an die Kasse",
-        "QR-Code pro Tisch jederzeit neu generieren",
-        "Weniger Personalaufwand — weniger Wege zum Tisch",
+        "Eigener QR-Code pro Tisch — herunterladen, drucken oder erneuern",
+        "Startseite für Gäste: bestellen, meine Bestellungen, Kellner rufen, Rechnung bitte",
+        "Speisekarte mit Kategorien, Suche, Beschreibungen und Fotos",
+        "Größen, Pflichtauswahl, Extras und abbestellte Zutaten",
+        "Zutaten, Allergene und Zusatzstoffe pro Gericht",
+        "Oberfläche folgt der Handy-Sprache (6 Sprachen)",
+        "Optional: Bestellungen vor dem Küchenversand freigeben",
+        "Optional: anonym bestellen oder per Telefon verifizieren",
+        "Optional: neuer QR-Code nach der Zahlung",
+        "Ihre Farben auf der Bestellseite",
       ],
     },
     sections: [
       {
         heading: {
-          en: "Lower your staff cost without lowering your service",
-          de: "Personalkosten senken, ohne Service zu verlieren",
+          en: "Scan, browse, order — like a native app",
+          de: "Scannen, stöbern, bestellen — wie eine App",
         },
         body: {
-          en: "Self-ordering takes the most repetitive tasks off your team — handing out menus, walking to the table to take an order, returning to fetch a drink. Guests handle those steps themselves on their own phone, so the same crew can serve more tables on a busy night and focus on hospitality where it matters.",
-          de: "Selbstbestellung nimmt Ihrem Team die wiederkehrenden Aufgaben ab — Karten verteilen, Bestellung am Tisch aufnehmen, ein Getränk nachholen. Ihre Gäste erledigen diese Schritte selbst auf dem eigenen Smartphone, sodass dieselbe Crew an einem vollen Abend mehr Tische bedienen kann und sich auf echte Gastfreundschaft konzentriert.",
+          en: "Guests see your menu with categories and search, open a dish for details, choose size, dough or extras and add it to the cart. Prices and surcharges come straight from your POS menu — change them once, they are correct everywhere.",
+          de: "Gäste sehen Ihre Speisekarte mit Kategorien und Suche, öffnen ein Gericht, wählen Größe, Teig oder Extras und legen es in den Warenkorb. Preise und Aufpreise kommen direkt aus Ihrer Kassen-Speisekarte — einmal ändern, überall richtig.",
+        },
+        bullets: {
+          en: [
+            "Required choices are enforced",
+            "Allergens and additives on every dish",
+            "Dark mode for evening service",
+          ],
+          de: [
+            "Pflichtauswahl wird erzwungen",
+            "Allergene und Zusatzstoffe bei jedem Gericht",
+            "Dunkler Modus für den Abendservice",
+          ],
+        },
+        image: "qr-guest.webp",
+        imageAlt: {
+          en: "Guest menu and dish customisation on two smartphones",
+          de: "Speisekarte und Gericht-Anpassung auf zwei Smartphones",
         },
       },
       {
         heading: {
-          en: "Activate it per table — you stay in control",
-          de: "Pro Tisch aktivieren — Sie behalten die Kontrolle",
+          en: "Call the waiter, ask for the bill",
+          de: "Kellner rufen, Rechnung anfordern",
         },
         body: {
-          en: "Self-ordering is enabled once in the common settings, then activated table by table from Master Data → Tables. The system generates a unique QR code for each table that you save to your gallery and print on a tent card or sticker. Need to reset a code? Tap Renew and a new QR is issued instantly.",
-          de: "Die Selbstbestellung wird einmal in den allgemeinen Einstellungen aktiviert und anschließend pro Tisch unter Stammdaten → Tische freigeschaltet. Das System erzeugt einen eindeutigen QR-Code pro Tisch, den Sie in der Galerie speichern und auf einen Aufsteller oder Aufkleber drucken. Code zurücksetzen? Mit „Erneuern“ wird sofort ein neuer QR ausgestellt.",
+          en: "The guest home screen has big buttons for “Call waiter” and “Bill, please” — including the preferred payment method. Your team gets a notification on every device and claims it with one tap. Guests pay as usual through your staff.",
+          de: "Die Startseite hat große Schaltflächen für „Kellner rufen“ und „Rechnung bitte“ — inklusive gewünschter Zahlungsart. Ihr Team bekommt auf jedem Gerät eine Mitteilung und übernimmt sie mit einem Tipp. Bezahlt wird wie gewohnt beim Personal.",
+        },
+        bullets: {
+          en: [
+            "“My orders” shows what has been ordered",
+            "Table number attached automatically",
+            "Digital receipts for the guest",
+          ],
+          de: [
+            "„Meine Bestellungen“ zeigt alles Bestellte",
+            "Tischnummer automatisch zugeordnet",
+            "Digitale Belege für den Gast",
+          ],
+        },
+        image: "qr-hub.webp",
+        imageAlt: {
+          en: "Guest home screen with order, call waiter and bill buttons",
+          de: "Startseite für Gäste mit Bestellen, Kellner rufen und Rechnung",
         },
       },
       {
         heading: {
-          en: "Order, call a waiter, request the bill",
-          de: "Bestellen, Kellner rufen, Rechnung anfordern",
+          en: "You stay in control",
+          de: "Sie behalten die Kontrolle",
         },
         body: {
-          en: "After the scan, guests land on a clear welcome screen with four actions: Place order, My orders, Call waiter and Request bill. They browse categories, search dishes, open product details, remove ingredients and pick variants like dressing or size — exactly like a native app, but in the browser.",
-          de: "Nach dem Scan landen Gäste auf einer klaren Startseite mit vier Aktionen: Bestellung aufgeben, Meine Bestellungen, Kellner rufen und Rechnung anfordern. Sie durchstöbern Kategorien, suchen Gerichte, öffnen Produktdetails, entfernen Zutaten und wählen Varianten wie Dressing oder Größe — wie in einer nativen App, nur im Browser.",
+          en: "Switch self-ordering on in the settings and print the QR code of each table from Master data → Tables. Decide whether guests may order anonymously, whether staff approve orders first and whether the QR code is renewed after payment.",
+          de: "Schalten Sie die Selbstbestellung in den Einstellungen ein und drucken Sie den QR-Code jedes Tisches unter Stammdaten → Tische. Legen Sie fest, ob Gäste anonym bestellen dürfen, ob das Personal Bestellungen zuerst freigibt und ob der QR-Code nach der Zahlung erneuert wird.",
         },
-      },
-      {
-        heading: {
-          en: "Connected end to end with your kitchen and POS",
-          de: "Durchgängig mit Küche und Kasse verbunden",
+        bullets: {
+          en: [
+            "Approval display for staff",
+            "Renew a code instantly — the old one stops working",
+            "Hide categories or dishes from self-ordering",
+          ],
+          de: [
+            "Freigabe-Ansicht für das Personal",
+            "Code sofort erneuern — der alte wird ungültig",
+            "Kategorien oder Gerichte in der Selbstbestellung ausblenden",
+          ],
         },
-        body: {
-          en: "Every self-order lands in the same place as a waiter-entered order: on the kitchen display, on the POS and in your reports. There is no second system to reconcile and no manual re-typing — a self-order is just an order, with the table number already attached.",
-          de: "Jede Selbstbestellung landet an derselben Stelle wie eine vom Kellner aufgenommene Bestellung: auf dem Küchenmonitor, an der Kasse und in Ihren Auswertungen. Kein zweites System, das abgeglichen werden muss, kein manuelles Übertragen — eine Selbstbestellung ist einfach eine Bestellung, mit der Tischnummer bereits dran.",
+        image: "qr-admin.webp",
+        imageAlt: {
+          en: "Self-service settings in the POS",
+          de: "Selbstbedienungs-Einstellungen in der Kasse",
         },
       },
     ],
     faq: [
       {
-        q: { en: "Do guests have to install an app?", de: "Müssen Gäste eine App installieren?" },
+        q: {
+          en: "Do guests need to install an app?",
+          de: "Müssen Gäste eine App installieren?",
+        },
         a: {
-          en: "No. The menu opens in any mobile browser straight from the QR scan — iOS, Android, anything with a camera.",
-          de: "Nein. Die Karte öffnet sich in jedem mobilen Browser direkt aus dem QR-Scan — iOS, Android, alles mit Kamera.",
+          en: "No. The menu opens in the phone’s browser directly from the QR scan.",
+          de: "Nein. Die Speisekarte öffnet sich direkt nach dem Scan im Browser des Handys.",
         },
       },
       {
         q: {
-          en: "Can I enable self-ordering only for some tables?",
-          de: "Kann ich die Selbstbestellung nur für bestimmte Tische aktivieren?",
+          en: "Can guests pay on their phone?",
+          de: "Können Gäste am Handy bezahlen?",
         },
         a: {
-          en: "Yes. You enable the feature once in the common settings and then activate it table by table from Master Data → Tables. Other tables keep classic waiter service.",
-          de: "Ja. Sie aktivieren die Funktion einmal in den allgemeinen Einstellungen und schalten sie anschließend pro Tisch unter Stammdaten → Tische frei. Andere Tische behalten den klassischen Kellnerservice.",
+          en: "Not yet. Guests request the bill and choose cash or card; your staff collect the payment at the table.",
+          de: "Noch nicht. Gäste fordern die Rechnung an und wählen Bar oder Karte; kassiert wird vom Personal am Tisch.",
         },
       },
       {
         q: {
-          en: "What if a QR code is lost or compromised?",
-          de: "Was, wenn ein QR-Code verloren geht oder kompromittiert wird?",
+          en: "Which languages does the guest page support?",
+          de: "Welche Sprachen hat die Gästeseite?",
         },
         a: {
-          en: "Open the table's self-order setting and tap Renew — a fresh QR is generated immediately and the old one stops working.",
-          de: "Öffnen Sie die Selbstbestelleinstellung des Tisches und tippen Sie auf „Erneuern“ — ein neuer QR wird sofort erzeugt und der alte funktioniert nicht mehr.",
+          en: "German, English, Turkish, Arabic, Spanish and French — chosen automatically from the phone settings. Dish names and descriptions appear as you entered them.",
+          de: "Deutsch, Englisch, Türkisch, Arabisch, Spanisch und Französisch — automatisch nach Handy-Einstellung. Gerichtnamen und Beschreibungen erscheinen so, wie Sie sie angelegt haben.",
         },
       },
       {
         q: {
-          en: "Can guests still call a waiter?",
-          de: "Können Gäste trotzdem einen Kellner rufen?",
+          en: "What if a QR code is copied or misused?",
+          de: "Was, wenn ein QR-Code kopiert oder missbraucht wird?",
         },
         a: {
-          en: "Yes. The welcome screen has dedicated buttons to call a waiter and to request the bill, so your team is alerted only when actually needed.",
-          de: "Ja. Auf der Startseite gibt es eigene Buttons, um einen Kellner zu rufen und die Rechnung anzufordern — Ihr Team wird nur dann benachrichtigt, wenn es wirklich gebraucht wird.",
-        },
-      },
-      {
-        q: { en: "Where do self-orders show up?", de: "Wo erscheinen Selbstbestellungen?" },
-        a: {
-          en: "On your kitchen display, on the POS and in your reports — exactly like an order taken by a waiter, with the correct table number attached.",
-          de: "Auf Ihrem Küchenmonitor, an der Kasse und in Ihren Auswertungen — genau wie eine vom Kellner aufgenommene Bestellung, mit der richtigen Tischnummer.",
+          en: "Renew it in the table’s self-order settings — the old code stops working immediately. You can also renew codes automatically after each payment.",
+          de: "Erneuern Sie ihn in der Selbstbestellungseinstellung des Tisches — der alte Code ist sofort ungültig. Auf Wunsch geschieht das nach jeder Zahlung automatisch.",
         },
       },
     ],
   },
   "kitchen-display": {
     slug: "kitchen-display",
-    eyebrow: { en: "AI Kitchen Display System", de: "KI-Küchenmonitor" },
+    eyebrow: {
+      en: "Kitchen display",
+      de: "Küchenmonitor",
+    },
     title: {
-      en: "An AI-powered Kitchen Display System that keeps every station in sync.",
-      de: "Ein KI-gestützter Küchenmonitor, der jede Station synchron hält.",
+      en: "The kitchen display that replaces paper tickets.",
+      de: "Der Küchenmonitor, der Papierbons ersetzt.",
     },
     lede: {
-      en: "Replace paper tickets with a real-time KDS. Orders land on screen the moment a waiter fires them, sorted by arrival, color-coded by urgency, and intelligently routed to the right station — so cooks never forget a table and guests never wait too long.",
-      de: "Ersetzen Sie Papierbons durch ein Echtzeit-KDS. Bestellungen erscheinen sofort nach Aufnahme auf dem Bildschirm — sortiert nach Eingang, farblich nach Dringlichkeit markiert und intelligent auf die richtige Station geroutet. Damit vergisst Ihre Küche keinen Tisch und Ihre Gäste warten nie zu lange.",
+      en: "Orders from the table, the counter, QR self-ordering and the webshop appear on screen the moment they are sent — oldest first, with a timer that turns amber and red. Cooks mark items ready, and the waiter is notified instantly.",
+      de: "Bestellungen vom Tisch, von der Theke, aus der QR-Selbstbestellung und dem Webshop erscheinen sofort auf dem Bildschirm — älteste zuerst, mit einem Timer, der gelb und rot wird. Die Küche meldet „fertig“, der Service wird sofort benachrichtigt.",
     },
     metaTitle: {
-      en: "AI Kitchen Display System (KDS) for Restaurants | GastroPos",
-      de: "KI-Küchenmonitor-System (KDS) für Restaurants | GastroPos",
+      en: "Kitchen Display System (KDS) for Restaurants | GastroPos",
+      de: "Küchenmonitor (KDS) für die Gastronomie | GastroPos",
     },
     metaDescription: {
-      en: "AI-powered kitchen display system. Smart station routing, predictive cook-time timers, course coordination, category filters and zero paper tickets.",
-      de: "KI-gestützter Küchenmonitor. Intelligentes Stations-Routing, vorausschauende Garzeit-Timer, Gangkoordination, Kategoriefilter und null Papierbons.",
+      en: "Kitchen display for restaurants and takeaways: orders from all channels, colour timer, category filter per screen, courses, ready notifications to waiters.",
+      de: "Küchenmonitor für Restaurant und Imbiss: Bestellungen aus allen Kanälen, Farb-Timer, Kategorie-Filter pro Bildschirm, Gänge, Abholbereit-Meldung an den Service.",
     },
+    heroImage: "kds-hero.webp",
+    heroAlt: {
+      en: "Kitchen display on a tablet and a second screen",
+      de: "Küchenmonitor auf einem Tablet und einem zweiten Bildschirm",
+    },
+    highlights: [
+      {
+        value: {
+          en: "All channels",
+          de: "Alle Kanäle",
+        },
+        label: {
+          en: "table, counter, QR and webshop",
+          de: "Tisch, Theke, QR und Webshop",
+        },
+      },
+      {
+        value: {
+          en: "5 / 10 min",
+          de: "5 / 10 Min.",
+        },
+        label: {
+          en: "amber and red timer",
+          de: "gelber und roter Timer",
+        },
+      },
+      {
+        value: {
+          en: "Per screen",
+          de: "Pro Bildschirm",
+        },
+        label: {
+          en: "own category filter",
+          de: "eigener Kategorie-Filter",
+        },
+      },
+      {
+        value: {
+          en: "Live",
+          de: "Live",
+        },
+        label: {
+          en: "ready notification to waiters",
+          de: "Abholbereit-Meldung an den Service",
+        },
+      },
+    ],
     features: {
       en: [
-        "Orders appear instantly, sorted left-to-right by arrival time",
-        "Color-coded urgency: tables waiting over 10 minutes turn red",
-        "Per-station filters — grill, cold, bar, pastry, pass",
-        "Category filters so each cook sees only their items",
-        "AI cook-time predictions based on your historical service data",
-        "Course-by-course timing with auto-fire on the pass",
-        "Bump-bar, touchscreen and foot-pedal support",
-        "Recall completed orders with a single tap",
-        "Live load indicator and average cook-time analytics",
-        "Multi-screen support — one KDS per station, fully synced",
+        "Orders sorted by arrival — oldest first",
+        "Timer per order: amber after 5, red after 10 minutes",
+        "Delivery and pickup orders timed against their due time",
+        "Category filter per screen — grill, pizza, bar, desserts",
+        "Items grouped by course",
+        "“Cooking” and “Ready” views, mark ready or served",
+        "Call waiters from the kitchen, print table items",
+        "New-order sound with volume, dark/light mode, font size",
+        "As many screens as you need, synchronised in real time",
       ],
       de: [
-        "Bestellungen erscheinen sofort, von links nach rechts nach Eingang sortiert",
-        "Farbcodierte Dringlichkeit: Tische über 10 Minuten werden rot",
-        "Filter pro Station — Grill, Kalt, Bar, Patisserie, Pass",
-        "Kategoriefilter, damit jeder Koch nur seine Artikel sieht",
-        "KI-Garzeit-Prognosen auf Basis Ihrer historischen Servicedaten",
-        "Gang-für-Gang-Timing mit automatischem Auslösen am Pass",
-        "Bump-Bar, Touchscreen und Fußpedal unterstützt",
-        "Abgeschlossene Bestellungen mit einem Tipp zurückholen",
-        "Live-Lastanzeige und Analyse durchschnittlicher Garzeiten",
-        "Multi-Screen — ein KDS pro Station, vollständig synchronisiert",
+        "Bestellungen nach Eingang sortiert — älteste zuerst",
+        "Timer pro Bestellung: gelb nach 5, rot nach 10 Minuten",
+        "Liefer- und Abholbestellungen nach Zielzeit getaktet",
+        "Kategorie-Filter pro Bildschirm — Grill, Pizza, Bar, Desserts",
+        "Artikel nach Gängen gruppiert",
+        "Ansichten „In Zubereitung“ und „Fertig“, fertig oder serviert melden",
+        "Kellner aus der Küche rufen, Tisch-Artikel drucken",
+        "Ton bei neuer Bestellung mit Lautstärke, Hell/Dunkel, Schriftgröße",
+        "Beliebig viele Bildschirme, in Echtzeit synchronisiert",
       ],
     },
     sections: [
       {
-        heading: { en: "From chaos to choreography", de: "Vom Chaos zur Choreografie" },
+        heading: {
+          en: "One screen for every order",
+          de: "Ein Bildschirm für jede Bestellung",
+        },
         body: {
-          en: "When orders are routed to the right station at the right moment, your line stops chasing tickets and starts producing food. The KDS shows what's coming, what's late, and what's about to fire — so every cook works the same plan, every shift.",
-          de: "Wenn Bestellungen zur richtigen Station zur richtigen Zeit geleitet werden, jagt Ihre Linie keinen Bons mehr hinterher, sondern produziert Speisen. Das KDS zeigt, was kommt, was verspätet ist und was gleich auf den Pass geht — damit jeder Koch in jeder Schicht den gleichen Plan fährt.",
+          en: "Whether a waiter sends it, a guest orders by QR code or a customer orders in your webshop — every order appears on the kitchen display with table or pickup name, items, extras, removed ingredients and notes.",
+          de: "Ob vom Kellner gesendet, per QR-Code bestellt oder im Webshop aufgegeben — jede Bestellung erscheint auf dem Küchenmonitor mit Tisch oder Abholname, Artikeln, Extras, abbestellten Zutaten und Wünschen.",
+        },
+        bullets: {
+          en: [
+            "Extras in blue, removed ingredients in red",
+            "Timer shows how long a table has been waiting",
+            "Search and statistics bar with open tables and items",
+          ],
+          de: [
+            "Extras in Blau, abbestellte Zutaten in Rot",
+            "Timer zeigt, wie lange ein Tisch schon wartet",
+            "Suche und Statusleiste mit offenen Tischen und Artikeln",
+          ],
+        },
+        image: "kds-board.webp",
+        imageAlt: {
+          en: "Kitchen display with an order and its items",
+          de: "Küchenmonitor mit einer Bestellung und ihren Artikeln",
         },
       },
       {
         heading: {
-          en: "Color-coded urgency keeps the line honest",
-          de: "Farbcodierte Dringlichkeit hält die Linie ehrlich",
+          en: "Ready — and the waiter knows",
+          de: "Fertig — und der Service weiß Bescheid",
         },
         body: {
-          en: "Every ticket carries a live timer. Tickets older than your service threshold (default 10 minutes) flip to red — an instant visual cue that pushes the team to pick up the pace before a guest ever has to ask. No more forgotten tables, no more cold mains sitting on the pass.",
-          de: "Jeder Bon hat einen Live-Timer. Bons älter als Ihr Schwellenwert (Standard 10 Minuten) werden rot — ein sofortiger visueller Hinweis, der das Team antreibt, bevor ein Gast überhaupt fragen muss. Keine vergessenen Tische mehr, keine kalten Hauptgerichte am Pass.",
+          en: "Tap an item or a whole order as ready. It moves to the “Ready” view and every waiter device shows a notification. Mark it served when it has left the pass.",
+          de: "Ein Tipp meldet einen Artikel oder die ganze Bestellung als fertig. Sie wandert in die Ansicht „Fertig“, und jedes Service-Gerät zeigt eine Mitteilung. Ist das Essen raus, wird es als serviert markiert.",
         },
-      },
-      {
-        heading: {
-          en: "Smart filters for specialized stations",
-          de: "Intelligente Filter für spezialisierte Stationen",
+        bullets: {
+          en: [
+            "Each screen filters its own categories",
+            "Works on any tablet, monitor or Sunmi device",
+            "Kitchen printers can run in parallel",
+          ],
+          de: [
+            "Jeder Bildschirm filtert seine eigenen Kategorien",
+            "Läuft auf jedem Tablet, Monitor oder Sunmi-Gerät",
+            "Küchendrucker können parallel laufen",
+          ],
         },
-        body: {
-          en: "Cooks who only work the grill don't need to see desserts. With one tap on \"Choose a category\" the cook picks the categories they're responsible for and the KDS hides the rest. Each station screen can be filtered independently — fast, focused, no clutter.",
-          de: 'Köche an der Grillstation brauchen keine Desserts zu sehen. Mit einem Tipp auf "Kategorie wählen" wählt der Koch seine Zuständigkeiten und das KDS blendet den Rest aus. Jeder Stationsbildschirm wird unabhängig gefiltert — schnell, fokussiert, ohne Ballast.',
-        },
-      },
-      {
-        heading: { en: "AI that learns your kitchen", de: "KI, die Ihre Küche kennenlernt" },
-        body: {
-          en: "GastroPos KDS analyzes thousands of past tickets to predict realistic cook times per dish, per station, per daypart. The system warns the line before a course falls behind, balances load across stations during rushes and surfaces the bottleneck so expediters can react in seconds, not minutes.",
-          de: "Das GastroPos KDS analysiert tausende vergangener Bons und prognostiziert realistische Garzeiten pro Gericht, Station und Tagesabschnitt. Das System warnt die Linie, bevor ein Gang ins Hintertreffen gerät, verteilt die Last während Stoßzeiten und zeigt den Engpass, damit der Expediter in Sekunden reagieren kann — nicht in Minuten.",
-        },
-      },
-      {
-        heading: {
-          en: "Built into the GastroPos platform",
-          de: "Vollständig in die GastroPos-Plattform integriert",
-        },
-        body: {
-          en: "Orders enter from POS, waiter app, QR ordering and online ordering — and land on one unified KDS. Status flows back in real time so the floor knows the moment a dish is bumped. No middleware, no second login, no paper.",
-          de: "Bestellungen kommen aus der Kasse, der Kellner-App, der QR-Bestellung und der Online-Bestellung — und landen auf einem einheitlichen KDS. Der Status fließt in Echtzeit zurück, sodass das Service-Team sofort weiß, wann ein Gericht fertig ist. Keine Middleware, kein zweites Login, kein Papier.",
+        image: "kds-ready.webp",
+        imageAlt: {
+          en: "Kitchen display with items marked",
+          de: "Küchenmonitor mit markierten Artikeln",
         },
       },
     ],
     faq: [
       {
-        q: { en: "Does it work with bump bars?", de: "Funktioniert es mit Bump-Bars?" },
+        q: {
+          en: "Which hardware do I need?",
+          de: "Welche Hardware brauche ich?",
+        },
         a: {
-          en: "Yes — most USB and Bluetooth bump bars are supported out of the box, alongside touchscreens and foot pedals.",
-          de: "Ja — die meisten USB- und Bluetooth-Bump-Bars werden out of the box unterstützt, ebenso Touchscreens und Fußpedale.",
+          en: "Any tablet or touchscreen device that runs the GastroPos app — Android, iOS, Windows or a Sunmi device. Mount it where the cooks can tap it.",
+          de: "Jedes Tablet oder Touch-Gerät, auf dem die GastroPos-App läuft — Android, iOS, Windows oder ein Sunmi-Gerät. Montieren Sie es dort, wo die Küche es antippen kann.",
         },
       },
       {
         q: {
-          en: "How many screens can I run per kitchen?",
-          de: "Wie viele Bildschirme kann ich pro Küche betreiben?",
+          en: "Can I use several screens?",
+          de: "Kann ich mehrere Bildschirme nutzen?",
         },
         a: {
-          en: "As many as you need. Each station — grill, cold, bar, pastry, pass — can have its own filtered screen, all synced in real time.",
-          de: "So viele Sie brauchen. Jede Station — Grill, Kalt, Bar, Patisserie, Pass — kann einen eigenen gefilterten Bildschirm haben, alle in Echtzeit synchronisiert.",
+          en: "Yes, as many as you like. Each screen has its own category filter, e.g. one for pizza, one for the grill and one for the bar.",
+          de: "Ja, beliebig viele. Jeder Bildschirm hat seinen eigenen Kategorie-Filter, z. B. einen für Pizza, einen für den Grill und einen für die Bar.",
         },
       },
       {
         q: {
-          en: "Can I change the 10-minute red threshold?",
-          de: "Kann ich die 10-Minuten-Rot-Schwelle ändern?",
+          en: "Can I still use kitchen printers?",
+          de: "Kann ich weiterhin Küchendrucker nutzen?",
         },
         a: {
-          en: "Yes. Set warning and critical thresholds per station and per daypart to match your service standards.",
-          de: "Ja. Setzen Sie Warn- und kritische Schwellen pro Station und Tagesabschnitt passend zu Ihren Servicestandards.",
+          en: "Yes. Printers are routed by category and can be used instead of or in addition to the display.",
+          de: "Ja. Drucker werden nach Kategorie angesteuert und können statt oder zusätzlich zum Monitor laufen.",
         },
       },
       {
         q: {
-          en: "Does the AI need a lot of data to be useful?",
-          de: "Braucht die KI viele Daten, um nützlich zu sein?",
+          en: "Does the kitchen display need internet?",
+          de: "Braucht der Küchenmonitor Internet?",
         },
         a: {
-          en: "It starts adding value after a few hundred tickets and keeps improving as your service history grows.",
-          de: "Sie liefert bereits nach wenigen hundert Bons Mehrwert und wird mit wachsender Servicehistorie immer besser.",
-        },
-      },
-      {
-        q: {
-          en: "What happens if the internet drops?",
-          de: "Was passiert, wenn das Internet ausfällt?",
-        },
-        a: {
-          en: "The KDS keeps running locally. Tickets queue and sync automatically once connectivity returns — no lost orders.",
-          de: "Das KDS läuft lokal weiter. Bons werden zwischengespeichert und synchronisieren sich automatisch — keine verlorenen Bestellungen.",
+          en: "Yes. Orders reach the display through the cloud in real time, so a stable Wi-Fi connection is required.",
+          de: "Ja. Bestellungen kommen in Echtzeit über die Cloud auf den Monitor, daher ist ein stabiles WLAN nötig.",
         },
       },
     ],
   },
   "online-ordering": {
     slug: "online-ordering",
-    eyebrow: { en: "Online Ordering", de: "Online-Bestellung" },
+    eyebrow: {
+      en: "Online ordering",
+      de: "Online-Bestellung",
+    },
     title: {
-      en: "Your own delivery & pickup website — zero commissions.",
-      de: "Ihre eigene Liefer- & Abholseite — ohne Provisionen.",
+      en: "Your own webshop for delivery and pickup.",
+      de: "Ihr eigener Webshop für Lieferung und Abholung.",
     },
     lede: {
-      en: "Stop paying 25–30% to marketplaces. Take direct orders from a branded website that syncs with your POS and KDS.",
-      de: "Hören Sie auf, 25–30 % an Marktplätze zu zahlen. Nehmen Sie Direktbestellungen über eine eigene Webseite an, die mit Kasse und KDS synchronisiert ist.",
+      en: "Guests order from your branded ordering page and pay online or on delivery. Orders arrive in the POS delivery system with a sound, print in the kitchen when accepted and are delivered by your own drivers.",
+      de: "Gäste bestellen auf Ihrer eigenen Bestellseite und zahlen online oder bei Lieferung. Bestellungen kommen mit Signalton im Liefersystem der Kasse an, drucken nach dem Annehmen in der Küche und werden von Ihren eigenen Fahrern ausgeliefert.",
     },
     metaTitle: {
-      en: "Online Ordering System with Zero Commission | GastroPos",
-      de: "Online-Bestellsystem ohne Provision | GastroPos",
+      en: "Online Ordering & Delivery Webshop for Restaurants | GastroPos",
+      de: "Online-Bestellsystem & Liefer-Webshop für Restaurants | GastroPos",
     },
     metaDescription: {
-      en: "Branded online ordering for delivery and pickup. No commissions, integrated with your POS, Stripe and your favorite delivery riders.",
-      de: "Eigene Online-Bestellseite für Lieferung und Abholung. Keine Provisionen, integriert mit Kasse, Stripe und Lieferpartnern.",
+      en: "Restaurant webshop for delivery and pickup: delivery zones by postcode or distance, card, Klarna, PayPal or cash, tips, discount codes, own drivers — no commission per order.",
+      de: "Webshop für Lieferung und Abholung: Liefergebiete nach PLZ oder Entfernung, Karte, Klarna, PayPal oder bar, Trinkgeld, Rabattcodes, eigene Fahrer — ohne Provision pro Bestellung.",
     },
+    heroImage: "online-hero.webp",
+    heroAlt: {
+      en: "GastroPos webshop of a pizzeria on a tablet and two smartphones",
+      de: "GastroPos-Webshop einer Pizzeria auf Tablet und zwei Smartphones",
+    },
+    highlights: [
+      {
+        value: {
+          en: "0 % commission",
+          de: "0 % Provision",
+        },
+        label: {
+          en: "per order from GastroPos",
+          de: "pro Bestellung von GastroPos",
+        },
+      },
+      {
+        value: {
+          en: "Card · Klarna · PayPal",
+          de: "Karte · Klarna · PayPal",
+        },
+        label: {
+          en: "plus cash and pay on site",
+          de: "plus bar und Zahlung vor Ort",
+        },
+      },
+      {
+        value: {
+          en: "PLZ or km",
+          de: "PLZ oder km",
+        },
+        label: {
+          en: "delivery zones with own fees",
+          de: "Liefergebiete mit eigenen Gebühren",
+        },
+      },
+      {
+        value: {
+          en: "Own drivers",
+          de: "Eigene Fahrer",
+        },
+        label: {
+          en: "assign, navigate, mark delivered",
+          de: "zuweisen, navigieren, zustellen",
+        },
+      },
+    ],
     features: {
       en: [
-        "Branded ordering website under your own domain",
-        "Stripe, PayPal, Apple Pay, Google Pay and SEPA",
-        "Delivery zones with distance- or postcode-based pricing",
-        "Pickup time slots with per-slot order throttling",
-        "Orders pushed to the KDS and receipt printer automatically",
-        "SEO-friendly menu pages that rank on Google",
-        "Scheduled ordering — let guests pre-order for later",
-        "Minimum order value, delivery fee and free-delivery thresholds",
-        "Live opening hours, pause button and item-level stock-outs",
-        "Coupons, promo codes and first-order discounts",
-        "One menu synced across POS, QR, kiosk and online",
-        "Customer accounts with saved addresses and reorder in one tap",
+        "Ordering page with your logo, intro text, colour and background images",
+        "Delivery and pickup — or pickup only",
+        "Delivery zones by postcode or distance: minimum order, fee, free from",
+        "Payment: card via Stripe, Klarna, PayPal, cash or card on delivery",
+        "ASAP or a chosen time today",
+        "Tips at checkout",
+        "Discount codes: % or €, minimum order, usage limit, weekdays, validity",
+        "Opening hours, holidays, closed today, “no delivery until”",
+        "Pause single products, sold-out items are hidden",
+        "Order history and “order again” on the guest’s device",
+        "Caller ID for phone orders (FRITZ!Box, add-on)",
       ],
       de: [
-        "Eigene Bestellwebseite unter Ihrer eigenen Domain",
-        "Stripe, PayPal, Apple Pay, Google Pay und SEPA",
-        "Liefergebiete mit Preisen nach Entfernung oder Postleitzahl",
-        "Abholzeitfenster mit Bestellbegrenzung pro Slot",
-        "Bestellungen automatisch an KDS und Bondrucker",
-        "SEO-freundliche Menüseiten, die bei Google ranken",
-        "Vorbestellung — Gäste bestellen für später vor",
-        "Mindestbestellwert, Liefergebühr und Gratis-Liefergrenze",
-        "Live-Öffnungszeiten, Pause-Button und Artikel-Ausverkauf",
-        "Gutscheine, Promo-Codes und Erstbestellrabatte",
-        "Eine Karte synchron über Kasse, QR, Kiosk und Online",
-        "Kundenkonten mit gespeicherten Adressen und Ein-Klick-Nachbestellung",
+        "Bestellseite mit Logo, Einführungstext, Farbe und Hintergrundbildern",
+        "Lieferung und Abholung — oder nur Abholung",
+        "Liefergebiete nach PLZ oder Entfernung: Mindestbestellwert, Gebühr, gratis ab",
+        "Bezahlung: Karte über Stripe, Klarna, PayPal, bar oder mit Karte bei Lieferung",
+        "So schnell wie möglich oder Wunschzeit am selben Tag",
+        "Trinkgeld im Checkout",
+        "Rabattcodes: % oder €, Mindestwert, Einlöselimit, Wochentage, Gültigkeit",
+        "Lieferzeiten, Feiertage, heute geschlossen, „keine Lieferung bis“",
+        "Einzelne Produkte pausieren, ausverkaufte werden ausgeblendet",
+        "Bestellhistorie und „erneut bestellen“ auf dem Gerät des Gastes",
+        "Anruferkennung für Telefonbestellungen (FRITZ!Box, Zusatzfunktion)",
       ],
     },
     sections: [
       {
-        heading: { en: "Stop paying the marketplace tax", de: "Schluss mit der Marktplatz-Steuer" },
+        heading: {
+          en: "A shop that looks like your restaurant",
+          de: "Ein Shop im Look Ihres Restaurants",
+        },
         body: {
-          en: "Lieferando, Uber Eats and Wolt take 14–30% of every order — on food you cooked, in a kitchen you pay for, for a guest who was already yours. On €25,000 of monthly delivery that's up to €7,500 handed to a platform every month. Your own GastroPos ordering site charges no commission: you pay a flat monthly fee and a normal card-processing rate, and keep the rest. Most venues cover the entire subscription with the commission they save in the first week.",
-          de: "Lieferando, Uber Eats und Wolt nehmen 14–30 % von jeder Bestellung — für Speisen, die Sie gekocht haben, in einer Küche, die Sie bezahlen, für einen Gast, der ohnehin Ihrer war. Bei 25.000 € Liefer­umsatz im Monat sind das bis zu 7.500 €, die jeden Monat an eine Plattform gehen. Ihre eigene GastroPos-Bestellseite verlangt keine Provision: Sie zahlen eine feste Monatsgebühr und einen normalen Kartensatz und behalten den Rest. Die meisten Betriebe decken das gesamte Abo allein mit der gesparten Provision der ersten Woche.",
+          en: "Guests open your ordering page on their phone or computer, choose delivery or pickup, browse the menu with photos and descriptions and see your discount codes right away. Logo, intro text, main colour and background images come from your delivery settings.",
+          de: "Gäste öffnen Ihre Bestellseite am Handy oder Computer, wählen Lieferung oder Abholung, stöbern in der Speisekarte mit Fotos und Beschreibungen und sehen Ihre Rabattcodes sofort. Logo, Einführungstext, Hauptfarbe und Hintergrundbilder stammen aus Ihren Liefer-Einstellungen.",
+        },
+        bullets: {
+          en: [
+            "Open/closed status and closing time at a glance",
+            "Search and categories for the whole menu",
+            "Dark mode and order history on the guest’s device",
+          ],
+          de: [
+            "Geöffnet-Status und Schließzeit auf einen Blick",
+            "Suche und Kategorien über die ganze Speisekarte",
+            "Dunkler Modus und Bestellhistorie auf dem Gerät des Gastes",
+          ],
+        },
+        image: "online-shop.webp",
+        imageAlt: {
+          en: "GastroPos webshop of a pizzeria on two smartphones",
+          de: "GastroPos-Webshop einer Pizzeria auf zwei Smartphones",
         },
       },
       {
         heading: {
-          en: "Own your customer — and the data marketplaces hide",
-          de: "Ihr Kunde, Ihre Daten — die Marktplätze verbergen",
+          en: "Orders arrive where you work",
+          de: "Bestellungen kommen dort an, wo Sie arbeiten",
         },
         body: {
-          en: "When a guest orders through a marketplace, the platform owns the relationship: the email, the phone number, the order history, the reorder rate. You get an anonymized payout and nothing to remarket to. Order through your own site and every detail is yours — so you can win the second order with a well-timed email, a loyalty reward or a 'we miss you' coupon, instead of renting that audience back from an app.",
-          de: "Bestellt ein Gast über einen Marktplatz, gehört die Beziehung der Plattform: E-Mail, Telefon­nummer, Bestellhistorie, Wiederbestellrate. Sie erhalten eine anonymisierte Auszahlung und nichts, womit Sie erneut werben könnten. Über die eigene Seite gehört jedes Detail Ihnen — Sie gewinnen die zweite Bestellung mit einer gut getimten E-Mail, einer Treue­prämie oder einem „Wir vermissen Sie“-Gutschein, statt dieses Publikum von einer App zurückzumieten.",
+          en: "New webshop orders appear in the POS delivery system with a signal tone — with items, extras, pickup or delivery time, payment status and customer details. Accept them with one tap: the kitchen ticket and delivery slip print automatically.",
+          de: "Neue Webshop-Bestellungen erscheinen mit Signalton im Liefersystem der Kasse — mit Artikeln, Extras, Abhol- oder Lieferzeit, Zahlungsstatus und Kundendaten. Mit einem Tipp angenommen, drucken Küchenbon und Lieferschein automatisch.",
+        },
+        bullets: {
+          en: [
+            "Phone orders entered in the same screen",
+            "Delivery slip with a Google Maps QR code",
+            "Webshop orders also appear on the kitchen display",
+          ],
+          de: [
+            "Telefonbestellungen im selben Bildschirm erfassen",
+            "Lieferschein mit Google-Maps-QR-Code",
+            "Webshop-Bestellungen erscheinen auch auf dem Küchenmonitor",
+          ],
+        },
+        image: "online-orders.webp",
+        imageAlt: {
+          en: "Delivery system with a new webshop order",
+          de: "Liefersystem mit einer neuen Webshop-Bestellung",
         },
       },
       {
         heading: {
-          en: "Delivery and pickup, run from one screen",
-          de: "Lieferung und Abholung, gesteuert von einem Bildschirm",
+          en: "Your own drivers, without the chaos",
+          de: "Eigene Fahrer, ohne Chaos",
         },
         body: {
-          en: "Set delivery zones by postcode or radius, with a different fee and minimum order for each. Throttle pickup and delivery slots so the kitchen never gets ten orders in the same minute. Pause ordering with one tap when you're slammed, mark a dish sold out without leaving the line, and switch opening hours for a holiday in seconds. Every online order lands on the same KDS as your dine-in tickets — no tablet farm, no separate device beeping in the corner.",
-          de: "Legen Sie Liefergebiete nach Postleitzahl oder Radius fest, jeweils mit eigener Gebühr und Mindestbestellung. Drosseln Sie Abhol- und Lieferslots, damit die Küche nie zehn Bestellungen in derselben Minute bekommt. Pausieren Sie Bestellungen mit einem Tipp, wenn es voll wird, markieren Sie ein Gericht als ausverkauft, ohne die Linie zu verlassen, und stellen Sie die Öffnungszeiten für einen Feiertag in Sekunden um. Jede Online-Bestellung landet auf demselben KDS wie Ihre Tische — keine Tablet-Sammlung, kein separat piependes Gerät in der Ecke.",
+          en: "Assign orders to your drivers. In the app, drivers see their deliveries on a map, start navigation in their maps app, call the customer and mark the order as delivered.",
+          de: "Weisen Sie Bestellungen Ihren Fahrern zu. In der App sehen Fahrer ihre Touren auf der Karte, starten die Navigation in ihrer Karten-App, rufen den Kunden an und melden die Zustellung.",
+        },
+        bullets: {
+          en: ["Driver role with its own view", "Payment at the door", "Delivery history per day"],
+          de: [
+            "Fahrer-Rolle mit eigener Ansicht",
+            "Bezahlung an der Haustür",
+            "Lieferhistorie pro Tag",
+          ],
+        },
+        image: "online-delivery.webp",
+        imageAlt: {
+          en: "Orders out for delivery with drivers",
+          de: "Bestellungen in Lieferung mit Fahrern",
         },
       },
       {
         heading: {
-          en: "Built to be found on Google",
-          de: "Gebaut, um bei Google gefunden zu werden",
+          en: "Set it up once",
+          de: "Einmal einrichten",
         },
         body: {
-          en: "A marketplace listing ranks the marketplace, not you. Your GastroPos site ships with clean, server-rendered menu pages, structured data for dishes and prices, fast load times and a mobile-first layout — exactly what Google rewards. Pair it with a Google Business Profile 'Order' link and guests who search your name order directly from you, commission-free, on the very first result.",
-          de: "Ein Marktplatz-Eintrag bringt den Marktplatz nach oben, nicht Sie. Ihre GastroPos-Seite liefert saubere, serverseitig gerenderte Menüseiten, strukturierte Daten für Gerichte und Preise, schnelle Ladezeiten und ein Mobile-First-Layout — genau das, was Google belohnt. In Kombination mit einem „Bestellen“-Link im Google-Unternehmensprofil bestellen Gäste, die Ihren Namen suchen, direkt bei Ihnen — provisionsfrei, schon beim ersten Treffer.",
+          en: "In the delivery settings you define what guests can do: open or closed today, delivery on or off, tips, payment methods, the start page of your shop, delivery times, holidays, delivery zones, product availability and discount codes.",
+          de: "In den Liefer-Einstellungen legen Sie fest, was Gäste können: heute geöffnet oder geschlossen, Lieferung an oder aus, Trinkgeld, Zahlungsarten, die Startseite Ihres Shops, Lieferzeiten, Feiertage, Liefergebiete, Produktverfügbarkeit und Rabattcodes.",
+        },
+        bullets: {
+          en: [
+            "Payments go directly to your Stripe or PayPal account",
+            "Webshop has its own menu, separate from the POS menu",
+            "Extra fees fixed or in %, optionally only for online payment",
+          ],
+          de: [
+            "Zahlungen gehen direkt auf Ihr Stripe- oder PayPal-Konto",
+            "Eigene Webshop-Speisekarte, getrennt von der Kassen-Speisekarte",
+            "Zusatzgebühren fix oder in %, optional nur bei Online-Zahlung",
+          ],
+        },
+        image: "online-settings.webp",
+        imageAlt: {
+          en: "General delivery settings in the POS",
+          de: "Allgemeine Liefer-Einstellungen in der Kasse",
         },
       },
       {
         heading: {
-          en: "One menu, every channel, always in sync",
-          de: "Eine Karte, alle Kanäle, immer synchron",
+          en: "Delivery zones that pay off",
+          de: "Liefergebiete, die sich rechnen",
         },
         body: {
-          en: "Change a price once and it updates on the POS, the QR menu, the kiosk and the online shop at the same moment. Sell out of the lunch special and it greys out everywhere automatically. There is no second menu to maintain and no risk of a guest ordering a dish you stopped serving last month — your online store is simply another window onto the same live menu.",
-          de: "Ändern Sie einen Preis einmal und er aktualisiert sich an der Kasse, in der QR-Karte, am Kiosk und im Online-Shop im selben Moment. Ist das Mittagsangebot ausverkauft, wird es überall automatisch ausgegraut. Es gibt keine zweite Karte zu pflegen und kein Risiko, dass ein Gast ein Gericht bestellt, das Sie letzten Monat aus dem Programm genommen haben — Ihr Online-Shop ist einfach ein weiteres Fenster auf dieselbe Live-Karte.",
+          en: "Define zones by postcode or by distance in kilometres — each with its own minimum order, delivery fee and free-delivery threshold.",
+          de: "Legen Sie Gebiete nach Postleitzahl oder Entfernung in Kilometern fest — jedes mit eigenem Mindestbestellwert, eigener Liefergebühr und Grenze für kostenlose Lieferung.",
+        },
+        bullets: {
+          en: [
+            "Guests outside your zones are told before ordering",
+            "Pickup always possible",
+            "Changes take effect immediately",
+          ],
+          de: [
+            "Gäste außerhalb Ihrer Gebiete erfahren es vor der Bestellung",
+            "Abholung immer möglich",
+            "Änderungen wirken sofort",
+          ],
+        },
+        image: "online-zones.webp",
+        imageAlt: {
+          en: "Delivery zones by distance",
+          de: "Liefergebiete nach Entfernung",
         },
       },
     ],
     faq: [
       {
         q: {
-          en: "How is this cheaper than Lieferando or Uber Eats?",
-          de: "Wie ist das günstiger als Lieferando oder Uber Eats?",
+          en: "Does GastroPos take a commission per order?",
+          de: "Nimmt GastroPos eine Provision pro Bestellung?",
         },
         a: {
-          en: "Marketplaces charge 14–30% commission per order. GastroPos online ordering has zero commission — you pay your flat GastroPos plan plus standard card-processing fees (typically around 1–1.9%). On any meaningful delivery volume the savings dwarf the subscription.",
-          de: "Marktplätze verlangen 14–30 % Provision pro Bestellung. Die GastroPos-Online-Bestellung hat null Provision — Sie zahlen Ihr festes GastroPos-Paket plus übliche Kartengebühren (meist rund 1–1,9 %). Bei nennenswertem Liefervolumen übersteigt die Ersparnis das Abo bei Weitem.",
-        },
-      },
-      {
-        q: {
-          en: "Do I need my own website already?",
-          de: "Brauche ich bereits eine eigene Webseite?",
-        },
-        a: {
-          en: "No. We host the ordering site for you and connect it to a subdomain or your own domain. If you already have a website, we give you an 'Order now' button and embeddable menu that match your branding.",
-          de: "Nein. Wir hosten die Bestellseite für Sie und verbinden sie mit einer Subdomain oder Ihrer eigenen Domain. Haben Sie bereits eine Webseite, erhalten Sie einen „Jetzt bestellen“-Button und eine einbettbare Karte im Look Ihrer Marke.",
-        },
-      },
-      {
-        q: {
-          en: "Can I do both delivery and pickup?",
-          de: "Kann ich sowohl Lieferung als auch Abholung anbieten?",
-        },
-        a: {
-          en: "Yes. Offer delivery, pickup or both, each with its own hours, fees, minimum order and time slots. You can also enable scheduled ordering so guests pre-order for a later time or date.",
-          de: "Ja. Bieten Sie Lieferung, Abholung oder beides an — jeweils mit eigenen Zeiten, Gebühren, Mindestbestellung und Zeitfenstern. Sie können auch Vorbestellungen aktivieren, sodass Gäste für eine spätere Zeit oder ein späteres Datum bestellen.",
-        },
-      },
-      {
-        q: {
-          en: "How do delivery orders reach my driver?",
-          de: "Wie erreichen Lieferbestellungen meinen Fahrer?",
-        },
-        a: {
-          en: "Orders land on your KDS and print to the kitchen automatically, with the delivery address and a route link on the ticket. You can deliver with your own staff or connect a third-party fleet integration.",
-          de: "Bestellungen landen auf Ihrem KDS und werden automatisch in die Küche gedruckt — mit Lieferadresse und Routen-Link auf dem Bon. Sie liefern mit eigenem Personal oder verbinden eine externe Flotten-Integration.",
+          en: "No. You pay your GastroPos plan plus the normal fees of your payment provider (Stripe or PayPal). The money goes directly to your account.",
+          de: "Nein. Sie zahlen Ihr GastroPos-Paket plus die üblichen Gebühren Ihres Zahlungsanbieters (Stripe oder PayPal). Das Geld geht direkt auf Ihr Konto.",
         },
       },
       {
         q: {
           en: "Which payment methods can guests use?",
-          de: "Welche Zahlungsmethoden können Gäste nutzen?",
+          de: "Welche Zahlungsarten können Gäste nutzen?",
         },
         a: {
-          en: "Stripe, PayPal, Apple Pay, Google Pay, SEPA and cash on delivery. Payments settle directly into your account — GastroPos never holds your money.",
-          de: "Stripe, PayPal, Apple Pay, Google Pay, SEPA und Barzahlung bei Lieferung. Zahlungen gehen direkt auf Ihr Konto — GastroPos hält Ihr Geld zu keinem Zeitpunkt.",
+          en: "Card via Stripe (Apple Pay and Google Pay appear on Stripe’s payment page where available), Klarna, PayPal, cash on delivery and card payment at your terminal on site. You switch each method on or off.",
+          de: "Karte über Stripe (Apple Pay und Google Pay erscheinen auf der Stripe-Zahlungsseite, wo verfügbar), Klarna, PayPal, Barzahlung bei Lieferung und Kartenzahlung am Terminal vor Ort. Jede Zahlungsart schalten Sie einzeln an oder aus.",
+        },
+      },
+      {
+        q: {
+          en: "Can guests pre-order?",
+          de: "Können Gäste vorbestellen?",
+        },
+        a: {
+          en: "Yes, for a chosen time on the same day — also while you are still closed, if you open later that day.",
+          de: "Ja, für eine Wunschzeit am selben Tag — auch wenn Sie noch geschlossen haben und später am Tag öffnen.",
+        },
+      },
+      {
+        q: {
+          en: "Do guests need an account?",
+          de: "Brauchen Gäste ein Kundenkonto?",
+        },
+        a: {
+          en: "No. Guests order without registering. Their contact details and order history are remembered on their device, and they can repeat an order with one tap.",
+          de: "Nein. Gäste bestellen ohne Registrierung. Kontaktdaten und Bestellhistorie bleiben auf ihrem Gerät gespeichert, eine Bestellung lässt sich mit einem Tipp wiederholen.",
+        },
+      },
+      {
+        q: {
+          en: "What about Lieferando, Wolt and Uber Eats?",
+          de: "Was ist mit Lieferando, Wolt und Uber Eats?",
+        },
+        a: {
+          en: "Your own webshop runs alongside these platforms. Customers from all channels are stored in your customer list. Ask us about the current status of the platform integrations.",
+          de: "Ihr eigener Webshop läuft parallel zu diesen Plattformen. Kunden aus allen Kanälen landen in Ihrer Kundenliste. Fragen Sie uns nach dem aktuellen Stand der Plattform-Anbindungen.",
         },
       },
     ],
   },
   inventory: {
     slug: "inventory",
-    eyebrow: { en: "Inventory", de: "Warenwirtschaft" },
+    eyebrow: {
+      en: "Stock & availability",
+      de: "Bestand & Verfügbarkeit",
+    },
     title: {
-      en: "Inventory management that deducts in real time.",
-      de: "Warenwirtschaft mit Echtzeit-Abbuchung.",
+      en: "Know what’s left — and stop selling what’s gone.",
+      de: "Wissen, was noch da ist — und nichts verkaufen, was weg ist.",
     },
     lede: {
-      en: "Recipes, ingredients and stock levels stay accurate as orders fire — no more end-of-week count surprises.",
-      de: "Rezepte, Zutaten und Bestände bleiben mit jeder Bestellung aktuell — keine Überraschungen mehr beim Wochenabschluss.",
+      en: "Keep a stock count per product, get an email when it runs low and mark items sold out — on the POS, in QR self-ordering and in the webshop at the same time. Allergens and additives are stored with every product.",
+      de: "Führen Sie einen Bestand pro Produkt, erhalten Sie eine E-Mail bei niedrigem Bestand und markieren Sie Artikel als ausverkauft — gleichzeitig an der Kasse, in der QR-Selbstbestellung und im Webshop. Allergene und Zusatzstoffe sind bei jedem Produkt hinterlegt.",
     },
     metaTitle: {
-      en: "Restaurant Inventory Management Software | GastroPos",
-      de: "Warenwirtschaft für die Gastronomie | GastroPos",
+      en: "Stock, Sold-Out & Allergens for Restaurants | GastroPos",
+      de: "Bestand, Ausverkauft & Allergene für die Gastronomie | GastroPos",
     },
     metaDescription: {
-      en: "Real-time inventory deduction, recipe costing, supplier orders and low-stock alerts. Cut food cost by up to 6%.",
-      de: "Echtzeit-Bestandsabbuchung, Rezeptkalkulation, Lieferantenbestellungen und Bestandswarnungen. Senken Sie Wareneinsatz um bis zu 6 %.",
+      en: "Simple stock management for restaurants: stock per product, low-stock email, sold-out on POS, QR ordering and webshop, 14 allergens and additives per product.",
+      de: "Einfache Bestandsführung für die Gastronomie: Bestand pro Produkt, E-Mail bei niedrigem Bestand, Ausverkauft an Kasse, QR-Bestellung und Webshop, 14 Allergene und Zusatzstoffe pro Produkt.",
     },
+    heroImage: "inventory-hero.webp",
+    heroAlt: {
+      en: "Product editor with prices and stock on a tablet",
+      de: "Produkteditor mit Preisen und Bestand auf einem Tablet",
+    },
+    highlights: [
+      {
+        value: {
+          en: "Per product",
+          de: "Pro Produkt",
+        },
+        label: {
+          en: "stock count — or unlimited",
+          de: "Bestand — oder unbegrenzt",
+        },
+      },
+      {
+        value: {
+          en: "Email alert",
+          de: "E-Mail-Warnung",
+        },
+        label: {
+          en: "when stock runs low",
+          de: "bei niedrigem Bestand",
+        },
+      },
+      {
+        value: {
+          en: "1 switch",
+          de: "1 Schalter",
+        },
+        label: {
+          en: "sold out everywhere",
+          de: "überall ausverkauft",
+        },
+      },
+      {
+        value: {
+          en: "14 allergens",
+          de: "14 Allergene",
+        },
+        label: {
+          en: "plus additives per product",
+          de: "plus Zusatzstoffe pro Produkt",
+        },
+      },
+    ],
     features: {
       en: [
-        "Recipe and ingredient mapping for every menu item",
-        "Live stock deduction the moment a dish is sold",
-        "Per-portion and per-recipe food-cost reporting",
-        "Supplier purchase orders with par-level suggestions",
-        "Low-stock and out-of-stock alerts via email and SMS",
-        "Multi-warehouse stock with transfers between locations",
-        "Waste, spoilage and variance tracking with reasons",
-        "Theoretical vs actual usage to expose shrinkage",
-        "Unit conversions — buy by the case, sell by the gram",
-        "Stocktake on any tablet or phone, counted offline",
-        "Supplier price history and cost-change alerts",
-        "Allergen and nutrition data carried from ingredient to dish",
+        "Stock count per product, empty means unlimited",
+        "Low-stock warning by email from a threshold you set",
+        "Option: mark as sold out when stock runs out",
+        "“Available” switch directly in the product list",
+        "Sold-out items blocked at the POS and in QR ordering, hidden in the webshop",
+        "Pause single products in the webshop temporarily",
+        "14 main allergens and additives per product",
+        "Ingredients for “without” requests",
       ],
       de: [
-        "Rezept- und Zutatenverknüpfung für jeden Menüpunkt",
-        "Live-Bestandsabbuchung im Moment des Verkaufs",
-        "Wareneinsatz-Reporting pro Portion und pro Rezept",
-        "Lieferantenbestellungen mit Vorschlägen nach Meldebestand",
-        "Bestands- und Ausverkauf-Warnungen per E-Mail und SMS",
-        "Mehrlager-Bestand mit Umlagerungen zwischen Standorten",
-        "Schwund-, Verderb- und Abweichungstracking mit Gründen",
-        "Soll- vs Ist-Verbrauch zur Aufdeckung von Schwund",
-        "Einheitenumrechnung — im Karton kaufen, im Gramm verkaufen",
-        "Inventur auf jedem Tablet oder Smartphone, auch offline",
-        "Lieferanten-Preishistorie und Kostenänderungs-Alarme",
-        "Allergen- und Nährwertdaten von der Zutat bis zum Gericht",
+        "Bestand pro Produkt, leer bedeutet unbegrenzt",
+        "Warnung per E-Mail ab einer selbst gewählten Schwelle",
+        "Option: als ausverkauft markieren, wenn nichts mehr da ist",
+        "Schalter „Verfügbar“ direkt in der Produktliste",
+        "Ausverkaufte Artikel an Kasse und QR-Bestellung gesperrt, im Webshop ausgeblendet",
+        "Einzelne Produkte im Webshop vorübergehend pausieren",
+        "14 Hauptallergene und Zusatzstoffe pro Produkt",
+        "Zutaten für „ohne“-Wünsche",
       ],
     },
     sections: [
       {
         heading: {
-          en: "Know your food cost — to the cent, in real time",
-          de: "Kennen Sie Ihren Wareneinsatz — auf den Cent, in Echtzeit",
+          en: "Sold out — everywhere, with one switch",
+          de: "Ausverkauft — überall, mit einem Schalter",
         },
         body: {
-          en: "Every dish maps to a recipe, every recipe maps to ingredients, and every ingredient is deducted from stock the instant the dish is sold. Instead of guessing your food cost once a month, you see the live cost percentage and margin on every menu item, all day. When the price of butter jumps, the dishes that use it light up — so you know exactly which margins to defend before the month-end surprise, not after it.",
-          de: "Jedes Gericht ist mit einem Rezept verknüpft, jedes Rezept mit Zutaten, und jede Zutat wird in dem Moment vom Bestand abgebucht, in dem das Gericht verkauft wird. Statt einmal im Monat zu schätzen, sehen Sie den Wareneinsatz und die Marge jedes Menüpunkts live, den ganzen Tag. Steigt der Butterpreis, leuchten die Gerichte auf, die sie verwenden — so wissen Sie genau, welche Margen Sie verteidigen müssen, bevor die Monatsabrechnung Sie überrascht, nicht danach.",
+          en: "The last tiramisu is gone? Switch off “Available” in the product list. The dish is immediately blocked at the POS and in QR self-ordering and disappears from the webshop. Switch it back on when it is available again.",
+          de: "Das letzte Tiramisu ist weg? Schalter „Verfügbar“ in der Produktliste aus — das Gericht ist sofort an der Kasse und in der QR-Selbstbestellung gesperrt und verschwindet aus dem Webshop. Wieder einschalten, sobald es nachgeliefert ist.",
+        },
+        bullets: {
+          en: [
+            "Visible to the whole team at once",
+            "No more disappointed guests",
+            "Works for every product and size",
+          ],
+          de: [
+            "Für das ganze Team sofort sichtbar",
+            "Keine enttäuschten Gäste mehr",
+            "Funktioniert für jedes Produkt",
+          ],
+        },
+        image: "inventory-soldout.webp",
+        imageAlt: {
+          en: "Product list with availability switches",
+          de: "Produktliste mit Verfügbarkeits-Schaltern",
         },
       },
       {
         heading: {
-          en: "The week's count stops being a Sunday-night ritual",
-          de: "Die Wocheninventur ist kein Sonntagabend-Ritual mehr",
+          en: "Stock and warnings",
+          de: "Bestand und Warnungen",
         },
         body: {
-          en: "Because stock moves with every ticket, your on-hand numbers are always close to reality. Stocktake becomes a quick confirmation on a tablet — scan or tap your way down the shelf, count offline in the cellar where there's no signal, and let the system reconcile counted-vs-expected and flag every gap. What used to be three hours with a clipboard and a calculator becomes twenty minutes with a phone.",
-          de: "Weil sich der Bestand mit jedem Bon bewegt, sind Ihre Lagerzahlen immer nah an der Realität. Die Inventur wird zur schnellen Bestätigung am Tablet — scannen oder tippen Sie sich am Regal entlang, zählen Sie offline im Keller ohne Empfang, und das System gleicht Soll und Ist ab und markiert jede Lücke. Was früher drei Stunden mit Klemmbrett und Taschenrechner waren, dauert jetzt zwanzig Minuten mit dem Smartphone.",
+          en: "Enter the current stock for products you want to track and a warning level. GastroPos emails you when the stock falls below it and can mark the product as sold out when it runs out.",
+          de: "Geben Sie für Produkte, die Sie verfolgen möchten, den aktuellen Bestand und eine Warnschwelle ein. GastroPos schickt Ihnen eine E-Mail, wenn der Bestand darunter fällt, und kann das Produkt bei null als ausverkauft markieren.",
+        },
+        bullets: {
+          en: [
+            "Ideal for daily specials, cakes or bottled drinks",
+            "Leave empty for unlimited products",
+            "Adjust stock with + / − in seconds",
+          ],
+          de: [
+            "Ideal für Tagesgerichte, Kuchen oder Flaschengetränke",
+            "Leer lassen für unbegrenzte Produkte",
+            "Bestand mit + / − in Sekunden anpassen",
+          ],
+        },
+        image: "inventory-webshop.webp",
+        imageAlt: {
+          en: "Product availability in the webshop settings",
+          de: "Produktverfügbarkeit in den Webshop-Einstellungen",
         },
       },
       {
         heading: {
-          en: "Theoretical vs actual: where your margin really goes",
-          de: "Soll vs Ist: wohin Ihre Marge wirklich verschwindet",
+          en: "Allergens and additives, correctly labelled",
+          de: "Allergene und Zusatzstoffe richtig gekennzeichnet",
         },
         body: {
-          en: "GastroPos knows how much of each ingredient should have been used based on what you sold (theoretical) and compares it to what actually left the shelf (actual). The difference is your shrinkage — over-pouring, over-portioning, waste, breakage or theft. Seeing it broken down by ingredient and by day turns a vague 'we're losing money somewhere' into a precise, fixable list.",
-          de: "GastroPos weiß, wie viel jeder Zutat laut Verkauf hätte verbraucht werden müssen (Soll), und vergleicht das mit dem, was tatsächlich das Regal verlassen hat (Ist). Die Differenz ist Ihr Schwund — Übergießen, Überportionieren, Verderb, Bruch oder Diebstahl. Aufgeschlüsselt nach Zutat und Tag wird aus einem vagen „Wir verlieren irgendwo Geld“ eine präzise, behebbare Liste.",
+          en: "Select the 14 main allergens and any additives for each product from a list. They are shown to guests in QR self-ordering and in the digital menu — the labelling you are legally required to provide.",
+          de: "Wählen Sie für jedes Produkt die 14 Hauptallergene und Zusatzstoffe aus einer Liste. Gäste sehen sie in der QR-Selbstbestellung und in der digitalen Speisekarte — die Kennzeichnung, die Sie gesetzlich schulden.",
         },
-      },
-      {
-        heading: {
-          en: "Order from suppliers without the guesswork",
-          de: "Beim Lieferanten bestellen, ohne zu raten",
+        bullets: {
+          en: [
+            "Ingredients become “without” options",
+            "Special requests as quick buttons",
+            "Hide products from waiter or self-order menus",
+          ],
+          de: [
+            "Zutaten werden zu „ohne“-Optionen",
+            "Sonderwünsche als Schnellauswahl",
+            "Produkte im Kellner- oder Selbstbestellungsmenü ausblenden",
+          ],
         },
-        body: {
-          en: "Set a par level for each ingredient and GastroPos drafts the purchase order for you when stock dips below it — grouped by supplier, priced from your latest cost, ready to send. Receive the delivery against the order, and any price change since last time is flagged so a quiet 8% increase on cooking oil never slips through unnoticed.",
-          de: "Legen Sie für jede Zutat einen Meldebestand fest, und GastroPos entwirft die Bestellung für Sie, sobald der Bestand darunter fällt — nach Lieferant gruppiert, mit Ihrem letzten Einkaufspreis kalkuliert, versandfertig. Buchen Sie die Lieferung gegen die Bestellung ein, und jede Preisänderung seit dem letzten Mal wird markiert, sodass eine stille 8-%-Erhöhung beim Speiseöl nie unbemerkt durchrutscht.",
-        },
-      },
-      {
-        heading: {
-          en: "One stock pool across every location",
-          de: "Ein Bestandspool über alle Standorte",
-        },
-        body: {
-          en: "Run a central kitchen and three outlets? Stock can live in multiple warehouses with transfers logged between them, so you always know what's where and what it's worth. Consolidated reporting rolls food cost up by location, region or your whole group, while each site keeps its own counts and orders.",
-          de: "Sie betreiben eine Zentralküche und drei Filialen? Bestand kann in mehreren Lagern liegen, mit protokollierten Umlagerungen dazwischen — so wissen Sie immer, was wo ist und was es wert ist. Das konsolidierte Reporting fasst den Wareneinsatz nach Standort, Region oder Gruppe zusammen, während jeder Betrieb seine eigenen Zählungen und Bestellungen behält.",
+        image: "inventory-allergens.webp",
+        imageAlt: {
+          en: "Product editor with ingredients and allergens",
+          de: "Produkteditor mit Zutaten und Allergenen",
         },
       },
     ],
     faq: [
       {
         q: {
-          en: "Do I have to build a recipe for every single dish?",
-          de: "Muss ich für jedes Gericht ein Rezept anlegen?",
+          en: "Is this a full inventory system with recipes?",
+          de: "Ist das eine Warenwirtschaft mit Rezepturen?",
         },
         a: {
-          en: "For full food-cost accuracy, yes — but you can start with your top sellers and grow from there. We help import recipes from a spreadsheet during onboarding, and simple retail items can be tracked as single units without a recipe.",
-          de: "Für volle Wareneinsatz-Genauigkeit ja — aber Sie können mit Ihren Bestsellern beginnen und nach und nach erweitern. Wir helfen beim Import von Rezepten aus einer Tabelle beim Onboarding, und einfache Handelsartikel lassen sich als Einzelstücke ohne Rezept führen.",
+          en: "No. GastroPos tracks stock per product — ideal for items you sell as a whole, like cakes, specials or bottles. Recipes, ingredient stock and suppliers are not part of GastroPos.",
+          de: "Nein. GastroPos führt den Bestand pro Produkt — ideal für Artikel, die Sie als Ganzes verkaufen, wie Kuchen, Tagesgerichte oder Flaschen. Rezepturen, Zutatenbestände und Lieferanten sind nicht Teil von GastroPos.",
         },
       },
       {
         q: {
-          en: "How much can inventory management actually save me?",
-          de: "Wie viel spart mir die Warenwirtschaft wirklich?",
+          en: "Do I have to track stock for every product?",
+          de: "Muss ich für jedes Produkt einen Bestand führen?",
         },
         a: {
-          en: "Operators typically cut food cost by 2–6 percentage points within a few months by catching shrinkage, tightening portions and ordering to par. On a venue doing €40,000 of food sales a month, even three points is over €1,000 saved monthly.",
-          de: "Betreiber senken den Wareneinsatz typischerweise um 2–6 Prozentpunkte innerhalb weniger Monate, indem sie Schwund aufdecken, Portionen straffen und nach Meldebestand bestellen. Bei 40.000 € Speise­umsatz im Monat sind schon drei Punkte über 1.000 € monatlich.",
+          en: "No. Leave the stock empty and the product is unlimited. Track only what really runs out.",
+          de: "Nein. Bleibt der Bestand leer, ist das Produkt unbegrenzt. Führen Sie nur das, was wirklich ausgehen kann.",
         },
       },
       {
         q: {
-          en: "Does stock update automatically when I sell?",
-          de: "Aktualisiert sich der Bestand beim Verkauf automatisch?",
+          en: "Where do guests see allergens?",
+          de: "Wo sehen Gäste die Allergene?",
         },
         a: {
-          en: "Yes. The moment a dish is rung up on the POS, QR, kiosk or online store, its recipe ingredients are deducted from stock in real time — no manual entry.",
-          de: "Ja. Sobald ein Gericht an Kasse, QR, Kiosk oder im Online-Shop gebucht wird, werden seine Rezeptzutaten in Echtzeit vom Bestand abgezogen — ohne manuelle Eingabe.",
-        },
-      },
-      {
-        q: {
-          en: "Can I count stock where there's no Wi-Fi?",
-          de: "Kann ich Bestand zählen, wo es kein WLAN gibt?",
-        },
-        a: {
-          en: "Yes. Stocktake works offline on a tablet or phone — count in the cellar or walk-in and everything syncs the moment you're back in range.",
-          de: "Ja. Die Inventur funktioniert offline auf Tablet oder Smartphone — zählen Sie im Keller oder Kühlraum, und alles synchronisiert sich, sobald Sie wieder Empfang haben.",
-        },
-      },
-      {
-        q: {
-          en: "Does it handle units like cases, bottles and grams?",
-          de: "Beherrscht es Einheiten wie Kartons, Flaschen und Gramm?",
-        },
-        a: {
-          en: "Yes. Buy by the case, store by the bottle and use by the gram — GastroPos converts between purchase, stock and recipe units automatically so your costs and counts always line up.",
-          de: "Ja. Im Karton kaufen, in der Flasche lagern und im Gramm verwenden — GastroPos rechnet zwischen Einkaufs-, Lager- und Rezepteinheiten automatisch um, sodass Kosten und Zählungen immer zusammenpassen.",
+          en: "In QR self-ordering and the digital menu on every dish. Your staff see them in the product details at the POS.",
+          de: "In der QR-Selbstbestellung und der digitalen Speisekarte bei jedem Gericht. Ihr Personal sieht sie in den Produktdetails an der Kasse.",
         },
       },
     ],
   },
   "cash-book": {
     slug: "cash-book",
-    eyebrow: { en: "Digital Cash Book", de: "Digitales Kassenbuch" },
+    eyebrow: {
+      en: "Digital cash book",
+      de: "Digitales Kassenbuch",
+    },
     title: {
-      en: "GoBD-compliant cash book — written automatically, every shift.",
-      de: "GoBD-konformes Kassenbuch — automatisch geführt, jede Schicht.",
+      en: "The cash book that writes itself.",
+      de: "Das Kassenbuch, das sich selbst führt.",
     },
     lede: {
-      en: "Every cash movement — sale, refund, expense, deposit, withdrawal, tip-out, change order — is logged the moment it happens, in an immutable digital cash book your Steuerberater will actually thank you for. No paper, no end-of-month panic, no Excel reconciliations.",
-      de: "Jede Kassenbewegung — Verkauf, Storno, Ausgabe, Einlage, Entnahme, Trinkgeldauszahlung, Wechselgeld — wird in dem Moment erfasst, in dem sie passiert, in einem unveränderlichen digitalen Kassenbuch, für das Ihr Steuerberater Sie wirklich liebt. Kein Papier, keine Monatsendpanik, keine Excel-Abstimmungen.",
+      en: "Every cash sale and cash refund is booked automatically. Deposits and withdrawals — bank transfer, purchases, private withdrawal — take seconds. Entries can’t be changed or deleted, only reversed, and flow into the Z-report, DATEV and the GoBD archive.",
+      de: "Jede Barzahlung und jede Bar-Erstattung wird automatisch gebucht. Ein- und Auszahlungen — Bank, Wareneinkauf, Privatentnahme — sind in Sekunden erfasst. Einträge lassen sich nicht ändern oder löschen, nur stornieren, und fließen in Z-Bericht, DATEV und GoBD-Archiv.",
     },
     metaTitle: {
-      en: "Digital Cash Book — GoBD compliant, DATEV-ready | GastroPos",
-      de: "Digitales Kassenbuch — GoBD-konform, DATEV-ready | GastroPos",
+      en: "Digital Cash Book for Restaurants (GoBD) | GastroPos",
+      de: "Digitales Kassenbuch für die Gastronomie (GoBD) | GastroPos",
     },
     metaDescription: {
-      en: "Automatic GoBD-compliant digital cash book. Every cash movement logged, immutable, audit-ready, exportable to DATEV in one click. Built for German hospitality and retail.",
-      de: "Automatisches GoBD-konformes digitales Kassenbuch. Jede Bewegung erfasst, unveränderlich, prüfsicher, mit einem Klick nach DATEV exportierbar. Für deutsche Gastronomie und Handel.",
+      en: "Digital cash book: automatic cash sales, deposits and withdrawals with purposes, gap-free numbering, reversal instead of deletion, DATEV accounts per purpose, GoBD archive.",
+      de: "Digitales Kassenbuch: automatische Barumsätze, Ein- und Auszahlungen mit Zweck, lückenlose Nummerierung, Storno statt Löschen, DATEV-Konto pro Zweck, GoBD-Archiv.",
     },
+    heroImage: "cashbook-hero.webp",
+    heroAlt: {
+      en: "Cash book with balance and entries on a tablet",
+      de: "Kassenbuch mit Kassenstand und Buchungen auf einem Tablet",
+    },
+    highlights: [
+      {
+        value: {
+          en: "Automatic",
+          de: "Automatisch",
+        },
+        label: {
+          en: "cash sales and refunds",
+          de: "Barumsätze und Erstattungen",
+        },
+      },
+      {
+        value: {
+          en: "Gap-free",
+          de: "Lückenlos",
+        },
+        label: {
+          en: "numbered, no edit, no delete",
+          de: "nummeriert, nicht änder- oder löschbar",
+        },
+      },
+      {
+        value: {
+          en: "DATEV account",
+          de: "DATEV-Konto",
+        },
+        label: {
+          en: "per purpose",
+          de: "pro Buchungszweck",
+        },
+      },
+      {
+        value: {
+          en: "Live balance",
+          de: "Live-Kassenstand",
+        },
+        label: {
+          en: "always up to date",
+          de: "immer aktuell",
+        },
+      },
+    ],
     features: {
       en: [
-        "Immutable log — every entry timestamped and signed per GoBD §146",
-        "Cash in / cash out / change orders / tip-outs tracked separately",
-        "Guided end-of-day Kassensturz with counted-vs-expected diff",
-        "Automatic daily Z-report and on-demand X-report",
-        "Multi-cashier and clean shift handover with opening/closing balance",
-        "Export to PDF, CSV and DATEV — formats your tax advisor expects",
-        "Receipt photos attached to every expense entry (Beleg-Pflicht)",
-        "Per-location and per-drawer cash books for multi-site businesses",
-        "Discrepancy alerts when counted cash deviates beyond your threshold",
-        "Audit-ready trail with full Finanzamt and DSFinV-K export",
+        "Cash sales and cash refunds booked automatically",
+        "Deposits and withdrawals with purpose, tax rate and supplier",
+        "Receipt number and date of the supplier receipt",
+        "Predefined purposes: bank, private, purchases, postage, tips payout …",
+        "Gap-free numbering and running cash balance",
+        "No editing, no deleting — reversal with reason only",
+        "Excel export, DATEV export and GoBD archive",
+        "Deposits and withdrawals shown on the Z-report",
+        "Cash drawer openings are logged",
       ],
       de: [
-        "Unveränderliches Journal — jeder Eintrag mit Zeitstempel, signiert nach GoBD §146",
-        "Kassen-Ein / Kassen-Aus / Wechselgeld / Trinkgeldauszahlungen separat erfasst",
-        "Geführter Kassensturz mit Soll-Ist-Abgleich am Tagesende",
-        "Automatischer täglicher Z-Bericht und X-Bericht auf Knopfdruck",
-        "Mehrere Kassierer und sauberer Schichtwechsel mit Anfangs- und Schlussbestand",
-        "Export als PDF, CSV und DATEV — Formate, die Ihr Steuerberater erwartet",
-        "Belegfotos zu jeder Ausgabe (Beleg-Pflicht)",
-        "Kassenbuch pro Standort und pro Schublade für Filialbetriebe",
-        "Abweichungsalarm, wenn der Kassenbestand außerhalb Ihrer Toleranz liegt",
-        "Prüfsicher mit vollständigem Finanzamt- und DSFinV-K-Export",
+        "Barverkäufe und Bar-Erstattungen automatisch gebucht",
+        "Ein- und Auszahlungen mit Zweck, Steuersatz und Lieferant",
+        "Belegnummer und -datum des Fremdbelegs",
+        "Vordefinierte Zwecke: Bank, Privat, Wareneinkauf, Porto, Trinkgeld-Auszahlung …",
+        "Lückenlose Nummerierung und laufender Kassenstand",
+        "Kein Ändern, kein Löschen — nur Storno mit Begründung",
+        "Excel-Export, DATEV-Export und GoBD-Archiv",
+        "Ein- und Auszahlungen im Z-Bericht ausgewiesen",
+        "Öffnungen der Kassenschublade werden protokolliert",
       ],
     },
     sections: [
       {
         heading: {
-          en: "Why a paper cash book is a liability in 2026",
-          de: "Warum ein Papier-Kassenbuch 2026 ein Risiko ist",
+          en: "Cash sales book themselves",
+          de: "Barumsätze buchen sich selbst",
         },
         body: {
-          en: "Since the GoBD reform, the Finanzamt expects every cash movement to be journaled in the moment, in a format that cannot be altered after the fact. A spiral notebook fails on both counts. GastroPos writes the cash book for you in real time, signs each entry with a Fiskaly-certified TSE, and stores it tamper-proof in the cloud — so an audit becomes a one-click export instead of a three-day reconstruction.",
-          de: "Seit der GoBD-Reform erwartet das Finanzamt, dass jede Kassenbewegung im Moment, in unveränderbarer Form erfasst wird. Ein Heft erfüllt beides nicht. GastroPos schreibt das Kassenbuch in Echtzeit, signiert jeden Eintrag mit einer Fiskaly-zertifizierten TSE und speichert es manipulationssicher in der Cloud — eine Prüfung wird zum Ein-Klick-Export statt zu drei Tagen Rekonstruktion.",
+          en: "Every cash payment at the POS appears in the cash book automatically, and every cash refund after a cancellation is booked out. Your current cash balance is always visible at the top.",
+          de: "Jede Barzahlung an der Kasse erscheint automatisch im Kassenbuch, jede Bar-Erstattung nach einem Storno wird ausgebucht. Der aktuelle Kassenstand steht immer oben.",
+        },
+        bullets: {
+          en: [
+            "Filter by period",
+            "Each entry shows employee and device",
+            "Excel export with one tap",
+          ],
+          de: [
+            "Filter nach Zeitraum",
+            "Jeder Eintrag zeigt Mitarbeiter und Gerät",
+            "Excel-Export mit einem Tipp",
+          ],
+        },
+        image: "cashbook-list.webp",
+        imageAlt: {
+          en: "Cash book list with balance, deposits and withdrawals",
+          de: "Kassenbuch mit Kassenstand, Ein- und Auszahlungen",
         },
       },
       {
         heading: {
-          en: "End-of-day cash count, guided step by step",
-          de: "Kassensturz, Schritt für Schritt geführt",
+          en: "Deposits and withdrawals in seconds",
+          de: "Ein- und Auszahlungen in Sekunden",
         },
         body: {
-          en: "At close of business the app walks the cashier through a guided count: stack by stack of banknotes, tray by tray of coins. The system compares the counted total to the expected total from the day's transactions and surfaces the difference instantly. Cashiers sign off digitally, managers approve, and the day is closed — no spreadsheet, no calculator, no after-shift overtime.",
-          de: "Zum Geschäftsschluss führt die App den Kassierer durch eine geführte Zählung: Stapel für Stapel Banknoten, Fach für Fach Münzen. Das System vergleicht den gezählten mit dem erwarteten Bestand und zeigt die Differenz sofort. Kassierer bestätigen digital, Manager geben frei, der Tag ist abgeschlossen — keine Tabelle, kein Taschenrechner, keine Überstunden nach Feierabend.",
+          en: "Bought parsley at the market or took cash to the bank? Choose withdrawal, the purpose, the amount and — if needed — tax rate, supplier and receipt number. Purposes are linked to your DATEV accounts.",
+          de: "Petersilie auf dem Markt gekauft oder Bargeld zur Bank gebracht? Auszahlung wählen, Zweck, Betrag und — bei Bedarf — Steuersatz, Lieferant und Belegnummer eintragen. Die Zwecke sind mit Ihren DATEV-Konten verknüpft.",
+        },
+        bullets: {
+          en: [
+            "Several positions per entry",
+            "Purposes and accounts configurable",
+            "Keep the paper receipt with the entry number",
+          ],
+          de: [
+            "Mehrere Positionen pro Buchung",
+            "Zwecke und Konten konfigurierbar",
+            "Papierbeleg mit der Buchungsnummer ablegen",
+          ],
+        },
+        image: "cashbook-entry.webp",
+        imageAlt: {
+          en: "Dialog for a new cash book entry",
+          de: "Dialog für eine neue Kassenbuch-Buchung",
         },
       },
       {
         heading: {
-          en: "Receipts attached, audits effortless",
-          de: "Belege dran, Prüfungen mühelos",
+          en: "Audit-proof by design",
+          de: "Prüfungssicher von Anfang an",
         },
         body: {
-          en: "When a team member pays for parsley at the market or fixes a leaking tap, they snap the receipt with their phone and the photo is attached to the cash-out entry. Every expense carries its Beleg automatically, fulfilling the Belegausgabepflicht without a single folder of crumpled receipts.",
-          de: "Wenn jemand Petersilie auf dem Markt kauft oder einen tropfenden Wasserhahn repariert, fotografiert er den Beleg mit dem Smartphone — das Foto wird automatisch an den Kassen-Aus-Eintrag angehängt. Jede Ausgabe trägt ihren Beleg, ohne einen einzigen Ordner zerknitterter Quittungen.",
+          en: "Entries are numbered without gaps and can’t be edited or deleted. A mistake is corrected by a reversal with a mandatory reason. Deposits and withdrawals appear on the Z-report, and the cash book is part of the DATEV export and the GoBD archive for tax audits.",
+          de: "Einträge sind lückenlos nummeriert und können weder geändert noch gelöscht werden. Fehler werden per Storno mit Pflicht-Begründung korrigiert. Ein- und Auszahlungen stehen im Z-Bericht, und das Kassenbuch ist Teil des DATEV-Exports und des GoBD-Archivs für die Betriebsprüfung.",
         },
-      },
-      {
-        heading: {
-          en: "One click to DATEV, no formatting headaches",
-          de: "Mit einem Klick nach DATEV, ohne Format-Kopfschmerzen",
+        bullets: {
+          en: [
+            "Z-report with deposits, withdrawals and drawer openings",
+            "Tax advisor login for the books",
+            "GoBD/GDPdU archive for the auditor",
+          ],
+          de: [
+            "Z-Bericht mit Ein-, Auszahlungen und Schubladen-Öffnungen",
+            "Steuerberater-Zugang für die Buchhaltung",
+            "GoBD-/GDPdU-Archiv für den Prüfer",
+          ],
         },
-        body: {
-          en: "At month-end your Steuerberater needs the cash book in DATEV format — not a PDF, not a screenshot. GastroPos exports a clean DATEV-ready file with one click, mapped to the correct Konten, including all opening and closing balances. Tax advisors save hours; you save the advisor fees.",
-          de: "Zum Monatsende braucht Ihr Steuerberater das Kassenbuch im DATEV-Format — kein PDF, kein Screenshot. GastroPos exportiert mit einem Klick eine saubere DATEV-Datei, korrekt auf die Konten gemappt, inklusive Anfangs- und Schlussbestände. Steuerberater sparen Stunden; Sie sparen die Honorare.",
-        },
-      },
-      {
-        heading: {
-          en: "Multi-cashier, multi-location, one ledger",
-          de: "Mehrere Kassierer, mehrere Standorte, ein Hauptbuch",
-        },
-        body: {
-          en: "Run one drawer per shift, four drawers in parallel, or twenty drawers across five locations — each drawer keeps its own cash book, and the consolidated view rolls them up by location, region or your whole group. Owners see the full picture; managers see only what they need.",
-          de: "Eine Schublade pro Schicht, vier parallel oder zwanzig über fünf Standorte — jede Schublade führt ihr eigenes Kassenbuch, und die konsolidierte Sicht fasst sie nach Standort, Region oder Gruppe zusammen. Inhaber sehen das Gesamtbild; Manager sehen nur das, was sie brauchen.",
-        },
-      },
-      {
-        heading: {
-          en: "Survives a Finanzamt visit without a sweat",
-          de: "Übersteht jede Betriebsprüfung ohne Schweißausbruch",
-        },
-        body: {
-          en: "When the Kassen-Nachschau or a full Betriebsprüfung arrives, the auditor wants three things: DSFinV-K export, GoBD journal, and the cash book for the requested period. GastroPos produces all three from one screen in under a minute — fully signed, fully sequenced, fully defensible.",
-          de: "Wenn die Kassen-Nachschau oder eine vollständige Betriebsprüfung kommt, will der Prüfer drei Dinge: DSFinV-K-Export, GoBD-Journal und das Kassenbuch für den geforderten Zeitraum. GastroPos liefert alle drei aus einem Bildschirm in unter einer Minute — voll signiert, lückenlos sequenziert, voll belastbar.",
+        image: "cashbook-z.webp",
+        imageAlt: {
+          en: "Z-reports with totals and details",
+          de: "Z-Berichte mit Summen und Details",
         },
       },
     ],
     faq: [
       {
         q: {
-          en: "Is the GastroPos cash book legally accepted in Germany?",
-          de: "Ist das GastroPos-Kassenbuch in Deutschland gesetzlich anerkannt?",
+          en: "Do I still need a paper cash book?",
+          de: "Brauche ich noch ein Kassenbuch auf Papier?",
         },
         a: {
-          en: "Yes. It meets all requirements of GoBD, AO §146 and KassenSichV — immutable, timestamped, signed by a Fiskaly-certified TSE and exportable in DSFinV-K format.",
-          de: "Ja. Es erfüllt alle Anforderungen der GoBD, AO §146 und KassenSichV — unveränderlich, mit Zeitstempel, signiert durch eine Fiskaly-zertifizierte TSE und im DSFinV-K-Format exportierbar.",
+          en: "GastroPos keeps the cash book digitally with gap-free numbering and without delete or edit. Discuss with your tax advisor how you file supplier receipts.",
+          de: "GastroPos führt das Kassenbuch digital, lückenlos nummeriert und ohne Lösch- oder Änderungsmöglichkeit. Wie Sie Fremdbelege ablegen, besprechen Sie am besten mit Ihrem Steuerberater.",
         },
       },
       {
         q: {
-          en: "Do I still need a paper cash book as a backup?",
-          de: "Brauche ich zusätzlich ein Papier-Kassenbuch?",
+          en: "Can I correct a wrong entry?",
+          de: "Kann ich eine falsche Buchung korrigieren?",
         },
         a: {
-          en: "No. A correctly maintained digital cash book fully replaces the paper one. In fact, running both in parallel often creates discrepancies that auditors will flag.",
-          de: "Nein. Ein korrekt geführtes digitales Kassenbuch ersetzt das Papier-Kassenbuch vollständig. Beides parallel zu führen erzeugt sogar oft Abweichungen, die Prüfer bemängeln.",
+          en: "Yes, by reversing it with a reason. The original entry and the reversal both remain visible — exactly as tax audits require.",
+          de: "Ja, durch ein Storno mit Begründung. Originalbuchung und Storno bleiben beide sichtbar — so, wie es die Betriebsprüfung erwartet.",
         },
       },
       {
         q: {
-          en: "What happens if cash on hand doesn't match the system?",
-          de: "Was passiert, wenn der Kassenbestand nicht stimmt?",
+          en: "Does my tax advisor get the cash book?",
+          de: "Bekommt mein Steuerberater das Kassenbuch?",
         },
         a: {
-          en: "The Kassensturz flow records both the counted and the expected total, the difference, and a mandatory note from the cashier. Nothing is hidden — and that transparency is exactly what the Finanzamt wants to see.",
-          de: "Der Kassensturz protokolliert sowohl den gezählten als auch den erwarteten Bestand, die Differenz und eine Pflichtnotiz des Kassierers. Nichts wird verborgen — und genau diese Transparenz erwartet das Finanzamt.",
+          en: "Yes. Cash book entries are included in the DATEV export with the accounts of their purposes, and your advisor can get a login of their own.",
+          de: "Ja. Kassenbuch-Buchungen sind mit den Konten ihrer Zwecke im DATEV-Export enthalten, und Ihr Steuerberater kann einen eigenen Zugang erhalten.",
         },
       },
       {
         q: {
-          en: "Can my Steuerberater access the cash book directly?",
-          de: "Kann mein Steuerberater direkt auf das Kassenbuch zugreifen?",
+          en: "How are tips handled?",
+          de: "Wie werden Trinkgelder behandelt?",
         },
         a: {
-          en: "Yes. Give them a read-only login or schedule automatic monthly DATEV exports straight to their inbox.",
-          de: "Ja. Geben Sie ihm einen Nur-Lese-Zugang oder planen Sie automatische monatliche DATEV-Exporte direkt in sein Postfach.",
-        },
-      },
-      {
-        q: {
-          en: "How long is the cash book retained?",
-          de: "Wie lange wird das Kassenbuch aufbewahrt?",
-        },
-        a: {
-          en: "Ten years, as required by German law (§147 AO). Storage is included in every GastroPos plan — no extra archival fee.",
-          de: "Zehn Jahre, wie nach §147 AO vorgeschrieben. Die Aufbewahrung ist in jedem GastroPos-Paket enthalten — keine Zusatzgebühr für Archivierung.",
-        },
-      },
-      {
-        q: {
-          en: "Does it handle tips and tronc payouts?",
-          de: "Werden Trinkgelder und Tronc-Auszahlungen unterstützt?",
-        },
-        a: {
-          en: "Yes. Tips are tracked separately from sales and tip-outs are recorded as their own cash-book entries, with audit trail for each employee.",
-          de: "Ja. Trinkgelder werden separat von Umsätzen erfasst und Auszahlungen als eigene Kassenbuch-Einträge mit Prüfpfad pro Mitarbeiter dokumentiert.",
+          en: "Tips are recorded per invoice and per waiter. A cash tip payout is booked with the purpose “Tips payout”.",
+          de: "Trinkgelder werden pro Rechnung und pro Kellner erfasst. Eine Bar-Auszahlung von Trinkgeld wird mit dem Zweck „Trinkgelder Auszahlung“ gebucht.",
         },
       },
     ],
   },
   "datev-export": {
     slug: "datev-export",
-    eyebrow: { en: "DATEV Export", de: "DATEV-Export" },
+    eyebrow: {
+      en: "DATEV & tax advisor",
+      de: "DATEV & Steuerberater",
+    },
     title: {
-      en: "One-click DATEV export your tax advisor will thank you for.",
-      de: "DATEV-Export per Klick — Ihr Steuerberater wird es Ihnen danken.",
+      en: "DATEV export your tax advisor can import directly.",
+      de: "DATEV-Export, den Ihr Steuerberater direkt importiert.",
     },
     lede: {
-      en: "Send daily, weekly or monthly DATEV-format bookings directly to your tax advisor. No more month-end CSV gymnastics.",
-      de: "Senden Sie tägliche, wöchentliche oder monatliche DATEV-Buchungen direkt an Ihren Steuerberater. Schluss mit CSV-Akrobatik zum Monatsende.",
+      en: "Create a DATEV booking batch for any period in a few clicks — with the right revenue accounts per VAT rate and payment method, SKR03, SKR04 or SKR07. Z-reports go to your tax advisor automatically by email.",
+      de: "Erstellen Sie für jeden Zeitraum mit wenigen Klicks einen DATEV-Buchungsstapel — mit den richtigen Erlöskonten je Steuersatz und Zahlungsart, SKR03, SKR04 oder SKR07. Z-Berichte gehen automatisch per E-Mail an Ihren Steuerberater.",
     },
     metaTitle: {
-      en: "DATEV Export for Hospitality & Retail POS | GastroPos",
-      de: "DATEV-Export für Gastronomie- und Handelskassen | GastroPos",
+      en: "DATEV Export for Restaurants (SKR03/04/07) | GastroPos",
+      de: "DATEV-Export für die Gastronomie (SKR03/04/07) | GastroPos",
     },
     metaDescription: {
-      en: "Native DATEV export from your POS. Daily, weekly, monthly bookings sent directly to your tax advisor with the correct SKR03/SKR04 accounts.",
-      de: "Nativer DATEV-Export aus Ihrer Kasse. Tages-, Wochen- oder Monatsbuchungen direkt an Ihren Steuerberater mit den richtigen SKR03/SKR04-Konten.",
+      en: "DATEV EXTF booking batch with SKR03, SKR04 or SKR07, accounts per VAT rate and payment method, cash book included, GoBD archive, DSFinV-K and Z-report emails to your tax advisor.",
+      de: "DATEV-Buchungsstapel (EXTF) mit SKR03, SKR04 oder SKR07, Konten je Steuersatz und Zahlungsart, inklusive Kassenbuch, GoBD-Archiv, DSFinV-K und Z-Bericht-Mails an den Steuerberater.",
     },
+    heroImage: "datev-hero.webp",
+    heroAlt: {
+      en: "DATEV export and account settings on a tablet",
+      de: "DATEV-Export und Kontenrahmen-Einstellungen auf einem Tablet",
+    },
+    highlights: [
+      {
+        value: {
+          en: "SKR03 · 04 · 07",
+          de: "SKR03 · 04 · 07",
+        },
+        label: {
+          en: "standard charts of accounts",
+          de: "Standard-Kontenrahmen",
+        },
+      },
+      {
+        value: {
+          en: "EXTF",
+          de: "EXTF",
+        },
+        label: {
+          en: "DATEV booking batch",
+          de: "DATEV-Buchungsstapel",
+        },
+      },
+      {
+        value: {
+          en: "Z-report email",
+          de: "Z-Bericht-Mail",
+        },
+        label: {
+          en: "daily, weekly or monthly",
+          de: "täglich, wöchentlich oder monatlich",
+        },
+      },
+      {
+        value: {
+          en: "GoBD archive",
+          de: "GoBD-Archiv",
+        },
+        label: {
+          en: "for the tax auditor",
+          de: "für die Betriebsprüfung",
+        },
+      },
+    ],
     features: {
       en: [
-        "SKR03 and SKR04 charts of accounts supported natively",
-        "Automatic VAT splits — 19% in-house, 7% takeaway, 0% and mixed",
-        "DATEV Unternehmen online connector and DATEV-format files",
-        "DSFinV-K export bundle included for every audit",
-        "Daily, weekly or monthly booking cadence — you choose",
-        "Configurable booking text and cost-centre mapping",
-        "Separate postings for cash, card, vouchers and tips",
-        "Per-store and consolidated multi-location exports",
-        "Scheduled auto-export straight to your tax advisor's inbox",
-        "Read-only advisor access — no more emailed spreadsheets",
-        "EÜR and double-entry bookkeeping both supported",
-        "Ten-year GoBD-compliant archive of every export",
+        "DATEV booking batch (EXTF) for any period within a fiscal year",
+        "SKR03, SKR04 or SKR07 with standard accounts",
+        "Own accounts per VAT rate and per payment method",
+        "Correct split of eat-in and takeaway VAT",
+        "Bookings per invoice or summed per day",
+        "Advisor and client number, fiscal year start",
+        "Cash book entries included, booked to their purpose accounts",
+        "Send the export by email or download it",
+        "GoBD/GDPdU archive and DSFinV-K export (with TSE)",
+        "Automatic Z-report emails and a login for your tax advisor",
       ],
       de: [
-        "SKR03 und SKR04 Kontenrahmen nativ unterstützt",
-        "Automatische MwSt-Splits — 19 % im Haus, 7 % außer Haus, 0 % und gemischt",
-        "DATEV-Unternehmen-online-Schnittstelle und DATEV-Format-Dateien",
-        "DSFinV-K-Exportpaket bei jeder Prüfung enthalten",
-        "Tägliche, wöchentliche oder monatliche Buchung — Sie entscheiden",
-        "Konfigurierbarer Buchungstext und Kostenstellen-Mapping",
-        "Getrennte Buchungen für Bar, Karte, Gutscheine und Trinkgeld",
-        "Exporte pro Filiale und konsolidiert über mehrere Standorte",
-        "Geplanter Auto-Export direkt ins Postfach des Steuerberaters",
-        "Nur-Lese-Zugang für Berater — keine E-Mail-Tabellen mehr",
-        "EÜR und doppelte Buchführung beide unterstützt",
-        "Zehn-Jahres-GoBD-Archiv jedes Exports",
+        "DATEV-Buchungsstapel (EXTF) für jeden Zeitraum innerhalb eines Wirtschaftsjahres",
+        "SKR03, SKR04 oder SKR07 mit Standardkonten",
+        "Eigene Konten je Steuersatz und je Zahlungsart",
+        "Richtige Aufteilung von Im-Haus- und Außer-Haus-Steuer",
+        "Buchungen pro Rechnung oder pro Tag zusammengefasst",
+        "Berater- und Mandantennummer, Wirtschaftsjahresbeginn",
+        "Kassenbuch enthalten, auf die Konten der Zwecke gebucht",
+        "Export per E-Mail senden oder herunterladen",
+        "GoBD-/GDPdU-Archiv und DSFinV-K-Export (mit TSE)",
+        "Automatische Z-Bericht-Mails und Zugang für den Steuerberater",
       ],
     },
     sections: [
       {
         heading: {
-          en: "The month-end CSV gymnastics end here",
-          de: "Schluss mit der CSV-Akrobatik zum Monatsende",
+          en: "From period to booking batch in a minute",
+          de: "Vom Zeitraum zum Buchungsstapel in einer Minute",
         },
         body: {
-          en: "If your current routine is exporting a sales report, opening it in Excel, re-mapping columns, fixing VAT rates by hand and emailing the result to your Steuerberater, you already know how fragile that is — one wrong column and the whole booking is off. GastroPos produces a clean, DATEV-ready file mapped to the correct accounts in a single click. No reformatting, no manual VAT, no risk of a typo turning into a tax problem.",
-          de: "Wenn Ihre aktuelle Routine darin besteht, einen Umsatzbericht zu exportieren, in Excel zu öffnen, Spalten neu zuzuordnen, MwSt-Sätze von Hand zu korrigieren und das Ergebnis an Ihren Steuerberater zu mailen, wissen Sie, wie fragil das ist — eine falsche Spalte und die ganze Buchung stimmt nicht. GastroPos erzeugt mit einem Klick eine saubere, DATEV-fertige Datei, korrekt auf die Konten gemappt. Kein Umformatieren, keine manuelle MwSt, kein Risiko, dass aus einem Tippfehler ein Steuerproblem wird.",
+          en: "Choose last month or any period, enter advisor and client number once, pick SKR03, SKR04 or SKR07 and create the export. The file is ready shortly afterwards in the export list — download it or send it to your tax advisor by email.",
+          de: "Wählen Sie den letzten Monat oder einen beliebigen Zeitraum, tragen Sie einmalig Berater- und Mandantennummer ein, wählen Sie SKR03, SKR04 oder SKR07 und erstellen Sie den Export. Kurz darauf liegt die Datei in der Exportliste — zum Herunterladen oder Versenden per E-Mail.",
+        },
+        bullets: {
+          en: [
+            "One booking per invoice, VAT rate and payment method",
+            "Split bills are divided pro rata",
+            "Cancellations as separate bookings",
+          ],
+          de: [
+            "Eine Buchung pro Rechnung, Steuersatz und Zahlungsart",
+            "Geteilte Rechnungen werden anteilig aufgeteilt",
+            "Stornos als eigene Buchungen",
+          ],
+        },
+        image: "datev-export.webp",
+        imageAlt: {
+          en: "DATEV export screen",
+          de: "DATEV-Export-Bildschirm",
         },
       },
       {
         heading: {
-          en: "VAT splits handled the way the Finanzamt expects",
-          de: "MwSt-Splits so, wie das Finanzamt es erwartet",
+          en: "Your accounts, your way",
+          de: "Ihre Konten, Ihre Zuordnung",
         },
         body: {
-          en: "Hospitality VAT is a minefield: 19% for eat-in versus 7% for takeaway, mixed receipts where a coffee and a slice of cake carry different rates, zero-rated items, deposits and vouchers. GastroPos applies the correct rate at the point of sale and carries it cleanly through to the booking, splitting each receipt across the right revenue and tax accounts automatically. Your advisor receives postings that already balance.",
-          de: "Die Gastro-MwSt ist ein Minenfeld: 19 % im Haus gegen 7 % außer Haus, gemischte Belege, bei denen Kaffee und Kuchenstück unterschiedliche Sätze tragen, Null-Sätze, Pfand und Gutscheine. GastroPos wendet den richtigen Satz an der Kasse an und führt ihn sauber bis zur Buchung, splittet jeden Beleg automatisch auf die richtigen Erlös- und Steuerkonten. Ihr Berater erhält Buchungen, die bereits ausgeglichen sind.",
+          en: "If no accounts are set, GastroPos uses the standard accounts of your chart, e.g. 8400/8300 for 19 %/7 % revenue in SKR03. Adjust payment accounts, revenue accounts per VAT rate and cash book purposes so the export matches your tax advisor’s bookkeeping.",
+          de: "Ohne eigene Einstellungen nutzt GastroPos die Standardkonten Ihres Kontenrahmens, z. B. 8400/8300 für 19 %/7 % Erlöse im SKR03. Passen Sie Zahlungskonten, Erlöskonten je Steuersatz und Kassenbuch-Zwecke so an, dass der Export zur Buchhaltung Ihres Steuerberaters passt.",
+        },
+        bullets: {
+          en: [
+            "Payment accounts for cash, card and every payment type",
+            "Revenue accounts with booking key per VAT rate",
+            "Austrian VAT rates included",
+          ],
+          de: [
+            "Zahlungskonten für Bar, Karte und jede Zahlungsart",
+            "Erlöskonten mit Buchungsschlüssel je Steuersatz",
+            "Österreichische Steuersätze inklusive",
+          ],
+        },
+        image: "datev-accounts.webp",
+        imageAlt: {
+          en: "DATEV account settings",
+          de: "DATEV-Kontorahmen-Einstellungen",
         },
       },
       {
         heading: {
-          en: "SKR03 or SKR04 — both, out of the box",
-          de: "SKR03 oder SKR04 — beide, sofort einsatzbereit",
+          en: "Your tax advisor stays informed — automatically",
+          de: "Ihr Steuerberater bleibt automatisch informiert",
         },
         body: {
-          en: "Most hospitality businesses book on SKR03, while many retailers prefer SKR04. GastroPos supports both standard charts of accounts natively, and you can override individual account mappings to match exactly how your tax advisor already books your business. Cash, card, voucher and tip payments each post to their own account, so the bank reconciliation downstream is painless.",
-          de: "Die meisten Gastronomiebetriebe buchen auf SKR03, viele Händler bevorzugen SKR04. GastroPos unterstützt beide Standard-Kontenrahmen nativ, und Sie können einzelne Konten-Zuordnungen anpassen, damit sie genau zu der Art passen, wie Ihr Steuerberater Ihr Geschäft bereits bucht. Bar-, Karten-, Gutschein- und Trinkgeldzahlungen buchen jeweils auf ein eigenes Konto, sodass die spätere Bankabstimmung mühelos ist.",
+          en: "Create Z-reports automatically at a time of your choice and send them to your tax advisor daily, weekly or monthly by email — with a summary and a link to the PDF. Your advisor can also get a login of their own.",
+          de: "Erstellen Sie Z-Berichte automatisch zu einer Uhrzeit Ihrer Wahl und senden Sie sie täglich, wöchentlich oder monatlich per E-Mail an Ihren Steuerberater — mit Zusammenfassung und Link zum PDF. Ihr Steuerberater kann zusätzlich einen eigenen Zugang bekommen.",
+        },
+        bullets: {
+          en: [
+            "Reminder when the last Z-report is too old",
+            "Days without sales are skipped",
+            "Z-reports as Excel, CSV or ZIP",
+          ],
+          de: [
+            "Erinnerung, wenn der letzte Z-Bericht zu alt ist",
+            "Tage ohne Umsatz werden übersprungen",
+            "Z-Berichte als Excel, CSV oder ZIP",
+          ],
+        },
+        image: "datev-advisor.webp",
+        imageAlt: {
+          en: "Day-end settings with automatic Z-report and email to the tax advisor",
+          de: "Tagesabschluss-Einstellungen mit automatischem Z-Bericht und Mail an den Steuerberater",
         },
       },
       {
         heading: {
-          en: "Set it once, then let it run",
-          de: "Einmal einrichten, dann laufen lassen",
+          en: "Ready for the tax audit",
+          de: "Bereit für die Betriebsprüfung",
         },
         body: {
-          en: "Choose a cadence — daily, weekly or monthly — and GastroPos exports automatically on schedule, straight to DATEV Unternehmen online or your advisor's inbox. Better still, give your Steuerberater a read-only login and they pull exactly what they need, when they need it. The back-and-forth of 'can you resend last week with the tips separated?' simply disappears.",
-          de: "Wählen Sie einen Rhythmus — täglich, wöchentlich oder monatlich — und GastroPos exportiert automatisch nach Plan, direkt nach DATEV Unternehmen online oder ins Postfach Ihres Beraters. Noch besser: Geben Sie Ihrem Steuerberater einen Nur-Lese-Zugang, und er zieht sich genau das, was er braucht, wann er es braucht. Das Hin und Her von „Kannst du letzte Woche nochmal schicken, mit getrennten Trinkgeldern?“ entfällt schlicht.",
+          en: "For an audit, export the GoBD archive: all invoices, positions, payments, taxes and the cash book as an archive with index.xml for the auditor’s software. With the fiskaly TSE add-on, the DSFinV-K export is available too.",
+          de: "Für die Betriebsprüfung exportieren Sie das GoBD-Archiv: alle Rechnungen, Positionen, Zahlungen, Steuern und das Kassenbuch als Archiv mit index.xml für die Prüfsoftware. Mit der Zusatzfunktion fiskaly-TSE steht auch der DSFinV-K-Export bereit.",
         },
-      },
-      {
-        heading: {
-          en: "Audit-ready, with DSFinV-K in the same bundle",
-          de: "Prüfungssicher, mit DSFinV-K im selben Paket",
+        bullets: {
+          en: [
+            "Data carrier transfer according to GDPdU",
+            "Exports kept in the export list",
+            "Austria: RKSV export",
+          ],
+          de: [
+            "Datenträgerüberlassung nach GDPdU",
+            "Exporte bleiben in der Exportliste",
+            "Österreich: RKSV-Export",
+          ],
         },
-        body: {
-          en: "A DATEV export covers your bookkeeping; a Kassen-Nachschau covers your till. GastroPos gives you both: alongside every DATEV file sits the DSFinV-K export and GoBD journal the auditor actually asks for, signed by a Fiskaly-certified TSE and retained for ten years. When the Finanzamt visits, the answer is one screen and one minute — not a three-day reconstruction.",
-          de: "Ein DATEV-Export deckt Ihre Buchhaltung ab; eine Kassen-Nachschau Ihre Kasse. GastroPos liefert beides: Neben jeder DATEV-Datei liegt der DSFinV-K-Export und das GoBD-Journal, das der Prüfer tatsächlich verlangt — signiert durch eine Fiskaly-zertifizierte TSE und zehn Jahre aufbewahrt. Kommt das Finanzamt, ist die Antwort ein Bildschirm und eine Minute — keine dreitägige Rekonstruktion.",
+        image: "datev-gobd.webp",
+        imageAlt: {
+          en: "GoBD export screen",
+          de: "GoBD-Export-Bildschirm",
         },
       },
     ],
     faq: [
       {
         q: {
-          en: "Does this connect directly to DATEV Unternehmen online?",
-          de: "Verbindet sich das direkt mit DATEV Unternehmen online?",
+          en: "Does GastroPos connect directly to DATEV Unternehmen online?",
+          de: "Gibt es eine direkte Verbindung zu DATEV Unternehmen online?",
         },
         a: {
-          en: "Yes. You can push bookings straight into DATEV Unternehmen online, or download a DATEV-format file (EXTF) to import manually — whichever your tax advisor prefers.",
-          de: "Ja. Sie können Buchungen direkt nach DATEV Unternehmen online übertragen oder eine DATEV-Format-Datei (EXTF) zum manuellen Import herunterladen — ganz wie Ihr Steuerberater es bevorzugt.",
+          en: "No. GastroPos creates a DATEV booking batch file (EXTF) that your tax advisor imports into DATEV. You can send it by email straight from GastroPos.",
+          de: "Nein. GastroPos erstellt eine DATEV-Buchungsstapel-Datei (EXTF), die Ihr Steuerberater in DATEV importiert. Sie können sie direkt aus GastroPos per E-Mail senden.",
         },
       },
       {
         q: {
-          en: "Will it match how my Steuerberater already books my accounts?",
-          de: "Passt es dazu, wie mein Steuerberater meine Konten bereits bucht?",
+          en: "Which charts of accounts are supported?",
+          de: "Welche Kontenrahmen werden unterstützt?",
         },
         a: {
-          en: "Yes. SKR03 and SKR04 are supported out of the box, and individual account and cost-centre mappings can be overridden so the export matches your existing setup exactly.",
-          de: "Ja. SKR03 und SKR04 sind sofort unterstützt, und einzelne Konten- und Kostenstellen-Zuordnungen lassen sich überschreiben, sodass der Export genau zu Ihrem bestehenden Setup passt.",
+          en: "SKR03, SKR04 and SKR07. Every account can be overridden in the DATEV account settings.",
+          de: "SKR03, SKR04 und SKR07. Jedes Konto lässt sich in den DATEV-Kontorahmen-Einstellungen überschreiben.",
         },
       },
       {
         q: {
-          en: "How are the 7% and 19% VAT rates handled?",
-          de: "Wie werden die MwSt-Sätze 7 % und 19 % behandelt?",
+          en: "What does my tax advisor receive automatically?",
+          de: "Was bekommt mein Steuerberater automatisch?",
         },
         a: {
-          en: "Automatically. The correct rate is applied at the point of sale — including mixed receipts and eat-in vs takeaway — and each receipt is split across the right revenue and tax accounts in the booking.",
-          de: "Automatisch. Der richtige Satz wird an der Kasse angewendet — inklusive gemischter Belege und im Haus vs außer Haus — und jeder Beleg wird in der Buchung auf die richtigen Erlös- und Steuerkonten gesplittet.",
+          en: "Z-reports by email — daily, weekly or monthly — with a summary and a PDF link. DATEV exports are created on demand and sent by you.",
+          de: "Z-Berichte per E-Mail — täglich, wöchentlich oder monatlich — mit Zusammenfassung und PDF-Link. DATEV-Exporte erstellen und versenden Sie bei Bedarf.",
         },
       },
       {
         q: {
-          en: "Can my tax advisor access the exports themselves?",
-          de: "Kann mein Steuerberater die Exporte selbst abrufen?",
+          en: "Is the DSFinV-K export included?",
+          de: "Ist der DSFinV-K-Export enthalten?",
         },
         a: {
-          en: "Yes. Give them a read-only login to pull exports on demand, or schedule an automatic monthly export straight to their inbox — no more emailing spreadsheets back and forth.",
-          de: "Ja. Geben Sie ihm einen Nur-Lese-Zugang für Exporte auf Abruf oder planen Sie einen automatischen Monatsexport direkt in sein Postfach — kein Hin- und Herschicken von Tabellen mehr.",
-        },
-      },
-      {
-        q: {
-          en: "Is the DSFinV-K export included or extra?",
-          de: "Ist der DSFinV-K-Export enthalten oder kostet er extra?",
-        },
-        a: {
-          en: "Included. Every GastroPos plan bundles the DSFinV-K export and GoBD journal alongside the DATEV export, with a ten-year compliant archive — no add-on fees.",
-          de: "Enthalten. Jedes GastroPos-Paket bündelt den DSFinV-K-Export und das GoBD-Journal mit dem DATEV-Export, inklusive zehnjährigem konformem Archiv — ohne Zusatzgebühren.",
+          en: "The DSFinV-K export comes from the fiskaly TSE, which is booked as an add-on (15 € per month). DATEV and GoBD exports are included in every plan.",
+          de: "Der DSFinV-K-Export kommt aus der fiskaly-TSE, die als Zusatzfunktion gebucht wird (15 € pro Monat). DATEV- und GoBD-Exporte sind in jedem Paket enthalten.",
         },
       },
     ],
   },
   analytics: {
     slug: "analytics",
-    eyebrow: { en: "Analytics", de: "Analytics" },
+    eyebrow: {
+      en: "Analytics",
+      de: "Auswertungen",
+    },
     title: {
-      en: "Reports that actually drive decisions.",
-      de: "Berichte, die Entscheidungen wirklich vorantreiben.",
+      en: "See how your business is doing — live, for any period.",
+      de: "Sehen, wie Ihr Betrieb läuft — live, für jeden Zeitraum.",
     },
     lede: {
-      en: "Best-sellers, peak hours, average ticket, server performance, food cost — all live, all drill-downable, all exportable.",
-      de: "Bestseller, Stoßzeiten, durchschnittlicher Bon, Service-Performance, Wareneinsatz — alles live, alles aufschlüsselbar, alles exportierbar.",
+      en: "Revenue, orders, average ticket, peak hours and best sellers at a glance — compared with the previous period. Eleven analyses by hour, day, product, category, employee, table, customer and payment method.",
+      de: "Umsatz, Bestellungen, Ø Bonwert, Stoßzeiten und Bestseller auf einen Blick — im Vergleich zum Vorzeitraum. Elf Auswertungen nach Stunde, Tag, Produkt, Kategorie, Mitarbeiter, Tisch, Kunde und Zahlungsart.",
     },
     metaTitle: {
-      en: "POS Analytics & Reports for Restaurants & Retail | GastroPos",
-      de: "Kassen-Analytics & Berichte für Gastronomie & Handel | GastroPos",
+      en: "Restaurant Analytics & Sales Reports | GastroPos",
+      de: "Auswertungen & Umsatzstatistik für die Gastronomie | GastroPos",
     },
     metaDescription: {
-      en: "Live sales analytics, best-seller reports, hourly heatmaps, staff performance and food cost — built into every GastroPos plan.",
-      de: "Live-Verkaufsanalysen, Bestseller-Berichte, Stunden-Heatmaps, Mitarbeiterleistung und Wareneinsatz — in jedem GastroPos-Paket enthalten.",
+      en: "Restaurant analytics: revenue, orders, average ticket, cooking and waiting times, sales by hour, day, product, category, employee, table and payment method, best and least sellers.",
+      de: "Auswertungen für die Gastronomie: Umsatz, Bestellungen, Ø Bonwert, Koch- und Wartezeiten, Umsatz nach Stunde, Tag, Produkt, Kategorie, Mitarbeiter, Tisch und Zahlungsart, Bestseller und Ladenhüter.",
     },
+    heroImage: "analytics-hero.webp",
+    heroAlt: {
+      en: "Statistics dashboard and revenue per hour on a tablet",
+      de: "Statistik-Dashboard und Umsatz pro Stunde auf einem Tablet",
+    },
+    highlights: [
+      {
+        value: {
+          en: "11 analyses",
+          de: "11 Auswertungen",
+        },
+        label: {
+          en: "from dashboard to least sellers",
+          de: "vom Dashboard bis zum Ladenhüter",
+        },
+      },
+      {
+        value: {
+          en: "Any period",
+          de: "Jeder Zeitraum",
+        },
+        label: {
+          en: "with comparison to the previous one",
+          de: "mit Vergleich zum Vorzeitraum",
+        },
+      },
+      {
+        value: {
+          en: "Peak hour",
+          de: "Stoßstunde",
+        },
+        label: {
+          en: "revenue per hour of the day",
+          de: "Umsatz pro Tagesstunde",
+        },
+      },
+      {
+        value: {
+          en: "Excel",
+          de: "Excel",
+        },
+        label: {
+          en: "export of product rankings",
+          de: "Export der Produkt-Ranglisten",
+        },
+      },
+    ],
     features: {
       en: [
-        "Sales by hour, day, week, month and custom range",
-        "Best- and worst-selling items with margin, not just volume",
-        "Hourly heatmaps that reveal your real peaks and lulls",
-        "Server, station and cashier scorecards",
-        "Average ticket, covers, table turn and upsell rate",
-        "Live food-cost and margin per item and per category",
-        "Payment-mix, refunds, discounts and void tracking",
-        "AI sales forecasting for the next 2–24 hours",
-        "Custom dashboards and saved views per role",
-        "Scheduled reports by email and Slack",
-        "Multi-store consolidation with per-location drill-down",
-        "Export anything to CSV, Excel or your BI tool",
+        "Dashboard: orders, revenue, average ticket, discounts, cancellations",
+        "Average cooking and waiting time",
+        "Trend compared with the previous period",
+        "Revenue by hour and by day",
+        "Revenue by product, category, employee, table, customer and payment method",
+        "Pie chart, bar chart or list",
+        "Best sellers and least sellers with Excel export",
+        "Product variations (sizes, extras) on request",
+        "Quick periods: today, 7 days, this month, 30 days",
       ],
       de: [
-        "Umsätze pro Stunde, Tag, Woche, Monat und frei wählbar",
-        "Best- und Worstseller mit Marge, nicht nur Menge",
-        "Stunden-Heatmaps, die echte Spitzen und Flauten zeigen",
-        "Scorecards für Service, Station und Kasse",
-        "Durchschnittsbon, Gäste, Tischrotation und Upsell-Quote",
-        "Live-Wareneinsatz und Marge pro Artikel und Kategorie",
-        "Zahlungsmix, Stornos, Rabatte und Void-Tracking",
-        "KI-Umsatzprognose für die nächsten 2–24 Stunden",
-        "Eigene Dashboards und gespeicherte Ansichten pro Rolle",
-        "Geplante Berichte per E-Mail und Slack",
-        "Mehrfilial-Konsolidierung mit Drill-down pro Standort",
-        "Export von allem nach CSV, Excel oder Ihr BI-Tool",
+        "Dashboard: Bestellungen, Umsatz, Ø Bonwert, Rabatte, Stornos",
+        "Durchschnittliche Koch- und Wartezeit",
+        "Trend im Vergleich zum Vorzeitraum",
+        "Umsatz nach Stunde und nach Tag",
+        "Umsatz nach Produkt, Kategorie, Mitarbeiter, Tisch, Kunde und Zahlungsart",
+        "Torten-, Balkendiagramm oder Liste",
+        "Bestseller und Ladenhüter mit Excel-Export",
+        "Produktvariationen (Größen, Extras) auf Wunsch",
+        "Schnellauswahl: heute, 7 Tage, dieser Monat, 30 Tage",
       ],
     },
     sections: [
       {
         heading: {
-          en: "Reports that drive a decision, not just fill a screen",
-          de: "Berichte, die eine Entscheidung auslösen, nicht nur den Bildschirm füllen",
+          en: "The day at a glance",
+          de: "Der Tag auf einen Blick",
         },
         body: {
-          en: "Most POS dashboards show you yesterday's revenue and stop there. GastroPos analytics is built around the questions operators actually ask: which dishes earn their place on the menu, when do I really need a third person on the floor, why was last Tuesday down 15%, and is the new starter actually selling? Every report drills from the headline number down to the individual ticket, so a hunch becomes a fact you can act on before the next shift.",
-          de: "Die meisten Kassen-Dashboards zeigen Ihnen den Umsatz von gestern und hören dort auf. Die GastroPos-Analytics ist um die Fragen herum gebaut, die Betreiber wirklich stellen: Welche Gerichte verdienen ihren Platz auf der Karte, wann brauche ich tatsächlich eine dritte Kraft im Service, warum war letzter Dienstag 15 % schwächer, und verkauft sich die neue Vorspeise wirklich? Jeder Bericht reicht von der Schlagzeile bis zum einzelnen Bon hinab, sodass aus einem Bauchgefühl ein Fakt wird, auf den Sie vor der nächsten Schicht reagieren können.",
+          en: "The dashboard shows the number of orders, revenue with average per order, cooking and waiting time, discounts and cancellations — plus revenue by hour, the top 5 products and the payment mix.",
+          de: "Das Dashboard zeigt Bestellzahl, Umsatz mit Durchschnitt pro Bestellung, Koch- und Wartezeit, Rabatte und Stornos — dazu Umsatz nach Uhrzeit, die Top-5-Produkte und die Verteilung der Zahlungsarten.",
+        },
+        bullets: {
+          en: [
+            "Any period with start and end time",
+            "Compared with the previous period",
+            "Available to administrators",
+          ],
+          de: [
+            "Beliebiger Zeitraum mit Start- und Endzeit",
+            "Im Vergleich zum Vorzeitraum",
+            "Für Administratoren verfügbar",
+          ],
+        },
+        image: "analytics-dashboard.webp",
+        imageAlt: {
+          en: "Statistics dashboard",
+          de: "Statistik-Dashboard",
         },
       },
       {
         heading: {
-          en: "Menu engineering: keep the stars, fix the dogs",
-          de: "Menü-Engineering: Stars behalten, Ladenhüter beheben",
+          en: "What sells — and what doesn’t",
+          de: "Was läuft — und was nicht",
         },
         body: {
-          en: "Volume alone lies. A dish can be your best seller and your worst earner at the same time. GastroPos plots every item by popularity and by margin, sorting your menu into stars, workhorses, puzzles and dogs. You see at a glance which items to feature, which to re-cost, which to re-price and which to retire — the single highest-leverage decision most venues never make with real data.",
-          de: "Menge allein lügt. Ein Gericht kann gleichzeitig Ihr Bestseller und Ihr schlechtester Verdiener sein. GastroPos trägt jeden Artikel nach Beliebtheit und Marge auf und sortiert Ihre Karte in Stars, Arbeitspferde, Rätsel und Ladenhüter. Sie sehen auf einen Blick, welche Artikel Sie hervorheben, neu kalkulieren, neu bepreisen oder streichen sollten — die wirkungsvollste Entscheidung, die die meisten Betriebe nie mit echten Daten treffen.",
+          en: "Revenue by product or category shows the share of each item in your total revenue, as a chart or list. The best and least seller lists rank products by quantity — export them to Excel for your menu planning.",
+          de: "Umsatz nach Produkt oder Kategorie zeigt den Anteil jedes Artikels am Gesamtumsatz, als Diagramm oder Liste. Bestseller- und Ladenhüter-Listen sortieren nach Stückzahl — als Excel-Export für Ihre Speisekartenplanung.",
+        },
+        bullets: {
+          en: [
+            "Top product and average per product",
+            "Sizes and extras as separate lines",
+            "Search by product or category",
+          ],
+          de: [
+            "Top-Produkt und Durchschnitt pro Produkt",
+            "Größen und Extras als eigene Zeilen",
+            "Suche nach Produkt oder Kategorie",
+          ],
+        },
+        image: "analytics-products.webp",
+        imageAlt: {
+          en: "Revenue by product",
+          de: "Umsatz nach Produkten",
         },
       },
       {
         heading: {
-          en: "Staff the floor to the hour, not the guess",
-          de: "Personal nach der Stunde planen, nicht nach Gefühl",
+          en: "Plan staff around your peaks",
+          de: "Personal nach Stoßzeiten planen",
         },
         body: {
-          en: "Hourly heatmaps show exactly when your covers, sales and average ticket rise and fall across the week. Lay your rota over the demand curve and the over-staffed Monday lunch and the under-staffed Friday rush both become obvious. Add the AI forecast for the next two to twenty-four hours and you can prep, order and roster against what's coming, not what happened last month.",
-          de: "Stunden-Heatmaps zeigen genau, wann Gäste, Umsatz und Durchschnittsbon im Wochenverlauf steigen und fallen. Legen Sie Ihren Dienstplan über die Nachfragekurve, und der überbesetzte Montagmittag und der unterbesetzte Freitagabend werden beide offensichtlich. Mit der KI-Prognose für die nächsten zwei bis vierundzwanzig Stunden planen Sie Mise en Place, Bestellung und Schichten gegen das, was kommt — nicht gegen das, was letzten Monat war.",
+          en: "Revenue per hour and per day reveals your peak hour, your best day and the share of weekend revenue — so you plan staff and prep for the hours that really count.",
+          de: "Umsatz pro Stunde und pro Tag zeigt Ihre Stoßstunde, Ihren besten Tag und den Wochenend-Anteil — so planen Sie Personal und Vorbereitung für die Stunden, die wirklich zählen.",
         },
-      },
-      {
-        heading: {
-          en: "See your whole group on one screen",
-          de: "Ihre ganze Gruppe auf einem Bildschirm",
+        bullets: {
+          en: [
+            "Peak hour and active hours",
+            "Best day and average per day",
+            "Waiter sales report for each shift",
+          ],
+          de: [
+            "Stoßstunde und aktive Stunden",
+            "Bester Tag und Durchschnitt pro Tag",
+            "Kellner-Umsatzbericht für jede Schicht",
+          ],
         },
-        body: {
-          en: "Running more than one location? The consolidated dashboard rolls revenue, margin and labour up across the group and lets you rank sites against each other, then drill into any single venue down to the cashier and the ticket. Spot the location quietly leaking margin, copy what your best site does, and manage five venues with the clarity you used to have with one.",
-          de: "Mehr als einen Standort? Das konsolidierte Dashboard fasst Umsatz, Marge und Personal über die Gruppe zusammen und lässt Sie Standorte gegeneinander ranken, dann in jeden einzelnen Betrieb bis zur Kasse und zum Bon eintauchen. Erkennen Sie den Standort, der still Marge verliert, kopieren Sie, was Ihr bester Betrieb tut, und führen Sie fünf Betriebe mit der Klarheit, die Sie früher bei einem hatten.",
-        },
-      },
-      {
-        heading: {
-          en: "The report lands in your inbox before you ask for it",
-          de: "Der Bericht liegt im Postfach, bevor Sie danach fragen",
-        },
-        body: {
-          en: "Build the dashboard once, save it per role, and schedule it. Owners get the morning-after numbers by email at 7am, managers get a Slack message when sales beat or miss target, accountants get the weekly export. Because the data is live, nobody is ever working from a screenshot that was already stale when it was taken.",
-          de: "Bauen Sie das Dashboard einmal, speichern Sie es pro Rolle und planen Sie es. Inhaber erhalten die Zahlen vom Vortag um 7 Uhr per E-Mail, Manager eine Slack-Nachricht, wenn der Umsatz das Ziel über- oder unterschreitet, Buchhalter den Wochenexport. Weil die Daten live sind, arbeitet niemand mehr mit einem Screenshot, der schon beim Erstellen veraltet war.",
+        image: "analytics-hours.webp",
+        imageAlt: {
+          en: "Revenue per hour",
+          de: "Umsatz pro Stunde",
         },
       },
     ],
     faq: [
       {
         q: {
-          en: "Is analytics included or a paid add-on?",
-          de: "Ist Analytics enthalten oder ein kostenpflichtiges Add-on?",
+          en: "Are analytics included?",
+          de: "Sind die Auswertungen inklusive?",
         },
         a: {
-          en: "Live sales analytics, best-seller reports, hourly heatmaps and staff scorecards are built into every GastroPos plan. There's no separate reporting fee.",
-          de: "Live-Verkaufsanalysen, Bestseller-Berichte, Stunden-Heatmaps und Mitarbeiter-Scorecards sind in jedem GastroPos-Paket enthalten. Es gibt keine separate Reporting-Gebühr.",
-        },
-      },
-      {
-        q: { en: "Can I see margin, not just revenue?", de: "Sehe ich Marge, nicht nur Umsatz?" },
-        a: {
-          en: "Yes. When inventory and recipes are set up, every item carries its live food-cost and margin, so your best sellers are ranked by profit as well as by volume.",
-          de: "Ja. Wenn Warenwirtschaft und Rezepte eingerichtet sind, trägt jeder Artikel seinen Live-Wareneinsatz und seine Marge — Ihre Bestseller werden nach Gewinn und nach Menge gerankt.",
+          en: "Yes, in every plan. They are available to administrators.",
+          de: "Ja, in jedem Paket. Sie stehen Administratoren zur Verfügung.",
         },
       },
       {
         q: {
-          en: "Does it combine all my locations?",
-          de: "Fasst es alle meine Standorte zusammen?",
+          en: "Can I export the data?",
+          de: "Kann ich die Daten exportieren?",
         },
         a: {
-          en: "Yes. The consolidated dashboard rolls every location up into one view and lets you drill down to a single venue, cashier or ticket whenever you need detail.",
-          de: "Ja. Das konsolidierte Dashboard fasst jeden Standort in einer Ansicht zusammen und lässt Sie bei Bedarf bis zu einem einzelnen Betrieb, einer Kasse oder einem Bon eintauchen.",
-        },
-      },
-      {
-        q: { en: "Can I get reports automatically?", de: "Bekomme ich Berichte automatisch?" },
-        a: {
-          en: "Yes. Schedule any saved dashboard to arrive by email or Slack — daily, weekly or monthly — and set alerts for when sales beat or miss target.",
-          de: "Ja. Planen Sie jedes gespeicherte Dashboard per E-Mail oder Slack — täglich, wöchentlich oder monatlich — und setzen Sie Alarme, wenn der Umsatz das Ziel über- oder unterschreitet.",
+          en: "Best seller and least seller lists can be exported to Excel. Z-reports can be exported as Excel or CSV, and the DATEV export covers your bookkeeping.",
+          de: "Bestseller- und Ladenhüter-Listen lassen sich als Excel exportieren. Z-Berichte gibt es als Excel oder CSV, für die Buchhaltung gibt es den DATEV-Export.",
         },
       },
       {
-        q: { en: "Can I export the raw data?", de: "Kann ich die Rohdaten exportieren?" },
+        q: {
+          en: "Why do analytics differ from my Z-report?",
+          de: "Warum weichen Auswertungen vom Z-Bericht ab?",
+        },
         a: {
-          en: "Yes. Export any report to CSV or Excel, or feed the data into your own BI tool — your numbers are never locked inside GastroPos.",
-          de: "Ja. Exportieren Sie jeden Bericht nach CSV oder Excel oder speisen Sie die Daten in Ihr eigenes BI-Tool — Ihre Zahlen sind nie in GastroPos eingesperrt.",
+          en: "Analytics use exactly the period you choose, while a Z-report covers everything since the previous Z-report. For accounting, the Z-report is what counts.",
+          de: "Auswertungen nutzen genau den gewählten Zeitraum, ein Z-Bericht umfasst alles seit dem letzten Z-Bericht. Für die Buchhaltung zählt der Z-Bericht.",
+        },
+      },
+      {
+        q: {
+          en: "Do analytics show margins or food cost?",
+          de: "Zeigen die Auswertungen Margen oder Wareneinsatz?",
+        },
+        a: {
+          en: "No. GastroPos analyses revenue and quantities; purchase prices and recipes are not stored.",
+          de: "Nein. GastroPos wertet Umsätze und Mengen aus; Einkaufspreise und Rezepturen werden nicht erfasst.",
         },
       },
     ],

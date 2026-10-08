@@ -759,6 +759,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/inter@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@fontsource/inter@npm:5.3.0"
+  checksum: 10c0/568601c10c83601c23005f8cd7434499df6e007eaa22c4dabbb1dcae327cc8e4a148ece8d4a4edaa8bafc5d2371ea97a37d1cc91ffbed77a43e2d8c15a6e831b
+  languageName: node
+  linkType: hard
+
+"@fontsource/jetbrains-mono@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@fontsource/jetbrains-mono@npm:5.3.0"
+  checksum: 10c0/1351b2350e893f5da39559ed90ff0e5e60bcc876b1f40531ad081ad4bf2f3cda3fa9e8940364aef5a7430ae3140685c9cd4819c36d8ad62bcd3fa37e3cc66b1d
+  languageName: node
+  linkType: hard
+
+"@fontsource/plus-jakarta-sans@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@fontsource/plus-jakarta-sans@npm:5.3.0"
+  checksum: 10c0/22342f0e6f8a834c2ffcaa695a2fd90909742f64cc4104ddc87a8df74462c11c254b3e43e2ca4335d9b406678ebdd13173841bca00de77b568f1791ced3747df
+  languageName: node
+  linkType: hard
+
 "@hookform/resolvers@npm:^5.2.2":
   version: 5.4.0
   resolution: "@hookform/resolvers@npm:5.4.0"
@@ -6078,6 +6099,9 @@ __metadata:
   resolution: "tanstack_start_ts@workspace:."
   dependencies:
     "@eslint/js": "npm:^9.32.0"
+    "@fontsource/inter": "npm:^5.3.0"
+    "@fontsource/jetbrains-mono": "npm:^5.3.0"
+    "@fontsource/plus-jakarta-sans": "npm:^5.3.0"
     "@hookform/resolvers": "npm:^5.2.2"
     "@lovable.dev/vite-tanstack-config": "npm:^2.1.1"
     "@microsoft/clarity": "npm:^1.0.2"

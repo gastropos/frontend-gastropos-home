@@ -127,15 +127,15 @@ export function Hero() {
     lang === "de"
       ? {
           badge: "KI-gestützte Gastronomie-Plattform",
-          h1a: "Erstes KI-basiertes POS-System mit",
-          sub: "Kassensystem, Küchenmonitor, QR-Bestellung & Reservierung in einer App.",
+          h1a: "Das Kassensystem mit KI und",
+          sub: "Kasse, Service-App, Küchenmonitor, QR-Bestellung und eigener Webshop — mit Cloud-TSE und DATEV-Export.",
           cta1: t.common.startTrial,
           cta2: t.common.bookDemo,
         }
       : {
           badge: "AI-Powered Gastronomy Platform",
-          h1a: "First AI Based POS System with",
-          sub: "POS, KDS, QR ordering & reservations in one unified system.",
+          h1a: "The POS system with AI and",
+          sub: "Till, waiter app, kitchen display, QR ordering and your own webshop — with cloud TSE and DATEV export.",
           cta1: t.common.startTrial,
           cta2: t.common.bookDemo,
         };

@@ -35,40 +35,40 @@ export function AiCapabilities() {
       ? [
           {
             icon: Brain,
-            title: "Vorhersagen",
-            desc: "KI prognostiziert Bestellvolumen anhand von Wetter, Events und historischen Daten — mit über 92% Genauigkeit.",
+            title: "Importieren",
+            desc: "Die KI liest Ihre Speisekarte aus Fotos oder PDF und legt Kategorien, Produkte und Preise für Sie an.",
             illustration: "/undraw_ai-slop_jm2g.svg",
           },
           {
             icon: Zap,
-            title: "Priorisieren",
-            desc: "Intelligentes Routing weist Bestellungen automatisch der optimalen Station zu und minimiert Wartezeiten.",
+            title: "Bestellen",
+            desc: "Mit „Mit KI hinzufügen“ nimmt der Service Bestellungen per Sprache auf — die Artikel landen direkt am Tisch.",
             illustration: "/undraw_chat-with-ai_ir62.svg",
           },
           {
             icon: TrendingUp,
-            title: "Performen",
-            desc: "Echtzeit-Analytics erkennen Engpässe, bevor sie entstehen, und optimieren den Durchsatz kontinuierlich.",
+            title: "Einrichten",
+            desc: "Der Assistent richtet Tische, Drucker und Zahlungsarten ein und beantwortet Fragen zum System.",
             illustration: "/undraw_data-input_whqw.svg",
           },
         ]
       : [
           {
             icon: Brain,
-            title: "Predict",
-            desc: "AI forecasts order volume using weather, events, and historical data — with 92%+ accuracy.",
+            title: "Import",
+            desc: "AI reads your menu from photos or a PDF and creates categories, products and prices for you.",
             illustration: "/undraw_ai-slop_jm2g.svg",
           },
           {
             icon: Zap,
-            title: "Prioritize",
-            desc: "Intelligent routing assigns orders to optimal stations automatically, minimizing wait times.",
+            title: "Order",
+            desc: "With “Add with AI”, waiters take orders by voice — the items land on the table instantly.",
             illustration: "/undraw_chat-with-ai_ir62.svg",
           },
           {
             icon: TrendingUp,
-            title: "Perform",
-            desc: "Real-time analytics detect bottlenecks before they form, continuously optimizing throughput.",
+            title: "Set up",
+            desc: "The assistant sets up tables, printers and payment types and answers questions about the system.",
             illustration: "/undraw_data-input_whqw.svg",
           },
         ];
@@ -112,7 +112,10 @@ export function AiCapabilities() {
                   <div
                     aria-hidden
                     className="pointer-events-none absolute -right-10 bottom-0 size-32 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                    style={{ background: "radial-gradient(circle, rgba(234,89,41,0.06) 0%, transparent 70%)" }}
+                    style={{
+                      background:
+                        "radial-gradient(circle, rgba(234,89,41,0.06) 0%, transparent 70%)",
+                    }}
                   />
                   <h3 className="font-display text-xl font-bold text-foreground">{title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
@@ -232,8 +235,8 @@ export function FinalCta() {
           </h2>
           <p className="mt-5 text-white/60">
             {lang === "de"
-              ? "Live in unter 20 Minuten. Keine Kreditkarte nötig."
-              : "Live in under 20 minutes. No credit card required."}
+              ? "Speisekarte per Foto importieren, Tische anlegen, loslegen — auf Ihren vorhandenen Geräten."
+              : "Import your menu from a photo, create your tables, get started — on the devices you already have."}
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
@@ -264,22 +267,24 @@ export function FinalCta() {
 export function SocialProof() {
   const { lang } = useI18n();
   const logos = [
-    "AKROPOLIS",
-    "ALTER FRITZ",
-    "CAFE AROMA",
-    "RHEINBAR",
-    "RISTORANTE ITALIA",
-    "MILCHHÜSLI",
-    "SOHO BARS",
-    "UPDATE LOUNGE",
+    "FISKALY TSE",
+    "DATEV",
+    "STRIPE",
+    "PAYPAL",
+    "KLARNA",
+    "SUMUP",
+    "ZETTLE",
+    "ZVT",
+    "SUNMI",
+    "IMIN",
   ];
   return (
     <section className="overflow-hidden bg-white py-14 border-t-8 border-l-8 border-t-[#ea5929] border-l-[#ea5929]">
       <div className="mx-auto max-w-7xl px-6">
         <p className="text-center font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
           {lang === "de"
-            ? "Vertraut von 2.000+ Betreibern in Europa"
-            : "Trusted by 2,000+ operators across Europe"}
+            ? "Arbeitet mit Ihrer Technik und Ihren Partnern"
+            : "Works with your hardware and partners"}
         </p>
         <div className="mt-8 overflow-hidden">
           <div className="flex animate-marquee gap-16 whitespace-nowrap">
@@ -309,35 +314,35 @@ export function KeyBenefits() {
       ? [
           {
             icon: Brain,
-            t: "KI-Nachfrageprognose",
-            d: "GastroPos lernt aus Wetter, Events und Verlaufsdaten — und sagt voraus, was Sie morgen verkaufen werden, mit über 92 % Genauigkeit.",
+            t: "Speisekarte per KI",
+            d: "Fotografieren Sie Ihre Speisekarte oder laden Sie ein PDF hoch — die KI legt Kategorien, Produkte und Preise an.",
           },
           {
             icon: Sparkles,
-            t: "Menü- & Preis-KI",
-            d: "Automatische Empfehlungen für Bestseller, Margen-Optimierung und dynamische Preise zu Stoßzeiten.",
+            t: "Bestellen per Sprache",
+            d: "Bestellungen per Sprache aufnehmen: Der Service diktiert, GastroPos legt die Artikel auf den Tisch.",
           },
           {
             icon: TrendingUp,
-            t: "Anomalie-Erkennung",
-            d: "Die KI erkennt ungewöhnliche Stornos, Schwund oder Kassenabweichungen in Echtzeit — bevor sie zum Problem werden.",
+            t: "KI-Assistent",
+            d: "Der Assistent erstellt Tische und Bereiche, richtet Drucker ein, testet sie und hilft bei der Fehlersuche.",
           },
         ]
       : [
           {
             icon: Brain,
-            t: "AI demand forecasting",
-            d: "GastroPos learns from weather, events and historical data — and predicts what you'll sell tomorrow with 92%+ accuracy.",
+            t: "AI menu import",
+            d: "Take a photo of your menu or upload a PDF — the AI creates categories, products and prices.",
           },
           {
             icon: Sparkles,
-            t: "Menu & pricing AI",
-            d: "Automatic recommendations for bestsellers, margin optimization and dynamic pricing during peak hours.",
+            t: "Ordering by voice",
+            d: "Take orders by voice: the waiter dictates, GastroPos puts the items on the table.",
           },
           {
             icon: TrendingUp,
-            t: "Anomaly detection",
-            d: "AI flags unusual voids, shrinkage or cash discrepancies in real time — before they become a problem.",
+            t: "AI assistant",
+            d: "The assistant creates tables and areas, sets up and tests printers and helps with troubleshooting.",
           },
         ];
   return (
@@ -376,32 +381,40 @@ const showcaseTabs = [
     icon: Receipt,
     en: "POS System",
     de: "Kasse",
-    desc_en: "Tablet-based ordering at every table. Waitstaff capture orders that flow instantly to the kitchen — no paper, no delays.",
-    desc_de: "Tablet-basierte Bestellaufnahme an jedem Tisch. Bestellungen fließen sofort in die Küche — kein Papier, keine Verzögerungen.",
+    desc_en:
+      "Tablet-based ordering at every table. Waitstaff capture orders that flow instantly to the kitchen — no paper, no delays.",
+    desc_de:
+      "Tablet-basierte Bestellaufnahme an jedem Tisch. Bestellungen fließen sofort in die Küche — kein Papier, keine Verzögerungen.",
   },
   {
     id: "kds",
     icon: ChefHat,
     en: "Kitchen Display",
     de: "Küchenmonitor",
-    desc_en: "Real-time order display for every kitchen station. Acoustic alerts, category filters, and status tracking from New to Served.",
-    desc_de: "Echtzeit-Auftragsanzeige für jede Küchenstation. Akustische Signale, Kategoriefilter und Statusverfolgung von Neu bis Serviert.",
+    desc_en:
+      "Real-time order display for every kitchen station. Acoustic alerts, category filters, and status tracking from New to Served.",
+    desc_de:
+      "Echtzeit-Auftragsanzeige für jede Küchenstation. Akustische Signale, Kategoriefilter und Statusverfolgung von Neu bis Serviert.",
   },
   {
     id: "qr",
     icon: ScanLine,
     en: "QR Ordering",
     de: "QR-Bestellung",
-    desc_en: "Guests scan a QR code at the table and place orders directly — no app download needed. Orders appear instantly in the KDS.",
-    desc_de: "Gäste scannen einen QR-Code am Tisch und bestellen direkt — kein App-Download nötig. Bestellungen erscheinen sofort im KDS.",
+    desc_en:
+      "Guests scan a QR code at the table and place orders directly — no app download needed. Orders appear instantly in the KDS.",
+    desc_de:
+      "Gäste scannen einen QR-Code am Tisch und bestellen direkt — kein App-Download nötig. Bestellungen erscheinen sofort im KDS.",
   },
   {
     id: "analytics",
     icon: BarChart3,
     en: "Analytics",
     de: "Analytics",
-    desc_en: "Revenue breakdowns, best-selling items, peak hours, and employee performance — all in one clear dashboard.",
-    desc_de: "Umsatzauswertungen, Bestseller, Stoßzeiten und Mitarbeiterleistung — übersichtlich in einem Dashboard.",
+    desc_en:
+      "Revenue breakdowns, best-selling items, peak hours, and employee performance — all in one clear dashboard.",
+    desc_de:
+      "Umsatzauswertungen, Bestseller, Stoßzeiten und Mitarbeiterleistung — übersichtlich in einem Dashboard.",
   },
 ] as const;
 
@@ -527,7 +540,12 @@ function PosPreview() {
           ].map((m, i) => (
             <div key={m.name} className="rounded-xl bg-white p-4 ring-1 ring-border">
               <div className="aspect-video w-full overflow-hidden rounded-md bg-gradient-to-br from-[#e8edf5] to-[#d9e2f3]">
-                <img src={m.image} alt={m.name} className="h-full w-full object-cover" loading="lazy" />
+                <img
+                  src={m.image}
+                  alt={m.name}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
               </div>
               <p className="mt-2 text-sm font-semibold">{m.name}</p>
               <p className="font-mono text-[10px] text-muted-foreground">€{(i + 1) * 4.5}.00</p>
@@ -570,7 +588,12 @@ function KdsPreview() {
   return (
     <div className="col-span-full grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
       {[
-        { table: "#14", time: "00:42", items: ["2× Burger", "1× Salad", "3× Coke"], status: "Cooking" },
+        {
+          table: "#14",
+          time: "00:42",
+          items: ["2× Burger", "1× Salad", "3× Coke"],
+          status: "Cooking",
+        },
         { table: "#08", time: "00:21", items: ["1× Steak", "1× Pasta", "2× Wine"], status: "New" },
         { table: "#22", time: "01:14", items: ["3× Pizza", "2× Beer"], status: "Cooking" },
         { table: "Bar", time: "00:05", items: ["4× Espresso"], status: "New" },

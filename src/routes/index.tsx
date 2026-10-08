@@ -1,36 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { absoluteUrl } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { Hero } from "@/components/home/Hero";
-import { AiCapabilities, StatsStrip, BuiltFor, FinalCta, SocialProof, KeyBenefits, ProductShowcase } from "@/components/home/Sections";
+import { BuiltFor, FinalCta, SocialProof, ProductShowcase } from "@/components/home/Sections";
 import { DashboardDemo } from "@/components/home/DashboardDemo";
-import { Testimonials } from "@/components/home/Testimonials";
 import { FuturisticIntro } from "@/components/home/FuturisticIntro";
 import { useState, useCallback } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: [
-      { title: "GastroPos — AI-Powered Gastronomy Platform & POS" },
-      {
-        name: "description",
-        content:
-          "The AI-powered cloud platform for gastronomy. POS, KDS, QR ordering, reservations, and AI routing in one unified system.",
-      },
-      { property: "og:title", content: "GastroPos — AI-Powered Gastronomy Platform & POS" },
-      {
-        property: "og:description",
-        content:
-          "POS, KDS, QR ordering, and reservations connected by a smart voice assistant. Scalable for restaurants, cafés, and service businesses.",
-      },
-      { property: "og:url", content: absoluteUrl("/") },
-    ],
+    ...pageHead({
+      title: "GastroPos — Cloud-Kassensystem für Restaurants, Cafés & Lieferdienste",
+      description:
+        "Kasse, Bestellaufnahme am Tisch, Küchenmonitor, QR-Bestellung und eigener Webshop in einem System. Mit fiskaly Cloud-TSE, Kassenbuch und DATEV-Export. Ab 39 € im Monat.",
+      path: "/",
+      image: "pos-hero.webp",
+    }),
     links: [
-      { rel: "canonical", href: absoluteUrl("/") },
+      { rel: "canonical", href: "https://www.gastropos.com/" },
       { rel: "preload", as: "image", href: "/carousel-kitchen.jpg" },
-      { rel: "preload", as: "image", href: "/carousel-restaurant.jpg" },
-      { rel: "preload", as: "image", href: "/carousel-cafe.jpg" },
-      { rel: "preload", as: "image", href: "/carousel-bar.jpg" },
     ],
   }),
   component: Index,
@@ -58,9 +46,7 @@ function Index() {
           <SocialProof />
           <ProductShowcase />
           <DashboardDemo />
-          <StatsStrip />
           <BuiltFor />
-          <Testimonials />
           <FinalCta />
         </SiteShell>
       </div>

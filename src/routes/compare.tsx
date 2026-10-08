@@ -1,45 +1,54 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { absoluteUrl } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { SubPageHero, CtaFooter } from "@/components/layout/SubPage";
 import { useI18n } from "@/lib/i18n/context";
 import { Check, X } from "lucide-react";
 
 export const Route = createFileRoute("/compare")({
-  head: () => ({
-    meta: [
-      { title: "Compare GastroPos vs Lightspeed, Vectron, GastroSoft" },
-      {
-        name: "description",
-        content:
-          "How GastroPos compares against legacy POS systems on TSE compliance, offline reliability, KDS, multi-store and total cost.",
-      },
-      { property: "og:title", content: "Compare GastroPos vs other POS systems" },
-      {
-        property: "og:description",
-        content:
-          "Feature-by-feature comparison: TSE, offline, KDS, multi-store, total cost of ownership.",
-      },
-      { property: "og:url", content: absoluteUrl("/compare") },
-    ],
-    links: [{ rel: "canonical", href: absoluteUrl("/compare") }],
-  }),
+  head: () =>
+    pageHead({
+      title: "GastroPos im Vergleich zu klassischen Kassensystemen",
+      description:
+        "Cloud-Kasse oder klassisches Kassensystem? Cloud-TSE, Küchenmonitor, Webshop, QR-Bestellung und KI-Import der Speisekarte im Funktionsvergleich.",
+      path: "/compare",
+      image: "pos-compliance.webp",
+      breadcrumbs: [{ name: "Vergleich", path: "/compare" }],
+    }),
   component: Compare,
 });
 
 const rows = [
   { label: { en: "Cloud-native", de: "Cloud-nativ" }, ot: true, legacy: false },
-  { label: { en: "TSE included", de: "TSE inklusive" }, ot: true, legacy: false },
-  { label: { en: "Offline-first", de: "Offline-first" }, ot: true, legacy: false },
+  {
+    label: { en: "Cloud TSE without hardware", de: "Cloud-TSE ohne Hardware" },
+    ot: true,
+    legacy: false,
+  },
   { label: { en: "KDS included", de: "KDS inklusive" }, ot: true, legacy: false },
   {
     label: { en: "Online ordering included", de: "Online-Bestellung inklusive" },
     ot: true,
     legacy: false,
   },
-  { label: { en: "Multi-store dashboard", de: "Multi-Filial-Dashboard" }, ot: true, legacy: false },
   {
-    label: { en: "Setup in under 2 hours", de: "Setup in unter 2 Stunden" },
+    label: { en: "QR self-ordering at the table", de: "QR-Selbstbestellung am Tisch" },
+    ot: true,
+    legacy: false,
+  },
+  {
+    label: {
+      en: "AI menu import from photo or PDF",
+      de: "KI-Import der Speisekarte aus Foto oder PDF",
+    },
+    ot: true,
+    legacy: false,
+  },
+  {
+    label: {
+      en: "Runs on phones, tablets, Sunmi devices and Windows",
+      de: "Läuft auf Handys, Tablets, Sunmi-Geräten und Windows",
+    },
     ot: true,
     legacy: false,
   },
@@ -103,8 +112,8 @@ function Compare() {
           </div>
           <p className="mt-8 text-center text-sm text-muted-foreground">
             {lang === "de"
-              ? "Wechseln von einer anderen Kasse? Wir migrieren Ihr Menü und Ihre Stammdaten kostenlos."
-              : "Switching from another POS? We migrate your menu and master data for free."}{" "}
+              ? "Wechseln von einer anderen Kasse? Ihre Speisekarte übernehmen Sie per Foto oder PDF mit dem KI-Import."
+              : "Switching from another POS? Bring your menu over from a photo or PDF with the AI import."}{" "}
             <Link to="/demo" className="text-accent font-semibold">
               {lang === "de" ? "Demo buchen" : "Book a demo"}
             </Link>

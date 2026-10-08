@@ -462,8 +462,8 @@ export function DashboardDemo() {
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/60">
                 <span className="inline-block size-2 rounded-full bg-green-400" />
                 {lang === "de"
-                  ? "KI-Assistent aktiv · 14 Befehle heute"
-                  : "AI assistant active · 14 commands today"}
+                  ? "KI-Assistent aktiv"
+                  : "AI assistant active"}
               </div>
             </motion.div>
           )}

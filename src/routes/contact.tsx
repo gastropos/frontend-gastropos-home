@@ -1,22 +1,31 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { absoluteUrl } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { useI18n } from "@/lib/i18n/context";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact GastroPos — Support & Sales" },
-      {
-        name: "description",
-        content:
-          "Reach GastroPos support, sales and partnerships. Email, phone, and Munich office address.",
-      },
-      { property: "og:url", content: absoluteUrl("/contact") },
-    ],
-    links: [{ rel: "canonical", href: absoluteUrl("/contact") }],
-  }),
+  head: () =>
+    pageHead({
+      title: "Kontakt — GastroPos Support & Vertrieb",
+      description:
+        "So erreichen Sie GastroPos: E-Mail an info@gastropos.ai, Telefon +49 201 759 346 94, Sitz in Essen.",
+      path: "/contact",
+      breadcrumbs: [{ name: "Kontakt", path: "/contact" }],
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Kontakt GastroPos",
+          mainEntity: {
+            "@type": "Organization",
+            name: "OrdersTracker UG (haftungsbeschränkt)",
+            email: "info@gastropos.ai",
+            telephone: "+49 201 75934694",
+          },
+        },
+      ],
+    }),
   component: Contact,
 });
 
@@ -31,17 +40,17 @@ function Contact() {
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
             {lang === "de"
-              ? "Unser Team antwortet werktags innerhalb von zwei Stunden."
-              : "Our team replies within two hours on business days."}
+              ? "Schreiben Sie uns oder rufen Sie an — wir melden uns werktags so schnell wie möglich."
+              : "Write to us or give us a call — we get back to you as soon as possible on business days."}
           </p>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             <a
-              href="mailto:support@gastropos.com"
+              href="mailto:info@gastropos.ai"
               className="rounded-2xl border border-border bg-surface/50 p-6 hover:border-accent"
             >
               <Mail className="size-5 text-accent" />
               <h3 className="mt-3 font-semibold">{lang === "de" ? "Support" : "Support"}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">support@gastropos.com</p>
+              <p className="mt-1 text-sm text-muted-foreground">info@gastropos.ai</p>
             </a>
             <a
               href="tel:+4920175934694"
@@ -55,9 +64,9 @@ function Contact() {
               <MapPin className="size-5 text-accent" />
               <h3 className="mt-3 font-semibold">{lang === "de" ? "Büro" : "Office"}</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Maximilianstraße 13
+                Marktstr. 10
                 <br />
-                80539 München, Deutschland
+                45355 Essen, Deutschland
               </p>
             </div>
           </div>

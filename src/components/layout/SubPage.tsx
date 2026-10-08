@@ -108,8 +108,8 @@ export function FeatureList({ items }: { items: string[] }) {
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
               {lang === "de"
-                ? "Keine Module, keine Aufpreise — jeder Punkt ist in jedem Paket dabei."
-                : "No modules, no add-on fees — every item ships with every plan."}
+                ? "Die wichtigsten Funktionen auf einen Blick."
+                : "The key features at a glance."}
             </p>
           </div>
         </Reveal>
@@ -313,13 +313,13 @@ export function CtaFooter() {
             />
             <h2 className="relative font-display text-3xl font-extrabold tracking-tight text-white text-balance md:text-4xl">
               {lang === "de"
-                ? "Bereit, in unter 20 Minuten live zu gehen?"
-                : "Ready to be live in under 20 minutes?"}
+                ? "GastroPos in Ihrem Betrieb ausprobieren?"
+                : "Want to try GastroPos in your business?"}
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/70">
               {lang === "de"
-                ? "Keine Einrichtungsgebühr, keine Vertragsbindung — starten Sie noch heute."
-                : "No setup fee, no lock-in — get started today."}
+                ? "Wir zeigen Ihnen GastroPos live — mit Ihrer Speisekarte und Ihren Abläufen."
+                : "We show you GastroPos live — with your menu and your workflows."}
             </p>
             <div className="relative mt-8 flex flex-wrap justify-center gap-3">
               <Link

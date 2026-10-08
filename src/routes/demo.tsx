@@ -1,28 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { absoluteUrl } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { useI18n } from "@/lib/i18n/context";
 import { Check } from "lucide-react";
 
 export const Route = createFileRoute("/demo")({
-  head: () => ({
-    meta: [
-      { title: "Book a demo — GastroPos Cloud POS" },
-      {
-        name: "description",
-        content:
-          "Get a 30-minute personalized walkthrough of GastroPos tailored to your venue. No commitment, no sales pressure.",
-      },
-      { property: "og:title", content: "Book a demo — GastroPos" },
-      {
-        property: "og:description",
-        content:
-          "30-minute personalized walkthrough. See GastroPos live with your menu and your industry.",
-      },
-      { property: "og:url", content: absoluteUrl("/demo") },
-    ],
-    links: [{ rel: "canonical", href: absoluteUrl("/demo") }],
-  }),
+  head: () =>
+    pageHead({
+      title: "Demo buchen — GastroPos live erleben",
+      description:
+        "Persönliche Online-Vorführung von GastroPos: Kasse, Service-App, Küchenmonitor, QR-Bestellung und Webshop — abgestimmt auf Ihren Betrieb.",
+      path: "/demo",
+      image: "waiter-hero.webp",
+      breadcrumbs: [{ name: "Demo", path: "/demo" }],
+    }),
   component: Demo,
 });
 
@@ -34,13 +25,13 @@ function Demo() {
           "30-minütiger personalisierter Walkthrough",
           "Live-Vorführung mit Ihrer Karte",
           "Hardware- und Zahlungsempfehlungen",
-          "Migrationsplan kostenlos",
+          "Hilfe beim Import Ihrer Speisekarte",
         ]
       : [
           "30-minute personalized walkthrough",
           "Live demo with your menu",
           "Hardware & payments recommendations",
-          "Free migration plan",
+          "Help importing your menu",
         ];
   return (
     <SiteShell>
@@ -71,42 +62,82 @@ function Demo() {
           </div>
           <form
             className="rounded-2xl border border-border bg-surface/50 p-8 space-y-4"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={(e) => {
+              e.preventDefault();
+              const data = new FormData(e.currentTarget);
+              const field = (k: string) => String(data.get(k) ?? "").trim();
+              const body = [
+                `Name: ${field("name")}`,
+                `E-Mail: ${field("email")}`,
+                `Telefon: ${field("phone")}`,
+                `Unternehmen: ${field("company")}`,
+                `Branche: ${field("industry")}`,
+                "",
+                field("message"),
+              ].join("\n");
+              window.location.href = `mailto:info@gastropos.ai?subject=${encodeURIComponent(
+                `Demo-Anfrage: ${field("company") || field("name")}`,
+              )}&body=${encodeURIComponent(body)}`;
+            }}
           >
             <input
+              name="name"
+              required
+              autoComplete="name"
+              aria-label={lang === "de" ? "Name" : "Full name"}
               placeholder={lang === "de" ? "Name" : "Full name"}
               className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm"
             />
             <input
               type="email"
+              name="email"
+              required
+              autoComplete="email"
+              aria-label={lang === "de" ? "E-Mail" : "Email"}
               placeholder={lang === "de" ? "E-Mail" : "Email"}
               className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm"
             />
             <input
+              name="phone"
+              type="tel"
+              autoComplete="tel"
+              aria-label={lang === "de" ? "Telefon" : "Phone"}
               placeholder={lang === "de" ? "Telefon" : "Phone"}
               className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm"
             />
             <input
+              name="company"
+              autoComplete="organization"
+              aria-label={lang === "de" ? "Unternehmen" : "Company"}
               placeholder={lang === "de" ? "Unternehmen" : "Company"}
               className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm"
             />
-            <select className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm">
+            <select
+              name="industry"
+              aria-label={lang === "de" ? "Branche" : "Industry"}
+              className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm"
+            >
               <option>{lang === "de" ? "Branche wählen…" : "Select industry…"}</option>
               <option>Restaurant</option>
               <option>Café</option>
               <option>Bar</option>
               <option>Bäckerei</option>
               <option>Foodtruck</option>
-              <option>Retail</option>
-              <option>Friseur</option>
-              <option>Spa</option>
+              <option>Imbiss</option>
+              <option>Lieferdienst</option>
+              <option>{lang === "de" ? "Sonstiges" : "Other"}</option>
             </select>
             <textarea
+              name="message"
               rows={3}
+              aria-label={lang === "de" ? "Was möchten Sie sehen?" : "What would you like to see?"}
               placeholder={lang === "de" ? "Was möchten Sie sehen?" : "What would you like to see?"}
               className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm"
             />
-            <button className="w-full rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground">
+            <button
+              type="submit"
+              className="w-full rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground"
+            >
               {lang === "de" ? "Demo anfragen" : "Request demo"}
             </button>
           </form>
