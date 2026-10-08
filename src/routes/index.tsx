@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { Hero } from "@/components/home/Hero";
-import { BuiltFor, FinalCta, SocialProof, ProductShowcase } from "@/components/home/Sections";
+import { BuiltFor, FinalCta, SocialProof } from "@/components/home/Sections";
+import { FeatureSuite } from "@/components/home/FeatureSuite";
 import { DashboardDemo } from "@/components/home/DashboardDemo";
 import { FuturisticIntro } from "@/components/home/FuturisticIntro";
 import { useState, useCallback } from "react";
@@ -44,7 +45,7 @@ function Index() {
         <SiteShell>
           <Hero />
           <SocialProof />
-          <ProductShowcase />
+          <FeatureSuite />
           <DashboardDemo />
           <BuiltFor />
           <FinalCta />

@@ -22,6 +22,10 @@ export function PageTransition({ children }: { children: ReactNode }) {
             duration: 0.45,
             ease: [0.16, 1, 0.3, 1] as const,
           },
+          // A leftover `filter` (even blur(0px)) turns this wrapper into the
+          // containing block for `position: fixed` children, which would make
+          // the fixed header scroll away with the page. Clear it once done.
+          transitionEnd: { filter: "none" },
         }}
         exit={{
           opacity: 0,

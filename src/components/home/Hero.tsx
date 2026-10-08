@@ -1,127 +1,19 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n/context";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { CanvasCarousel } from "./CanvasCarousel";
-import {
-  ArrowRight,
-  Brain,
-  Sparkles,
-  Timer,
-  Flame,
-  CheckCircle2,
-  Zap,
-} from "lucide-react";
-
-/* ────────────────────────────── Types ────────────────────────────── */
-
-type OrderStatus = "new" | "cooking" | "ready";
-
-interface KdsOrder {
-  id: string;
-  table: string;
-  items: string[];
-  status: OrderStatus;
-  elapsed: number;
-  priority?: boolean;
-}
-
-/* ────────────────────────────── Data ────────────────────────────── */
-
-const SEED_ORDERS: KdsOrder[] = [
-  {
-    id: "a",
-    table: "#14",
-    items: ["2× Wagyu Burger", "1× Truffle Fries"],
-    status: "cooking",
-    elapsed: 342,
-  },
-  {
-    id: "b",
-    table: "#08",
-    items: ["1× Lobster Risotto", "2× Caesar"],
-    status: "cooking",
-    elapsed: 187,
-    priority: true,
-  },
-  {
-    id: "c",
-    table: "#22",
-    items: ["3× Margherita", "1× Tiramisu"],
-    status: "new",
-    elapsed: 24,
-  },
-  {
-    id: "d",
-    table: "Bar",
-    items: ["4× Espresso Martini"],
-    status: "new",
-    elapsed: 8,
-  },
-];
-
-const STATUS_META: Record<
-  OrderStatus,
-  { color: string; bg: string; border: string; label: string }
-> = {
-  new: {
-    color: "text-blue-600",
-    bg: "bg-blue-50",
-    border: "border-l-blue-500",
-    label: "NEW",
-  },
-  cooking: {
-    color: "text-amber-600",
-    bg: "bg-amber-50",
-    border: "border-l-amber-500",
-    label: "COOKING",
-  },
-  ready: {
-    color: "text-emerald-600",
-    bg: "bg-emerald-50",
-    border: "border-l-emerald-500",
-    label: "READY",
-  },
-};
-
-function fmtTime(s: number) {
-  return `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(s % 60).padStart(2, "0")}`;
-}
+import { FloorPlan } from "./FloorPlan";
+import { ArrowRight, BookOpen, Brain, ChefHat, QrCode, Timer, Truck, Zap } from "lucide-react";
 
 /* ────────────────────────────── Component ────────────────────────── */
 
 export function Hero() {
   const { lang, t } = useI18n();
-  const [orders, setOrders] = useState(SEED_ORDERS);
 
   const words = useMemo(() => lang === "de"
     ? ["Küchenanzeige", "Selbstbestellsystem", "Liefersystem", "Kassenbuch"]
     : ["Kitchen Display System", "Self ordering system", "Delivery system", "Cash book"], [lang]);
-
-  /* tick timers every second */
-  useEffect(() => {
-    const id = setInterval(
-      () => setOrders((p) => p.map((o) => ({ ...o, elapsed: o.elapsed + 1 }))),
-      1000,
-    );
-    return () => clearInterval(id);
-  }, []);
-
-  /* cycle order statuses every 4 s */
-  useEffect(() => {
-    const id = setInterval(() => {
-      setOrders((prev) => {
-        const ni = prev.findIndex((o) => o.status === "new");
-        if (ni !== -1)
-          return prev.map((o, i) => (i === ni ? { ...o, status: "cooking" as const } : o));
-        const ci = prev.findIndex((o) => o.status === "cooking");
-        if (ci !== -1)
-          return prev.map((o, i) => (i === ci ? { ...o, status: "ready" as const } : o));
-        return SEED_ORDERS;
-      });
-    }, 4000);
-    return () => clearInterval(id);
-  }, []);
 
   const c =
     lang === "de"
@@ -166,8 +58,8 @@ export function Hero() {
           <h1 className="relative z-[2] mt-8 font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
             {c.h1a}
             <br />
-            <span className="text-[1.75rem] sm:text-4xl md:text-5xl lg:text-6xl">
-              <Typewriter words={words} />
+            <span className="text-[1.45rem] sm:text-4xl md:text-5xl lg:text-6xl">
+              <FeatureRotator words={words} />
             </span>
           </h1>
 
@@ -194,7 +86,7 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* ── KDS mockup ── */}
+        {/* ── Live floor plan ── */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
@@ -211,72 +103,7 @@ export function Hero() {
             }}
           />
 
-          <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-white shadow-2xl shadow-slate-200/60">
-            {/* title bar */}
-            <div className="flex items-center justify-between border-b border-border/40 bg-[#f8fafc] px-5 py-3">
-              <div className="flex items-center gap-3">
-                <div className="flex items-center gap-1.5">
-                  <span className="size-2.5 rounded-full bg-red-400" />
-                  <span className="size-2.5 rounded-full bg-amber-400" />
-                  <span className="size-2.5 rounded-full bg-emerald-400" />
-                </div>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-slate-400">
-                  GastroPos KDS
-                </span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="flex items-center gap-1.5 font-mono text-[10px] text-emerald-600">
-                  <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" /> LIVE
-                </span>
-                <span className="hidden items-center gap-1.5 font-mono text-[10px] text-[#ea5929] sm:flex">
-                  <Zap className="size-3" /> AI ROUTING
-                </span>
-              </div>
-            </div>
-
-            {/* order card grid */}
-            <div className="grid grid-cols-2 gap-3 p-4 md:grid-cols-4">
-              {orders.map((order) => {
-                const m = STATUS_META[order.status];
-                return (
-                  <motion.div
-                    key={order.id}
-                    layout
-                    className={`rounded-xl border-l-2 bg-[#f8fafc] ring-1 ring-border/30 p-4 ${m.border} transition-colors duration-500`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="font-display text-sm font-bold text-foreground">{order.table}</span>
-                      {order.priority && (
-                        <span className="rounded bg-red-100 px-1.5 py-0.5 text-[9px] font-bold uppercase text-red-600">
-                          Rush
-                        </span>
-                      )}
-                    </div>
-                    <p className={`mt-1 font-mono text-xs ${m.color}`}>
-                      {fmtTime(order.elapsed)}
-                    </p>
-                    <ul className="mt-3 space-y-1">
-                      {order.items.map((item) => (
-                        <li key={item} className="text-[11px] text-muted-foreground">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-3">
-                      <span
-                        className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${m.bg} ${m.color}`}
-                      >
-                        {order.status === "new" && <Sparkles className="size-2.5" />}
-                        {order.status === "cooking" && <Flame className="size-2.5" />}
-                        {order.status === "ready" && <CheckCircle2 className="size-2.5" />}
-                        {m.label}
-                      </span>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
+          <FloorPlan />
 
           {/* floating stat pills */}
           <motion.div
@@ -325,46 +152,110 @@ export function Hero() {
   );
 }
 
-function Typewriter({ words }: { words: string[] }) {
-  const [wordIdx, setWordIdx] = useState(0);
-  const [text, setText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
+/* Feature word rotator: a fixed-width frosted chip (sized to the longest
+   feature). The whole chip – background, icon and word – rolls upwards like a
+   3D cube to reveal the next feature, followed by a shine sweep. */
+const ROTATE_MS = 3000;
+const FEATURE_ICONS = [ChefHat, QrCode, Truck, BookOpen];
+// The chip is 1.3em tall; rotating around an axis half that depth behind it
+// makes consecutive chips behave like the front and bottom faces of a cube.
+const CUBE_ORIGIN = "50% 50% -0.65em";
+const CUBE_TRANSITION = { duration: 0.8, ease: [0.65, 0, 0.35, 1] } as const;
+
+function FeatureRotator({ words }: { words: string[] }) {
+  const reduce = useReducedMotion();
+  const [index, setIndex] = useState(0);
+  const [widths, setWidths] = useState<number[] | null>(null);
+  const ghosts = useRef<(HTMLSpanElement | null)[]>([]);
 
   useEffect(() => {
-    const currentWord = words[wordIdx];
-    let timeout: NodeJS.Timeout;
-    
-    if (isDeleting) {
-      if (text.length === 0) {
-        setIsDeleting(false);
-        setWordIdx((prev) => (prev + 1) % words.length);
-      } else {
-        timeout = setTimeout(() => {
-          setText(currentWord.substring(0, text.length - 1));
-        }, 30);
-      }
-    } else {
-      if (text.length === currentWord.length) {
-        timeout = setTimeout(() => {
-          setIsDeleting(true);
-        }, 1500);
-      } else {
-        timeout = setTimeout(() => {
-          setText(currentWord.substring(0, text.length + 1));
-        }, 60);
-      }
-    }
-    return () => clearTimeout(timeout);
-  }, [text, isDeleting, wordIdx, words]);
+    setIndex(0);
+  }, [words]);
+
+  useEffect(() => {
+    if (reduce) return;
+    const id = setInterval(() => setIndex((i) => (i + 1) % words.length), ROTATE_MS);
+    return () => clearInterval(id);
+  }, [reduce, words.length]);
+
+  // Measure every word so the chip can be as wide as the longest one.
+  useEffect(() => {
+    const measure = () =>
+      setWidths(ghosts.current.map((g) => g?.getBoundingClientRect().width ?? 0));
+    measure();
+    const ro = new ResizeObserver(measure);
+    ghosts.current.forEach((g) => g && ro.observe(g));
+    document.fonts?.ready.then(measure);
+    return () => ro.disconnect();
+  }, [words]);
+
+  const i = index % words.length;
+  const word = words[i];
+  const Icon = FEATURE_ICONS[i % FEATURE_ICONS.length];
+  const maxWidth = widths ? Math.ceil(Math.max(...widths)) : null;
 
   return (
-    <span className="inline-block relative h-[1.25em] align-bottom pb-[0.1em]">
-      <span className="text-gradient-ai">{text}&#8203;</span>
-      <motion.span
-        animate={{ opacity: [1, 0, 1] }}
-        transition={{ repeat: Infinity, duration: 0.8 }}
-        className="ml-[0.05em] inline-block w-[0.08em] h-[0.9em] bg-[#ea5929] align-baseline -mb-[0.05em]"
-      />
+    <span className="relative mt-2 inline-flex align-bottom">
+      <span className="sr-only">{words.join(", ")}</span>
+
+      {/* invisible copies used for measuring */}
+      <span
+        aria-hidden
+        className="pointer-events-none invisible absolute left-0 top-0 whitespace-nowrap"
+      >
+        {words.map((w, k) => (
+          <span
+            key={w}
+            ref={(el) => {
+              ghosts.current[k] = el;
+            }}
+            className="absolute whitespace-nowrap"
+          >
+            {w}
+          </span>
+        ))}
+      </span>
+
+      {/* 3D stage */}
+      <span
+        aria-hidden
+        className="relative inline-flex"
+        style={{ perspective: "7em", transformStyle: "preserve-3d" }}
+      >
+        <AnimatePresence mode="popLayout" initial={false}>
+          <motion.span
+            key={`${i}-${word}`}
+            className="relative inline-flex h-[1.3em] items-center gap-[0.28em] overflow-hidden rounded-[0.38em] bg-white/80 pl-[0.22em] pr-[0.3em] shadow-[0_10px_40px_-12px_rgba(26,45,109,0.35)] ring-1 ring-[#ea5929]/20 backdrop-blur-md"
+            style={{ transformOrigin: CUBE_ORIGIN, backfaceVisibility: "hidden" }}
+            initial={reduce ? false : { rotateX: -90, filter: "brightness(0.6)" }}
+            animate={{ rotateX: 0, filter: "brightness(1)" }}
+            exit={reduce ? undefined : { rotateX: 90, filter: "brightness(0.6)" }}
+            transition={CUBE_TRANSITION}
+          >
+            <span className="grid size-[0.82em] shrink-0 place-items-center rounded-[0.24em] bg-[#1a2d6d] text-white">
+              <Icon className="size-[0.48em]" strokeWidth={2.2} />
+            </span>
+            <span
+              className="text-gradient-ai inline-flex justify-center whitespace-nowrap pb-[0.06em]"
+              style={{ width: maxWidth ? `${maxWidth}px` : undefined }}
+            >
+              {word}
+            </span>
+            {!reduce && (
+              <motion.span
+                className="pointer-events-none absolute inset-y-0 w-[1.2em] -skew-x-12"
+                style={{
+                  background:
+                    "linear-gradient(90deg, transparent, rgba(255,255,255,0.85), transparent)",
+                }}
+                initial={{ left: "-20%" }}
+                animate={{ left: "120%" }}
+                transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1], delay: 0.55 }}
+              />
+            )}
+          </motion.span>
+        </AnimatePresence>
+      </span>
     </span>
   );
 }

@@ -261,7 +261,10 @@ export function Header() {
   const desc = (l: LinkItem) => (lang === "de" ? l.desc_de : l.desc_en);
 
   return (
-    <header className="sticky top-4 z-50 px-4" onMouseLeave={() => setOpen(null)}>
+    <>
+    {/* reserves the header's height in the flow, since the header itself is fixed */}
+    <div aria-hidden className="h-14" />
+    <header className="fixed inset-x-0 top-4 z-50 px-4" onMouseLeave={() => setOpen(null)}>
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between rounded-full border border-white/40 bg-white/85 px-4 pl-6 shadow-[0_10px_40px_-10px_rgba(15,23,42,0.25)] backdrop-blur-xl">
         <div className="flex items-center gap-6">
           <Link to="/" className="flex items-center" aria-label="GastroPos">
@@ -294,12 +297,6 @@ export function Header() {
         </div>
         <div className="flex items-center gap-3">
           <LangDropdown lang={lang} setLang={setLang} />
-          <Link
-            to="/signin"
-            className="hidden md:inline-flex text-sm font-semibold text-foreground hover:text-accent"
-          >
-            {t.nav.signin}
-          </Link>
           <Link
             to="/demo"
             className="group btn-shimmer hidden md:inline-flex items-center gap-1.5 rounded-full bg-[#1a2d6d] px-5 py-2.5 text-[13px] font-semibold text-white shadow-[0_0_20px_rgba(26,45,109,0.3)] transition-all hover:bg-[#122050] hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(26,45,109,0.5)]"
@@ -399,6 +396,7 @@ export function Header() {
         </div>
       )}
     </header>
+    </>
   );
 }
 

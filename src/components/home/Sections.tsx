@@ -1,8 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n/context";
 import { Reveal, SectionLabel, Counter } from "@/components/ui/motion";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Brain,
   Zap,
@@ -13,11 +12,6 @@ import {
   ChefHat,
   ShoppingBag,
   Building2,
-  Receipt,
-  ScanLine,
-  BarChart3,
-  Globe,
-  Check,
   Wine,
   Croissant,
   Truck,
@@ -264,39 +258,109 @@ export function FinalCta() {
 /* ─── Social Proof (marquee) ──────────────────────────────────────── */
 /* ═══════════════════════════════════════════════════════════════════ */
 
+const CUSTOMERS = [
+  "Lechtaler Dirndl & Tracht",
+  "Update Lounge",
+  "Waldgaststätte Althegnenberg",
+  "Villa Weidig",
+  "Norrii Zushii",
+  "Kassenfux",
+  "Cafe Aroma",
+  "Steinfeldzentrum",
+  "Meido Chi",
+  "Restaurant Onassis",
+  "Swing and Move Enterprises",
+  "Restaurant Vastur",
+  "BEAMS - Pub & Sportsbar",
+  "Gelateria Zampolli",
+  "Taos",
+  "Schützenhaus Durmersheim",
+  "Bauernhofstueble",
+  "Café alte Werkstatt",
+  "Smoke Nation Restobar GmbH",
+  "Schützenges. 1900 Alerheim e.V",
+  "Gesang- und Musikverein 1846 e.V. Lambsheim",
+  "Waldgaststätte",
+  "Smashup! am Dom",
+  "Klein und Fein",
+  "z u m   T u r m",
+  "Admir Ghiol Techirghiol",
+  "BRUCKS Trattoria",
+  "Gelateria La Gondola s.a.r.l.",
+  "Ristorante Italia",
+  "Waldhof Wernswig",
+  "RheinBar",
+  "RistoranteDeiFratelli",
+  "Bürgerhaus Glasofen",
+  "Seyfi Baba",
+  "Rossetti's Il Panzerotto",
+  "Gästehaus Falkenau",
+  "Cafe La Phäd",
+  "Alter Fritz",
+  "Stigma Cafe Bar Bistro",
+  "Akropolis",
+  "Flori's",
+  "Zunftstube",
+  "Ates Barbershop",
+  "Lenny's im Saal",
+  "Solemio Lounge & Bar",
+  "The Coffee Society",
+  "Seepavillon Ochsenwerder",
+  "Dor de casă",
+  "Feuerwehr Babenhausen",
+  "PausenPlätzchen Kulturcafe",
+  "Urfam Grillhouse",
+  "Hotel Baergsunnu",
+  "Gutsschänke Weingut Blümel",
+  "Salzfit & Schwimmschule",
+  "Schlaraffia Ravensbergia",
+  "Milchhüsli",
+  "The Golden Hop",
+];
+
 export function SocialProof() {
   const { lang } = useI18n();
-  const logos = [
-    "FISKALY TSE",
-    "DATEV",
-    "STRIPE",
-    "PAYPAL",
-    "KLARNA",
-    "SUMUP",
-    "ZETTLE",
-    "ZVT",
-    "SUNMI",
-    "IMIN",
+  const half = Math.ceil(CUSTOMERS.length / 2);
+  const rows = [
+    { names: CUSTOMERS.slice(0, half), reverse: false },
+    { names: CUSTOMERS.slice(half), reverse: true },
   ];
   return (
     <section className="overflow-hidden bg-white py-14 border-t-8 border-l-8 border-t-[#ea5929] border-l-[#ea5929]">
       <div className="mx-auto max-w-7xl px-6">
         <p className="text-center font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
           {lang === "de"
-            ? "Arbeitet mit Ihrer Technik und Ihren Partnern"
-            : "Works with your hardware and partners"}
+            ? "Diese Betriebe vertrauen bereits auf GastroPos"
+            : "Trusted by these businesses"}
         </p>
-        <div className="mt-8 overflow-hidden">
-          <div className="flex animate-marquee gap-16 whitespace-nowrap">
-            {[...logos, ...logos].map((l, i) => (
-              <span
-                key={i}
-                className="font-display text-lg font-bold tracking-widest text-muted-foreground/50"
-              >
-                {l}
-              </span>
-            ))}
-          </div>
+        <span className="sr-only">{CUSTOMERS.join(", ")}</span>
+        <div
+          aria-hidden
+          className="mt-8 space-y-5 overflow-hidden"
+          style={{
+            maskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
+            WebkitMaskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
+          }}
+        >
+          {rows.map((row, r) => (
+            <div
+              key={r}
+              className="flex w-max animate-marquee items-center whitespace-nowrap hover:[animation-play-state:paused]"
+              style={{
+                animationDuration: "120s",
+                animationDirection: row.reverse ? "reverse" : "normal",
+              }}
+            >
+              {[...row.names, ...row.names].map((name, i) => (
+                <span key={i} className="flex items-center">
+                  <span className="font-display text-lg font-bold tracking-tight text-muted-foreground/60">
+                    {name}
+                  </span>
+                  <span className="mx-8 size-1.5 rounded-full bg-[#ea5929]/40" />
+                </span>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -368,359 +432,5 @@ export function KeyBenefits() {
         </div>
       </div>
     </section>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════════════════ */
-/* ─── Product Showcase (tabbed dashboard) ─────────────────────────── */
-/* ═══════════════════════════════════════════════════════════════════ */
-
-const showcaseTabs = [
-  {
-    id: "pos",
-    icon: Receipt,
-    en: "POS System",
-    de: "Kasse",
-    desc_en:
-      "Tablet-based ordering at every table. Waitstaff capture orders that flow instantly to the kitchen — no paper, no delays.",
-    desc_de:
-      "Tablet-basierte Bestellaufnahme an jedem Tisch. Bestellungen fließen sofort in die Küche — kein Papier, keine Verzögerungen.",
-  },
-  {
-    id: "kds",
-    icon: ChefHat,
-    en: "Kitchen Display",
-    de: "Küchenmonitor",
-    desc_en:
-      "Real-time order display for every kitchen station. Acoustic alerts, category filters, and status tracking from New to Served.",
-    desc_de:
-      "Echtzeit-Auftragsanzeige für jede Küchenstation. Akustische Signale, Kategoriefilter und Statusverfolgung von Neu bis Serviert.",
-  },
-  {
-    id: "qr",
-    icon: ScanLine,
-    en: "QR Ordering",
-    de: "QR-Bestellung",
-    desc_en:
-      "Guests scan a QR code at the table and place orders directly — no app download needed. Orders appear instantly in the KDS.",
-    desc_de:
-      "Gäste scannen einen QR-Code am Tisch und bestellen direkt — kein App-Download nötig. Bestellungen erscheinen sofort im KDS.",
-  },
-  {
-    id: "analytics",
-    icon: BarChart3,
-    en: "Analytics",
-    de: "Analytics",
-    desc_en:
-      "Revenue breakdowns, best-selling items, peak hours, and employee performance — all in one clear dashboard.",
-    desc_de:
-      "Umsatzauswertungen, Bestseller, Stoßzeiten und Mitarbeiterleistung — übersichtlich in einem Dashboard.",
-  },
-] as const;
-
-export function ProductShowcase() {
-  const { lang } = useI18n();
-  const [active, setActive] = useState<(typeof showcaseTabs)[number]["id"]>("pos");
-  return (
-    <section className="overflow-hidden bg-white py-28 border-l-8 border-l-[#ea5929]">
-      <div className="mx-auto max-w-7xl px-6">
-        <Reveal>
-          <div className="mx-auto max-w-2xl text-center">
-            <SectionLabel>
-              {lang === "de" ? "Eine Suite. Jeder Touchpoint." : "One suite. Every touchpoint."}
-            </SectionLabel>
-            <h2 className="mt-4 text-balance font-display text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
-              {lang === "de"
-                ? "Die komplette professionelle Suite."
-                : "The complete professional suite."}
-            </h2>
-            <p className="mt-4 text-muted-foreground">
-              {lang === "de"
-                ? "Vom Tresen bis zur Küche. Vom Tisch bis zum Online-Shop. Alles synchron, in Echtzeit."
-                : "From counter to kitchen. From table to online shop. Everything synced, in real time."}
-            </p>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.1}>
-          <div className="mt-10 flex justify-center">
-            <div className="flex flex-wrap justify-center gap-1 rounded-2xl border border-border bg-[#f8fafc] p-1 sm:inline-flex sm:rounded-full">
-              {showcaseTabs.map((tab) => {
-                const isActive = active === tab.id;
-                const Icon = tab.icon;
-                return (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActive(tab.id)}
-                    className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all ${
-                      isActive
-                        ? "bg-[#0c1b3d] text-white shadow"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    <Icon className="size-3.5" />
-                    {lang === "de" ? tab.de : tab.en}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </Reveal>
-
-        <AnimatePresence mode="wait">
-          {showcaseTabs.map((tab) =>
-            active === tab.id ? (
-              <motion.div
-                key={tab.id}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -4 }}
-                transition={{ duration: 0.3 }}
-                className="mt-4 text-center"
-              >
-                <p className="mx-auto max-w-xl text-sm text-muted-foreground">
-                  {lang === "de" ? tab.desc_de : tab.desc_en}
-                </p>
-              </motion.div>
-            ) : null,
-          )}
-        </AnimatePresence>
-
-        <Reveal delay={0.2}>
-          <div className="mt-6 overflow-hidden rounded-3xl border border-border bg-white p-3 shadow-xl">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.4 }}
-                className="grid min-h-[420px] grid-cols-1 gap-3 rounded-2xl bg-[#f8fafc] p-6 lg:grid-cols-12"
-              >
-                {active === "pos" && <PosPreview />}
-                {active === "kds" && <KdsPreview />}
-                {active === "qr" && <QrPreview />}
-                {active === "analytics" && <AnalyticsPreview />}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-/* ── Preview sub-components ─────────────────────────────────── */
-
-function PosPreview() {
-  return (
-    <>
-      <div className="space-y-3 lg:col-span-7">
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-          {["Mains", "Drinks", "Sides", "Desserts"].map((c, i) => (
-            <div
-              key={c}
-              className={`rounded-lg px-3 py-2 text-xs font-semibold ${i === 0 ? "bg-[#0c1b3d] text-white" : "bg-white ring-1 ring-border"}`}
-            >
-              {c}
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-          {[
-            { name: "Burger", image: "/food/burger.jpg" },
-            { name: "Steak", image: "/food/steak.jpg" },
-            { name: "Salad", image: "/food/salad.jpg" },
-            { name: "Pasta", image: "/food/pasta.jpg" },
-            { name: "Pizza", image: "/food/pizza.jpg" },
-            { name: "Fries", image: "/food/fries.jpg" },
-            { name: "Soup", image: "/food/soup.jpg" },
-            { name: "Wrap", image: "/food/wrap.jpg" },
-            { name: "Bowl", image: "/food/bowl.jpg" },
-          ].map((m, i) => (
-            <div key={m.name} className="rounded-xl bg-white p-4 ring-1 ring-border">
-              <div className="aspect-video w-full overflow-hidden rounded-md bg-gradient-to-br from-[#e8edf5] to-[#d9e2f3]">
-                <img
-                  src={m.image}
-                  alt={m.name}
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <p className="mt-2 text-sm font-semibold">{m.name}</p>
-              <p className="font-mono text-[10px] text-muted-foreground">€{(i + 1) * 4.5}.00</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="rounded-xl bg-white p-5 ring-1 ring-border lg:col-span-5">
-        <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          Order #2047
-        </p>
-        <h4 className="mt-1 font-display font-bold">Table 14 · Terrace</h4>
-        <div className="mt-4 space-y-3 text-sm">
-          {[
-            ["2× Burger", "18.00"],
-            ["1× Salad", "9.00"],
-            ["3× Coke", "9.00"],
-          ].map(([k, v]) => (
-            <div key={k} className="flex justify-between">
-              <span>{k}</span>
-              <span className="font-mono">€{v}</span>
-            </div>
-          ))}
-        </div>
-        <div className="mt-4 border-t border-border pt-4">
-          <div className="flex justify-between font-display text-lg font-bold">
-            <span>Total</span>
-            <span>€36.00</span>
-          </div>
-        </div>
-        <button className="mt-4 w-full rounded-lg bg-[#ea5929] py-3 text-sm font-semibold text-white">
-          Tap to Pay
-        </button>
-      </div>
-    </>
-  );
-}
-
-function KdsPreview() {
-  return (
-    <div className="col-span-full grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
-      {[
-        {
-          table: "#14",
-          time: "00:42",
-          items: ["2× Burger", "1× Salad", "3× Coke"],
-          status: "Cooking",
-        },
-        { table: "#08", time: "00:21", items: ["1× Steak", "1× Pasta", "2× Wine"], status: "New" },
-        { table: "#22", time: "01:14", items: ["3× Pizza", "2× Beer"], status: "Cooking" },
-        { table: "Bar", time: "00:05", items: ["4× Espresso"], status: "New" },
-      ].map((t) => (
-        <div key={t.table} className="rounded-xl bg-white p-4 ring-1 ring-border">
-          <div className="flex items-center justify-between">
-            <span className="font-display font-bold">{t.table}</span>
-            <span
-              className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${t.status === "New" ? "bg-[#ea5929]/10 text-[#ea5929]" : "bg-green-500/10 text-green-600"}`}
-            >
-              {t.status}
-            </span>
-          </div>
-          <p className="mt-1 font-mono text-xs text-muted-foreground">{t.time}</p>
-          <ul className="mt-3 space-y-1.5 text-sm">
-            {t.items.map((i) => (
-              <li key={i} className="flex items-start gap-2">
-                <Check className="mt-0.5 size-3.5 text-muted-foreground" />
-                {i}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function QrPreview() {
-  return (
-    <>
-      <div className="flex items-center justify-center lg:col-span-5">
-        <div className="w-64 rounded-3xl border border-border bg-white p-6 shadow-xl">
-          <div className="mx-auto grid aspect-square w-40 grid-cols-8 gap-0.5 rounded-xl bg-[#0c1b3d] p-2">
-            {Array.from({ length: 64 }).map((_, i) => (
-              <div
-                key={i}
-                className={`rounded-[1px] ${Math.random() > 0.5 ? "bg-white" : "bg-[#0c1b3d]"}`}
-              />
-            ))}
-          </div>
-          <p className="mt-4 text-center font-display font-bold">Scan to order</p>
-          <p className="text-center font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-            Table 14
-          </p>
-        </div>
-      </div>
-      <div className="rounded-xl bg-white p-6 ring-1 ring-border lg:col-span-7">
-        <div className="flex items-center gap-2">
-          <Globe className="size-4 text-[#ea5929]" />
-          <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-            order.gastropos.ai
-          </span>
-        </div>
-        <h4 className="mt-3 font-display text-2xl font-bold">Welcome to Table 14</h4>
-        <p className="text-sm text-muted-foreground">
-          Browse the menu, customize, pay — without waiting.
-        </p>
-        <div className="mt-5 space-y-3">
-          {["Margherita Pizza", "Truffle Pasta", "Tiramisu"].map((m) => (
-            <div key={m} className="flex items-center justify-between rounded-lg bg-[#f8fafc] p-3">
-              <div>
-                <p className="text-sm font-semibold">{m}</p>
-                <p className="font-mono text-xs text-muted-foreground">€12.00</p>
-              </div>
-              <button className="rounded-md bg-[#ea5929] px-3 py-1.5 text-xs font-semibold text-white">
-                Add
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
-    </>
-  );
-}
-
-function AnalyticsPreview() {
-  return (
-    <>
-      <div className="rounded-xl bg-white p-6 ring-1 ring-border lg:col-span-8">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-              Revenue · Last 30 days
-            </p>
-            <p className="mt-1 font-display text-3xl font-extrabold">
-              €<Counter to={184230} />
-            </p>
-          </div>
-          <span className="rounded-full bg-green-500/10 px-2 py-1 text-xs font-bold text-green-600">
-            +24.5%
-          </span>
-        </div>
-        <svg viewBox="0 0 400 140" className="mt-6 w-full">
-          <defs>
-            <linearGradient id="chart-g" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0%" stopColor="#1a2d6d" stopOpacity="0.2" />
-              <stop offset="100%" stopColor="#1a2d6d" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-          <path
-            d="M0,100 C40,80 80,90 120,60 C160,40 200,70 240,50 C280,30 320,55 360,25 L400,15 L400,140 L0,140 Z"
-            fill="url(#chart-g)"
-          />
-          <path
-            d="M0,100 C40,80 80,90 120,60 C160,40 200,70 240,50 C280,30 320,55 360,25 L400,15"
-            stroke="#1a2d6d"
-            strokeWidth="2"
-            fill="none"
-          />
-        </svg>
-      </div>
-      <div className="grid grid-cols-1 gap-3 lg:col-span-4">
-        {[
-          { k: "Avg. ticket", v: "€42.30" },
-          { k: "Covers today", v: "284" },
-          { k: "Active staff", v: "12" },
-          { k: "Open tables", v: "14/20" },
-        ].map((s) => (
-          <div key={s.k} className="rounded-xl bg-white p-4 ring-1 ring-border">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-              {s.k}
-            </p>
-            <p className="mt-1 font-display text-xl font-bold">{s.v}</p>
-          </div>
-        ))}
-      </div>
-    </>
   );
 }
